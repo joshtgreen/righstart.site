@@ -58,12 +58,6 @@ export default function About() {
             working to improve systems that impact people when it matters most.
           </p>
 
-          <p className="text-base text-[#718096] italic border-l-2 border-[#e5e2dc] pl-4">
-            And if it helps to know who you&apos;re talking to: I&apos;m based
-            in San Francisco, I sing (badly and joyfully) in the gay men&apos;s
-            chorus, and I believe the best work starts with honesty, warmth,
-            and a genuine desire to help others succeed.
-          </p>
         </div>
 
         {/* Credential bar */}
