@@ -43,3 +43,12 @@ body {
 .animate-slide-from-left {
   animation: slide-in-from-left 300ms ease-out both;
 }
+
+@keyframes progress-fill {
+  from { width: 0% }
+  to   { width: 100% }
+}
+
+.animate-progress-fill {
+  animation: progress-fill 5s linear forwards;
+}

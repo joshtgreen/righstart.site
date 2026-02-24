@@ -1,9 +1,9 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import ServicesTabbed from "@/components/ServicesTabbed";
-import ServicesSidePanel from "@/components/ServicesSidePanel";
-import ServicesAccordion from "@/components/ServicesAccordion";
+import ServicesGhostNumbers from "@/components/ServicesGhostNumbers";
+import ServicesProgressBar from "@/components/ServicesProgressBar";
+import ServicesProofCards from "@/components/ServicesProofCards";
 import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
@@ -15,9 +15,9 @@ export default function Home() {
       <main>
         <Hero />
         <About />
-        <ServicesTabbed />
-        <ServicesSidePanel />
-        <ServicesAccordion />
+        <ServicesGhostNumbers />
+        <ServicesProgressBar />
+        <ServicesProofCards />
         <Testimonials />
         <CTA />
       </main>
