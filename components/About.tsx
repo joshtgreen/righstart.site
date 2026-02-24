@@ -1,10 +1,3 @@
-const credentials = [
-  { stat: "3×", label: "First ops hire at startups that went on to be acquired" },
-  { stat: "50 states", label: "Scaled telehealth nationwide in under 3 months" },
-  { stat: "COO + CFO", label: "Fractional and interim executive leadership" },
-  { stat: "SF-based", label: "Works with organizations across the country" },
-];
-
 export default function About() {
   return (
     <section id="about" className="bg-[#faf9f7] py-24 lg:py-32">
@@ -60,15 +53,6 @@ export default function About() {
 
         </div>
 
-        {/* Credential bar */}
-        <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-px bg-[#e5e2dc] rounded-2xl overflow-hidden">
-          {credentials.map((c) => (
-            <div key={c.stat} className="bg-white px-8 py-7">
-              <div className="text-2xl font-bold text-[#1a2744] mb-1">{c.stat}</div>
-              <div className="text-sm text-[#718096] leading-snug">{c.label}</div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
