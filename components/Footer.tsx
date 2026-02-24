@@ -18,7 +18,7 @@ export default function Footer() {
             <span className="text-white/20">·</span>
             <span className="text-white/50 text-sm">Josh Green</span>
             <span className="text-white/20">·</span>
-            <span className="text-white/50 text-sm">Fractional &amp; Interim COO · CFO</span>
+            <span className="text-white/50 text-sm">Fractional/Interim COO or CFO</span>
           </div>
 
           <div className="flex items-center gap-6">

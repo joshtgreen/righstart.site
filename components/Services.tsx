@@ -7,7 +7,7 @@ const services = [
         />
       </svg>
     ),
-    title: "Fractional & Interim COO · CFO",
+    title: "Fractional/Interim COO or CFO",
     tagline: "Embedded operational and financial leadership — without the full-time overhead.",
     results: [
       "Helped define strategic goals and hire executive leaders at an AI education nonprofit",

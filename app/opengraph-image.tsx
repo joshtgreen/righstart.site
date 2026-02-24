@@ -78,7 +78,7 @@ export default function Image() {
               flexDirection: "column",
             }}
           >
-            <span>Fractional &amp; Interim</span>
+            <span>Fractional/Interim</span>
             <span>
               <span style={{ color: "#3dbda5" }}>COO</span>
               <span style={{ color: "rgba(255,255,255,0.4)", margin: "0 16px" }}>·</span>
