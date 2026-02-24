@@ -27,7 +27,7 @@ const services = [
         />
       </svg>
     ),
-    title: "Project Consulting",
+    title: "Project-Based Consulting",
     tagline: "Short-term support for complex, high-stakes initiatives.",
     results: [
       "Led HIPAA compliance and launch readiness for a virtual care organization",

@@ -27,7 +27,7 @@ const services = [
         />
       </svg>
     ),
-    title: "Project Consulting",
+    title: "Project-Based Consulting",
     tagline: "Short-term support for complex, high-stakes initiatives.",
     results: [
       "Led HIPAA compliance and launch readiness for a virtual care organization",
@@ -100,22 +100,43 @@ export default function ServicesTabbed() {
           </p>
         </div>
 
-        {/* Tab pills */}
-        <div className="flex flex-wrap gap-3 mb-8">
+        {/* Selector cards */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
           {services.map((s, i) => (
             <button
               key={s.title}
               onClick={() => setActive(i)}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
+              className={`flex flex-col items-start gap-3 p-5 rounded-2xl border text-left transition-all ${
                 active === i
-                  ? "bg-[#1a2744] text-white shadow-sm"
-                  : "bg-white border border-[#e5e2dc] text-[#1a2744] hover:border-[#2a7d6e] hover:text-[#2a7d6e]"
+                  ? s.highlight
+                    ? "bg-[#1a2744] border-[#2d3f6b] shadow-md"
+                    : "bg-[#1a2744] border-[#1a2744] shadow-md"
+                  : "bg-white border-[#e5e2dc] hover:border-[#2a7d6e] hover:shadow-sm"
               }`}
             >
-              <span className={`w-4 h-4 flex-shrink-0 ${active === i ? "text-[#3dbda5]" : "text-[#2a7d6e]"}`}>
+              {/* Icon circle */}
+              <div
+                className={`flex items-center justify-center w-10 h-10 rounded-xl flex-shrink-0 ${
+                  active === i
+                    ? "bg-[#2a7d6e]/40 text-[#3dbda5]"
+                    : "bg-[#2a7d6e]/10 text-[#2a7d6e]"
+                }`}
+              >
                 {s.icon}
+              </div>
+              <span
+                className={`text-sm font-semibold leading-snug ${
+                  active === i ? "text-white" : "text-[#1a2744]"
+                }`}
+              >
+                {s.title}
               </span>
-              {s.title}
+              {/* Active indicator dot */}
+              <span
+                className={`w-1.5 h-1.5 rounded-full mt-auto ${
+                  active === i ? "bg-[#3dbda5]" : "bg-transparent"
+                }`}
+              />
             </button>
           ))}
         </div>

@@ -5,7 +5,7 @@ import { useState } from "react";
 const services = [
   {
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
           d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
         />
@@ -21,13 +21,13 @@ const services = [
   },
   {
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
         />
       </svg>
     ),
-    title: "Project Consulting",
+    title: "Project-Based Consulting",
     tagline: "Short-term support for complex, high-stakes initiatives.",
     results: [
       "Led HIPAA compliance and launch readiness for a virtual care organization",
@@ -37,7 +37,7 @@ const services = [
   },
   {
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
           d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
         />
@@ -53,7 +53,7 @@ const services = [
   },
   {
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
           d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
         />
@@ -103,27 +103,57 @@ export default function ServicesSidePanel() {
         {/* Split layout */}
         <div className="flex flex-col lg:flex-row gap-4">
           {/* Left nav */}
-          <div className="flex flex-row flex-wrap lg:flex-col gap-2 lg:w-60 lg:flex-shrink-0">
+          <div className="flex flex-col gap-2 lg:w-72 lg:flex-shrink-0">
             {services.map((s, i) => (
               <button
                 key={s.title}
                 onClick={() => setActive(i)}
-                className={`flex items-center gap-3 px-4 py-3.5 rounded-xl text-left transition-all w-full ${
+                className={`group relative flex items-center gap-4 px-5 py-4 rounded-2xl text-left transition-all overflow-hidden ${
                   active === i
-                    ? "bg-white border border-[#e5e2dc] shadow-sm"
-                    : "text-[#4a5568] hover:bg-white/60 hover:text-[#1a2744]"
+                    ? s.highlight
+                      ? "bg-[#1a2744] shadow-md"
+                      : "bg-white border border-[#e5e2dc] shadow-md"
+                    : "hover:bg-white/60"
                 }`}
               >
+                {/* Active left border accent */}
+                {active === i && !s.highlight && (
+                  <span className="absolute left-0 top-3 bottom-3 w-[3px] rounded-full bg-[#2a7d6e]" />
+                )}
+
+                {/* Number */}
                 <span
-                  className={`flex-shrink-0 w-4 h-4 ${
-                    active === i ? "text-[#2a7d6e]" : "text-[#9ca3af]"
+                  className={`flex-shrink-0 text-xs font-bold tabular-nums w-5 ${
+                    active === i
+                      ? s.highlight
+                        ? "text-[#3dbda5]"
+                        : "text-[#2a7d6e]"
+                      : "text-[#9ca3af]"
+                  }`}
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+
+                {/* Icon */}
+                <div
+                  className={`flex-shrink-0 flex items-center justify-center w-9 h-9 rounded-xl ${
+                    active === i
+                      ? s.highlight
+                        ? "bg-[#2a7d6e]/30 text-[#3dbda5]"
+                        : "bg-[#2a7d6e]/10 text-[#2a7d6e]"
+                      : "bg-[#f3f1ee] text-[#9ca3af] group-hover:bg-[#2a7d6e]/10 group-hover:text-[#2a7d6e]"
                   }`}
                 >
                   {s.icon}
-                </span>
+                </div>
+
                 <span
-                  className={`text-sm leading-snug ${
-                    active === i ? "font-semibold text-[#1a2744]" : ""
+                  className={`text-sm font-semibold leading-snug ${
+                    active === i
+                      ? s.highlight
+                        ? "text-white"
+                        : "text-[#1a2744]"
+                      : "text-[#4a5568] group-hover:text-[#1a2744]"
                   }`}
                 >
                   {s.title}
