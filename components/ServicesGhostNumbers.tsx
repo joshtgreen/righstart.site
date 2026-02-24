@@ -66,7 +66,6 @@ const services = [
       "Space to clear a block, gut-check an idea, or sketch next steps",
       "Open to leaders, operators, and curious collaborators",
     ],
-    highlight: true,
   },
 ];
 
@@ -77,11 +76,6 @@ export default function ServicesGhostNumbers() {
   return (
     <section id="services" className="bg-[#f3f1ee] py-16 lg:py-20">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        {/* Temp label */}
-        <div className="inline-block mb-6 px-3 py-1 rounded-full bg-[#1a2744] text-white text-xs font-semibold tracking-wide">
-          Option 1 — Ghost Numbers
-        </div>
-
         {/* Section header */}
         <div className="max-w-2xl mb-10">
           <div className="inline-flex items-center gap-2 mb-4">
@@ -103,18 +97,20 @@ export default function ServicesGhostNumbers() {
         <div className="flex flex-col lg:flex-row gap-6">
           {/* Left nav */}
           <div className="lg:w-72 lg:flex-shrink-0">
-            <ul className="divide-y divide-[#e5e2dc]">
+            <ul className="flex flex-col gap-1">
               {services.map((s, i) => {
                 const isActive = active === i;
                 return (
                   <li
                     key={s.title}
                     onClick={() => setActive(i)}
-                    className="relative cursor-pointer py-5 pl-5 pr-2 select-none overflow-hidden"
+                    className={`relative cursor-pointer py-5 pl-5 pr-2 select-none overflow-hidden rounded-xl transition-colors duration-150 ${
+                      isActive ? "bg-white/70" : "hover:bg-white/40"
+                    }`}
                   >
                     {/* Active left bar */}
                     <span
-                      className={`absolute left-0 top-0 bottom-0 w-[3px] rounded-r transition-all duration-200 ${
+                      className={`absolute left-0 top-2 bottom-2 w-[3px] rounded-r transition-all duration-200 ${
                         isActive ? "bg-[#2a7d6e]" : "bg-transparent"
                       }`}
                     />
@@ -152,34 +148,16 @@ export default function ServicesGhostNumbers() {
           <div className="flex-1">
             <div
               key={active}
-              className={`rounded-2xl p-8 lg:p-10 border h-full animate-slide-from-right ${
-                service.highlight
-                  ? "bg-[#1a2744] border-[#2d3f6b]"
-                  : "bg-white border-[#e5e2dc]"
-              }`}
+              className="rounded-2xl p-8 lg:p-10 border h-full animate-slide-from-right bg-[#1a2744] border-[#2d3f6b]"
             >
-              <div
-                className={`inline-flex items-center justify-center w-12 h-12 rounded-xl mb-4 ${
-                  service.highlight
-                    ? "bg-[#2a7d6e]/30 text-[#3dbda5]"
-                    : "bg-[#2a7d6e]/10 text-[#2a7d6e]"
-                }`}
-              >
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl mb-4 bg-[#2a7d6e]/30 text-[#3dbda5]">
                 {service.icon}
               </div>
 
-              <h3
-                className={`text-xl font-bold mb-1 ${
-                  service.highlight ? "text-white" : "text-[#1a2744]"
-                }`}
-              >
+              <h3 className="text-xl font-bold mb-1 text-white">
                 {service.title}
               </h3>
-              <p
-                className={`text-sm font-medium mb-6 ${
-                  service.highlight ? "text-[#3dbda5]" : "text-[#2a7d6e]"
-                }`}
-              >
+              <p className="text-sm font-medium mb-6 text-[#3dbda5]">
                 {service.tagline}
               </p>
 
@@ -187,15 +165,9 @@ export default function ServicesGhostNumbers() {
                 {service.results.map((r) => (
                   <li
                     key={r}
-                    className={`flex gap-3 text-sm leading-relaxed ${
-                      service.highlight ? "text-white/75" : "text-[#4a5568]"
-                    }`}
+                    className="flex gap-3 text-sm leading-relaxed text-white/75"
                   >
-                    <span
-                      className={`mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full ${
-                        service.highlight ? "bg-[#3dbda5]" : "bg-[#2a7d6e]"
-                      }`}
-                    />
+                    <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#3dbda5]" />
                     {r}
                   </li>
                 ))}
