@@ -131,12 +131,6 @@ export default function ServicesTabbed() {
               >
                 {s.title}
               </span>
-              {/* Active indicator dot */}
-              <span
-                className={`w-1.5 h-1.5 rounded-full mt-auto ${
-                  active === i ? "bg-[#3dbda5]" : "bg-transparent"
-                }`}
-              />
             </button>
           ))}
         </div>
