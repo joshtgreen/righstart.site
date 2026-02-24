@@ -1,28 +1,67 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+
 const testimonials = [
   {
     quote:
-      "Josh brought clarity and structure to a moment when we desperately needed both. He's the kind of leader who makes everyone around him better.",
+      "Josh brought clarity and structure to a moment when we desperately needed both. He stepped in without missing a beat, built trust with the team immediately, and helped us make decisions we'd been stuck on for months. He's the kind of leader who makes everyone around him better.",
     name: "[Name]",
     title: "[Title]",
     org: "[Organization]",
+    photo: "",
   },
   {
     quote:
-      "Working with Josh transformed how we operate. He understands both the operational and financial sides, and he never loses sight of the mission.",
+      "Working with Josh transformed how we operate. He understands both the operational and financial sides of an organization, and he never loses sight of the mission. What impressed me most was how quickly he got up to speed and how thoughtfully he engaged with our team.",
     name: "[Name]",
     title: "[Title]",
     org: "[Organization]",
+    photo: "",
   },
   {
     quote:
-      "Josh is the rare person who can step into a leadership vacuum, earn trust quickly, and actually move the needle. We wouldn't be where we are without him.",
+      "Josh is the rare person who can step into a leadership vacuum, earn trust quickly, and actually move the needle. He brought rigor and calm to a chaotic period and left us in a significantly stronger position. We wouldn't be where we are without him.",
     name: "[Name]",
     title: "[Title]",
     org: "[Organization]",
+    photo: "",
   },
 ];
 
+function getInitials(name: string) {
+  return name
+    .split(" ")
+    .filter((p) => p.length > 1)
+    .map((p) => p[0])
+    .join("")
+    .toUpperCase()
+    .slice(0, 2);
+}
+
 export default function Testimonials() {
+  const [active, setActive] = useState(0);
+  const [direction, setDirection] = useState<"next" | "prev">("next");
+
+  function goTo(index: number, dir: "next" | "prev") {
+    setDirection(dir);
+    setActive(index);
+  }
+
+  function prev() {
+    goTo((active - 1 + testimonials.length) % testimonials.length, "prev");
+  }
+
+  function next() {
+    goTo((active + 1) % testimonials.length, "next");
+  }
+
+  const t = testimonials[active];
+  const initials = getInitials(t.name);
+  const animClass =
+    direction === "next" ? "animate-slide-from-right" : "animate-slide-from-left";
+
   return (
     <section className="bg-[#faf9f7] py-24 lg:py-32">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
@@ -39,27 +78,89 @@ export default function Testimonials() {
           </h2>
         </div>
 
-        {/* Testimonial cards */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
+        {/* Carousel */}
+        <div className="flex items-center gap-4 lg:gap-8">
+          {/* Prev arrow */}
+          <button
+            onClick={prev}
+            aria-label="Previous testimonial"
+            className="flex-shrink-0 w-11 h-11 rounded-full border border-[#e5e2dc] bg-white hover:bg-[#f3f1ee] transition-colors flex items-center justify-center text-[#1a2744]"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Card */}
+          <div className="flex-1 max-w-3xl mx-auto">
             <div
-              key={i}
-              className="bg-white rounded-2xl border border-[#e5e2dc] p-8 shadow-sm flex flex-col"
+              key={active}
+              className={`bg-white rounded-2xl border border-[#e5e2dc] p-10 lg:p-14 shadow-sm ${animClass}`}
             >
-              <div className="text-5xl leading-none text-[#3dbda5] font-serif mb-4">
+              {/* Decorative quote mark */}
+              <div className="text-7xl leading-none text-[#3dbda5] font-serif mb-6 select-none">
                 &ldquo;
               </div>
-              <p className="text-[#4a5568] leading-relaxed flex-1 mb-6">
+
+              {/* Quote body */}
+              <p className="text-lg lg:text-xl text-[#4a5568] leading-relaxed">
                 {t.quote}
               </p>
-              <div className="border-t border-[#e5e2dc] pt-5">
-                <div className="font-semibold text-[#1a2744] text-sm">{t.name}</div>
-                <div className="text-[#718096] text-sm mt-0.5">
-                  {t.title} · {t.org}
+
+              {/* Attribution */}
+              <div className="border-t border-[#e5e2dc] mt-8 pt-8 flex items-center gap-4">
+                {/* Photo / avatar */}
+                {t.photo ? (
+                  <div className="flex-shrink-0 w-16 h-16 rounded-full overflow-hidden ring-2 ring-[#e5e2dc]">
+                    <Image
+                      src={t.photo}
+                      alt={t.name}
+                      width={64}
+                      height={64}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                ) : (
+                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-[#1a2744] flex items-center justify-center ring-2 ring-[#e5e2dc]">
+                    <span className="text-white text-lg font-bold">{initials}</span>
+                  </div>
+                )}
+
+                {/* Name + role */}
+                <div>
+                  <div className="font-bold text-[#1a2744]">{t.name}</div>
+                  <div className="text-sm text-[#718096] mt-0.5">
+                    {t.title} · {t.org}
+                  </div>
                 </div>
               </div>
             </div>
-          ))}
+
+            {/* Dot indicators */}
+            <div className="flex justify-center gap-2 mt-6">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => goTo(i, i > active ? "next" : "prev")}
+                  aria-label={`Go to testimonial ${i + 1}`}
+                  className={`w-2 h-2 rounded-full transition-colors ${
+                    i === active ? "bg-[#2a7d6e]" : "bg-[#e5e2dc]"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Next arrow */}
+          <button
+            onClick={next}
+            aria-label="Next testimonial"
+            className="flex-shrink-0 w-11 h-11 rounded-full border border-[#e5e2dc] bg-white hover:bg-[#f3f1ee] transition-colors flex items-center justify-center text-[#1a2744]"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
