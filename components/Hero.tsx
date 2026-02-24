@@ -24,7 +24,7 @@ export default function Hero() {
           {/* Left: text */}
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/20 text-white/70 text-xs font-medium mb-8 tracking-wide uppercase">
-              Fractional COO &amp; Startup Advisor
+              Fractional &amp; Interim COO · CFO
             </div>
 
             <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.08] tracking-tight mb-6">
@@ -36,10 +36,10 @@ export default function Hero() {
             </h1>
 
             <p className="text-lg lg:text-xl text-white/70 leading-relaxed max-w-lg mb-10">
-              Strategic operations consulting for early-stage health tech, AI,
-              and mission-driven startups. Fractional COO, project-based
-              consulting, and advisory support — whatever you need to gain real
-              traction.
+              Strategic operations leadership for nonprofits, health-focused
+              ventures, and mission-driven organizations. Fractional or interim
+              COO and CFO support, project consulting, and advisory — whatever
+              your organization needs to move forward with clarity.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -82,11 +82,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40">
-          <span className="text-xs tracking-widest uppercase">Scroll</span>
-          <div className="w-px h-8 bg-gradient-to-b from-white/40 to-transparent" />
-        </div>
       </div>
     </section>
   );

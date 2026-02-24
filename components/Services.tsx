@@ -7,11 +7,11 @@ const services = [
         />
       </svg>
     ),
-    title: "Fractional COO",
-    tagline: "Bringing calm clarity and operational structure to fast-moving startups.",
+    title: "Fractional & Interim COO · CFO",
+    tagline: "Embedded operational and financial leadership — without the full-time overhead.",
     results: [
       "Helped define strategic goals and hire executive leaders at an AI education nonprofit",
-      "Scaled a telehealth company to 50 states and quadrupled patient volume in 3 months",
+      "Scaled a telehealth organization to 50 states and quadrupled patient volume in 3 months",
       "Developed internal systems supporting growth, retention, and team culture at a national nonprofit",
     ],
   },
@@ -26,9 +26,9 @@ const services = [
     title: "Project Consulting",
     tagline: "Short-term support for complex, high-stakes initiatives.",
     results: [
-      "Led HIPAA compliance and launch readiness for a virtual care startup",
+      "Led HIPAA compliance and launch readiness for a virtual care organization",
       "Built a provider hiring pipeline for a nutrition therapy platform",
-      "Designed and implemented automations for an orthodontic healthtech MVP",
+      "Designed and implemented automations for an orthodontic healthtech venture",
     ],
   },
   {
@@ -40,7 +40,7 @@ const services = [
       </svg>
     ),
     title: "Advising",
-    tagline: "Ongoing support, honest feedback, and traction-focused guidance.",
+    tagline: "Ongoing support, honest feedback, and clarity-focused guidance.",
     results: [
       "A space to think clearly, ask the hard questions, and move things forward",
       "Weekly calls or check-ins to stay grounded, focused, and accountable",
@@ -60,7 +60,7 @@ const services = [
     results: [
       "A low-stakes way to talk through what's working (or not)",
       "Space to clear a block, gut-check an idea, or sketch next steps",
-      "Open to founders, operators, and curious collaborators",
+      "Open to leaders, operators, and curious collaborators",
     ],
     highlight: true,
   },
@@ -79,12 +79,12 @@ export default function Services() {
             </span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-[#1a2744] leading-tight">
-            The right support, at the right stage.
+            The right support, for where you are.
           </h2>
           <p className="mt-4 text-lg text-[#4a5568] leading-relaxed">
-            Whether you need a steady operational hand, help getting a project
-            across the finish line, or just someone to think with — there&apos;s a
-            way to work together.
+            Whether you need embedded executive leadership, help getting a
+            complex initiative across the finish line, or just someone to think
+            with — there&apos;s a way to work together.
           </p>
         </div>
 
