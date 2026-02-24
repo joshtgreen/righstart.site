@@ -1,0 +1,93 @@
+import Image from "next/image";
+
+export default function Hero() {
+  return (
+    <section className="relative min-h-screen flex items-center bg-[#1a2744] overflow-hidden">
+      {/* Subtle texture overlay */}
+      <div className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
+          backgroundSize: "32px 32px",
+        }}
+      />
+
+      {/* Warm gradient accent */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-10"
+        style={{
+          background: "radial-gradient(circle, #2a7d6e 0%, transparent 70%)",
+          transform: "translate(20%, -20%)",
+        }}
+      />
+
+      <div className="relative max-w-6xl mx-auto px-6 lg:px-8 pt-24 pb-20 w-full">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left: text */}
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/20 text-white/70 text-xs font-medium mb-8 tracking-wide uppercase">
+              Fractional COO &amp; Startup Advisor
+            </div>
+
+            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.08] tracking-tight mb-6">
+              Make better
+              <br />
+              <span className="text-[#3dbda5]">decisions,</span>
+              <br />
+              faster.
+            </h1>
+
+            <p className="text-lg lg:text-xl text-white/70 leading-relaxed max-w-lg mb-10">
+              Strategic operations consulting for early-stage health tech, AI,
+              and mission-driven startups. Fractional COO, project-based
+              consulting, and advisory support — whatever you need to gain real
+              traction.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="https://rightstart.co/book"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-base bg-[#2a7d6e] text-white hover:bg-[#236b5e] transition-all hover:shadow-lg hover:shadow-teal-900/30 hover:-translate-y-0.5"
+              >
+                Let&apos;s Talk
+              </a>
+              <a
+                href="#about"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-base border border-white/25 text-white/90 hover:bg-white/10 transition-all"
+              >
+                Learn More
+              </a>
+            </div>
+          </div>
+
+          {/* Right: photo */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative w-72 h-72 lg:w-96 lg:h-96">
+              {/* Decorative ring */}
+              <div className="absolute inset-0 rounded-full border-2 border-[#2a7d6e]/40 scale-110" />
+              <div className="absolute inset-0 rounded-full border border-white/10 scale-125" />
+
+              {/* Photo */}
+              <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-[#2a7d6e]/30">
+                <Image
+                  src="https://images.squarespace-cdn.com/content/v1/681b3ede27973f2eef8ec91a/14b70cd5-9e58-483a-8109-31d72c73ea5e/Josh+Green+Rightstart.co"
+                  alt="Josh Green, Fractional COO and Strategic Advisor at RightStart"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="(max-width: 768px) 288px, 384px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40">
+          <span className="text-xs tracking-widest uppercase">Scroll</span>
+          <div className="w-px h-8 bg-gradient-to-b from-white/40 to-transparent" />
+        </div>
+      </div>
+    </section>
+  );
+}
