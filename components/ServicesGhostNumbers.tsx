@@ -141,9 +141,6 @@ export default function ServicesGhostNumbers() {
                       >
                         {s.title}
                       </p>
-                      <p className="text-xs text-[#9ca3af] leading-snug mt-1 pr-2">
-                        {s.tagline}
-                      </p>
                     </div>
                   </li>
                 );
