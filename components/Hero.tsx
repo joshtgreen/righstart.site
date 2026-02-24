@@ -36,10 +36,9 @@ export default function Hero() {
             </h1>
 
             <p className="text-lg lg:text-xl text-white/70 leading-relaxed max-w-lg mb-10">
-              Strategic operations leadership for nonprofits, health-focused
-              ventures, and mission-driven organizations. Fractional or interim
-              COO and CFO support, project consulting, and advisory — whatever
-              your organization needs to move forward with clarity.
+              I support nonprofits and mission-driven organizations when they
+              need senior leadership without a full-time hire. I step in as
+              fractional/interim COO or CFO, project lead, or trusted advisor.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
