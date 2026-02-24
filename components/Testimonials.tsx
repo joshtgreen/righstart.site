@@ -95,10 +95,10 @@ export default function Testimonials() {
           <div className="flex-1 max-w-3xl mx-auto">
             <div
               key={active}
-              className={`bg-white rounded-2xl border border-[#e5e2dc] p-10 lg:p-14 shadow-sm ${animClass}`}
+              className={`bg-white rounded-2xl border border-[#e5e2dc] p-8 lg:p-10 shadow-sm ${animClass}`}
             >
               {/* Decorative quote mark */}
-              <div className="text-7xl leading-none text-[#3dbda5] font-serif mb-6 select-none">
+              <div className="text-5xl leading-none text-[#3dbda5] font-serif mb-3 select-none">
                 &ldquo;
               </div>
 
@@ -108,7 +108,7 @@ export default function Testimonials() {
               </p>
 
               {/* Attribution */}
-              <div className="border-t border-[#e5e2dc] mt-8 pt-8 flex items-center gap-4">
+              <div className="border-t border-[#e5e2dc] mt-5 pt-5 flex items-center gap-4">
                 {/* Photo / avatar */}
                 {t.photo ? (
                   <div className="flex-shrink-0 w-16 h-16 rounded-full overflow-hidden ring-2 ring-[#e5e2dc]">
