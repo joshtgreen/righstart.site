@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section id="about" className="bg-[#faf9f7] py-24 lg:py-32">
+    <section id="about" className="bg-[#faf9f7] py-16 lg:py-20">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section label */}
         <div className="inline-flex items-center gap-2 mb-8">

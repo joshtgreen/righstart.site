@@ -1,6 +1,6 @@
 export default function CTA() {
   return (
-    <section id="contact" className="bg-[#1a2744] py-24 lg:py-32">
+    <section id="contact" className="bg-[#1a2744] py-16 lg:py-20">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left: text */}

@@ -68,10 +68,10 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="bg-[#f3f1ee] py-24 lg:py-32">
+    <section id="services" className="bg-[#f3f1ee] py-16 lg:py-20">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section header */}
-        <div className="max-w-2xl mb-16">
+        <div className="max-w-2xl mb-10">
           <div className="inline-flex items-center gap-2 mb-4">
             <div className="w-8 h-px bg-[#2a7d6e]" />
             <span className="text-xs font-semibold uppercase tracking-widest text-[#2a7d6e]">
