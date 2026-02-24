@@ -23,10 +23,6 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: text */}
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/20 text-white/70 text-xs font-medium mb-8 tracking-wide uppercase">
-              Fractional &amp; Interim COO · CFO
-            </div>
-
             <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.08] tracking-tight mb-6">
               Make better
               <br />
@@ -37,8 +33,11 @@ export default function Hero() {
 
             <p className="text-lg lg:text-xl text-white/70 leading-relaxed max-w-lg mb-10">
               I support nonprofits and mission-driven organizations when they
-              need senior leadership without a full-time hire. I step in as
-              fractional/interim COO or CFO, project lead, or trusted advisor.
+              need senior leadership without a full-time hire. I step in as{" "}
+              <span className="text-[#3dbda5] font-medium">
+                fractional/interim COO or CFO
+              </span>
+              , project lead, or trusted advisor.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
