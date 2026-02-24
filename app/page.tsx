@@ -1,7 +1,9 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Services from "@/components/Services";
+import ServicesTabbed from "@/components/ServicesTabbed";
+import ServicesSidePanel from "@/components/ServicesSidePanel";
+import ServicesAccordion from "@/components/ServicesAccordion";
 import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
@@ -13,7 +15,9 @@ export default function Home() {
       <main>
         <Hero />
         <About />
-        <Services />
+        <ServicesTabbed />
+        <ServicesSidePanel />
+        <ServicesAccordion />
         <Testimonials />
         <CTA />
       </main>
