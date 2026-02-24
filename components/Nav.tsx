@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -26,16 +27,31 @@ export default function Nav() {
           {/* Logo / Wordmark */}
           <Link
             href="/"
-            className="flex items-center gap-2 group"
-            aria-label="RightStart home"
+            className="flex items-center group"
+            aria-label="Rightstart home"
           >
-            <span
-              className={`text-xl font-bold tracking-tight transition-colors ${
-                scrolled ? "text-[#1a2744]" : "text-white"
-              }`}
-            >
-              RightStart
-            </span>
+            <div className="relative h-8 w-36">
+              {/* White logo — shown on dark/transparent nav */}
+              <Image
+                src="/logos/rightstart font white.png"
+                alt="Rightstart"
+                fill
+                className={`object-contain object-left transition-opacity duration-300 ${
+                  scrolled ? "opacity-0" : "opacity-100"
+                }`}
+                priority
+              />
+              {/* Dark logo — shown when nav is scrolled/light */}
+              <Image
+                src="/logos/rightstart.png"
+                alt="Rightstart"
+                fill
+                className={`object-contain object-left transition-opacity duration-300 ${
+                  scrolled ? "opacity-100" : "opacity-0"
+                }`}
+                priority
+              />
+            </div>
           </Link>
 
           {/* Desktop nav links */}

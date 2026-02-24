@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -6,7 +8,13 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <span className="text-white font-bold text-lg">RightStart</span>
+            <Image
+              src="/logos/rightstart font white.png"
+              alt="Rightstart"
+              width={880}
+              height={190}
+              className="h-6 w-auto"
+            />
             <span className="text-white/20">·</span>
             <span className="text-white/50 text-sm">Josh Green</span>
             <span className="text-white/20">·</span>
