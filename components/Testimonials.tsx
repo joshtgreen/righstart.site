@@ -6,27 +6,30 @@ import Image from "next/image";
 const testimonials = [
   {
     quote:
-      "Josh brought clarity and structure to a moment when we desperately needed both. He stepped in without missing a beat, built trust with the team immediately, and helped us make decisions we'd been stuck on for months. He's the kind of leader who makes everyone around him better.",
-    name: "[Name]",
-    title: "[Title]",
-    org: "[Organization]",
-    photo: "",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    name: "Alex Kotran",
+    title: "CEO",
+    org: "aiEDU",
+    orgUrl: "https://www.aiedu.org/",
+    photo: "/testimonials/alex-kotran.jpg",
   },
   {
     quote:
-      "Working with Josh transformed how we operate. He understands both the operational and financial sides of an organization, and he never loses sight of the mission. What impressed me most was how quickly he got up to speed and how thoughtfully he engaged with our team.",
-    name: "[Name]",
-    title: "[Title]",
-    org: "[Organization]",
-    photo: "",
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    name: "Deanna van Buren",
+    title: "Executive Director",
+    org: "Designing Justice + Designing Spaces",
+    orgUrl: "https://designingjustice.org/",
+    photo: "/testimonials/deanna-van-buren.jpg",
   },
   {
     quote:
-      "Josh is the rare person who can step into a leadership vacuum, earn trust quickly, and actually move the needle. He brought rigor and calm to a chaotic period and left us in a significantly stronger position. We wouldn't be where we are without him.",
-    name: "[Name]",
-    title: "[Title]",
-    org: "[Organization]",
-    photo: "",
+      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt.",
+    name: "Kate O'Connor",
+    title: "VP of Operations",
+    org: "Revero",
+    orgUrl: "https://www.revero.com/",
+    photo: "/testimonials/kate-oconnor.jpg",
   },
 ];
 
@@ -130,7 +133,15 @@ export default function Testimonials() {
                 <div>
                   <div className="font-bold text-[#1a2744]">{t.name}</div>
                   <div className="text-sm text-[#718096] mt-0.5">
-                    {t.title} · {t.org}
+                    {t.title} ·{" "}
+                    <a
+                      href={t.orgUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-[#2a7d6e] transition-colors"
+                    >
+                      {t.org}
+                    </a>
                   </div>
                 </div>
               </div>
