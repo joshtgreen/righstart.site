@@ -1,4 +1,10 @@
+"use client";
+
+import { useState } from "react";
+
 export default function About() {
+  const [expanded, setExpanded] = useState(false);
+
   return (
     <section id="about" className="bg-[#faf9f7] py-16 lg:py-20">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
@@ -19,7 +25,8 @@ export default function About() {
         </h2>
 
         {/* Bio */}
-        <div className="space-y-5 text-[#4a5568] leading-relaxed text-lg">
+        <div className="text-[#4a5568] leading-relaxed text-lg">
+          {/* Paragraph 1 — always visible */}
           <p>
             I spent the early part of my career as a{" "}
             <strong className="text-[#1a2744]">
@@ -35,34 +42,72 @@ export default function About() {
             work when the stakes are high and the resources are limited.
           </p>
 
-          <p>
-            In 2021, I started RightStart to bring that same energy to
-            organizations doing work I believe in. I&apos;ve stepped in as an{" "}
-            <strong className="text-[#1a2744]">
-              interim or fractional COO and CFO
-            </strong>{" "}
-            for nonprofits, health-focused organizations, and mission-driven
-            ventures — including{" "}
-            <strong className="text-[#1a2744]">
-              <a href="https://www.aiedu.org/" target="_blank" rel="noopener noreferrer" className="text-[#2a7d6e] underline decoration-[#2a7d6e]/40 hover:decoration-[#2a7d6e] transition-colors">aiEDU</a>
-            </strong>
-            , which brings AI literacy to students across the country, and{" "}
-            <strong className="text-[#1a2744]">
-              <a href="https://designingjustice.org/" target="_blank" rel="noopener noreferrer" className="text-[#2a7d6e] underline decoration-[#2a7d6e]/40 hover:decoration-[#2a7d6e] transition-colors">Designing Justice + Designing Spaces</a>
-            </strong>
-            , which uses architecture and development to address the root causes
-            of mass incarceration.
-          </p>
+          {/* Divider — always visible on desktop, visible on mobile only when expanded */}
+          <div className={`flex items-center gap-3 my-6 ${expanded ? "flex" : "hidden lg:flex"}`}>
+            <div className="h-px flex-1 bg-[#2a7d6e]/15" />
+            <svg className="w-4 h-4 text-[#2a7d6e]/40 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+            <div className="h-px flex-1 bg-[#2a7d6e]/15" />
+          </div>
 
-          <p>
-            What I love about this work is pretty simple:{" "}
-            <strong className="text-[#1a2744]">
-              I get to make life easier for people doing important things.
-            </strong>{" "}
-            Whether that means untangling finances, building a hiring process, or
-            just being a calm voice when everything feels urgent — that&apos;s
-            where I&apos;m most useful and most fulfilled.
-          </p>
+          {/* Paragraphs 2 & 3 — hidden on mobile until expanded, always visible on desktop */}
+          <div className={`${expanded ? "block" : "hidden lg:block"}`}>
+            <p>
+              In 2021, I started RightStart to bring that same energy to
+              organizations doing work I believe in. I&apos;ve stepped in as an{" "}
+              <strong className="text-[#1a2744]">
+                interim or fractional COO and CFO
+              </strong>{" "}
+              for nonprofits, health-focused organizations, and mission-driven
+              ventures — including{" "}
+              <strong className="text-[#1a2744]">
+                <a href="https://www.aiedu.org/" target="_blank" rel="noopener noreferrer" className="text-[#2a7d6e] underline decoration-[#2a7d6e]/40 hover:decoration-[#2a7d6e] transition-colors">aiEDU</a>
+              </strong>
+              , which brings AI literacy to students across the country, and{" "}
+              <strong className="text-[#1a2744]">
+                <a href="https://designingjustice.org/" target="_blank" rel="noopener noreferrer" className="text-[#2a7d6e] underline decoration-[#2a7d6e]/40 hover:decoration-[#2a7d6e] transition-colors">Designing Justice + Designing Spaces</a>
+              </strong>
+              , which uses architecture and development to address the root causes
+              of mass incarceration.
+            </p>
+
+            {/* Divider */}
+            <div className="flex items-center gap-3 my-6">
+              <div className="h-px flex-1 bg-[#2a7d6e]/15" />
+              <svg className="w-4 h-4 text-[#2a7d6e]/40 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+              <div className="h-px flex-1 bg-[#2a7d6e]/15" />
+            </div>
+
+            <p>
+              What I love about this work is pretty simple:{" "}
+              <strong className="text-[#1a2744]">
+                I get to make life easier for people doing important things.
+              </strong>{" "}
+              Whether that means untangling finances, building a hiring process, or
+              just being a calm voice when everything feels urgent — that&apos;s
+              where I&apos;m most useful and most fulfilled.
+            </p>
+          </div>
+
+          {/* Read more / Read less toggle — mobile only */}
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="lg:hidden mt-5 inline-flex items-center gap-1.5 text-[#2a7d6e] font-medium text-base hover:text-[#236b5e] transition-colors"
+          >
+            {expanded ? "Read less" : "Read more"}
+            <svg
+              className={`w-4 h-4 transition-transform ${expanded ? "rotate-180" : ""}`}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="m19 9-7 7-7-7" />
+            </svg>
+          </button>
         </div>
 
       </div>
