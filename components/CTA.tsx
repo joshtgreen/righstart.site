@@ -22,11 +22,6 @@ export default function CTA() {
               I&apos;d love to talk. I&apos;m based in San Francisco and work
               with founders across the country.
             </p>
-            <p className="text-base text-white/60 leading-relaxed mb-10">
-              If you&apos;d like to brainstorm, troubleshoot, or find out what
-              it would look like to work together — book time during office
-              hours and we&apos;ll dive in.
-            </p>
 
           </div>
 
