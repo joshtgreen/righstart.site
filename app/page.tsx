@@ -53,7 +53,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Nav />
-      <main>
+      <main id="main-content">
         <Hero />
         <About />
         <ServicesGhostNumbers />

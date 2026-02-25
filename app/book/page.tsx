@@ -13,7 +13,7 @@ export default function BookPage() {
   return (
     <>
       <Nav />
-      <main>
+      <main id="main-content">
         {/* Hero strip */}
         <section className="bg-[#1a2744] pt-32 pb-20 px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">

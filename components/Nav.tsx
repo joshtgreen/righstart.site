@@ -1,18 +1,44 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Close on Escape and return focus to toggle
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === "Escape" && menuOpen) {
+        setMenuOpen(false);
+        toggleRef.current?.focus();
+      }
+    },
+    [menuOpen],
+  );
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [handleKeyDown]);
+
+  // Move focus into menu when it opens
+  useEffect(() => {
+    if (menuOpen) {
+      const firstLink = menuRef.current?.querySelector("a");
+      firstLink?.focus();
+    }
+  }, [menuOpen]);
 
   return (
     <header
@@ -77,9 +103,12 @@ export default function Nav() {
 
           {/* Mobile burger */}
           <button
+            ref={toggleRef}
             className="md:hidden p-2 -mr-2"
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-nav"
           >
             <span
               className={`block w-5 h-0.5 mb-1.5 transition-all ${
@@ -102,7 +131,11 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[#faf9f7] border-t border-[#e5e2dc] px-6 py-4 flex flex-col gap-4">
+        <nav
+          id="mobile-nav"
+          ref={menuRef}
+          className="md:hidden bg-[#faf9f7] border-t border-[#e5e2dc] px-6 py-4 flex flex-col gap-4"
+        >
           {["About", "Services", "Contact"].map((item) => (
             <a
               key={item}
@@ -119,7 +152,7 @@ export default function Nav() {
           >
             Book a Call
           </a>
-        </div>
+        </nav>
       )}
     </header>
   );

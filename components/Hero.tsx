@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center bg-[#1a2744] overflow-hidden">
       {/* Subtle texture overlay */}
-      <div className="absolute inset-0 opacity-[0.04]"
+      <div className="absolute inset-0 opacity-[0.04]" aria-hidden="true"
         style={{
           backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
           backgroundSize: "32px 32px",
@@ -12,7 +12,7 @@ export default function Hero() {
       />
 
       {/* Warm gradient accent */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-10"
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-10" aria-hidden="true"
         style={{
           background: "radial-gradient(circle, #2a7d6e 0%, transparent 70%)",
           transform: "translate(20%, -20%)",
@@ -45,7 +45,7 @@ export default function Hero() {
                 href="/book"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-base bg-[#2a7d6e] text-white hover:bg-[#236b5e] transition-all hover:shadow-lg hover:shadow-teal-900/30 hover:-translate-y-0.5"
               >
-                Let&apos;s Talk
+                Book a Call
               </a>
               <a
                 href="#about"
@@ -60,8 +60,8 @@ export default function Hero() {
           <div className="hidden lg:flex lg:justify-end">
             <div className="relative w-72 h-72 lg:w-96 lg:h-96">
               {/* Decorative ring */}
-              <div className="absolute inset-0 rounded-full border-2 border-[#2a7d6e]/40 scale-110" />
-              <div className="absolute inset-0 rounded-full border border-white/10 scale-125" />
+              <div className="absolute inset-0 rounded-full border-2 border-[#2a7d6e]/40 scale-110" aria-hidden="true" />
+              <div className="absolute inset-0 rounded-full border border-white/10 scale-125" aria-hidden="true" />
 
               {/* Photo */}
               <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-[#2a7d6e]/30">

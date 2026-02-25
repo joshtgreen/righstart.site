@@ -10,8 +10,8 @@ export default function About() {
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section label */}
         <div className="inline-flex items-center gap-2 mb-4">
-          <div className="w-8 h-px bg-[#2a7d6e]" />
-          <span className="text-xs font-semibold uppercase tracking-widest text-[#2a7d6e]">
+          <div className="w-8 h-px bg-[#2a7d6e]" aria-hidden="true" />
+          <span className="text-xs font-semibold uppercase tracking-widest text-[#1f6356]">
             Meet Josh
           </span>
         </div>
