@@ -45,25 +45,26 @@ function getInitials(name: string) {
 
 export default function Testimonials() {
   const [active, setActive] = useState(0);
-  const [direction, setDirection] = useState<"next" | "prev">("next");
+  const [show, setShow] = useState(true);
 
-  function goTo(index: number, dir: "next" | "prev") {
-    setDirection(dir);
-    setActive(index);
+  function goTo(index: number) {
+    setShow(false);
+    setTimeout(() => {
+      setActive(index);
+      setShow(true);
+    }, 180);
   }
 
   function prev() {
-    goTo((active - 1 + testimonials.length) % testimonials.length, "prev");
+    goTo((active - 1 + testimonials.length) % testimonials.length);
   }
 
   function next() {
-    goTo((active + 1) % testimonials.length, "next");
+    goTo((active + 1) % testimonials.length);
   }
 
   const t = testimonials[active];
   const initials = getInitials(t.name);
-  const animClass =
-    direction === "next" ? "animate-slide-from-right" : "animate-slide-from-left";
 
   return (
     <section className="bg-[#faf9f7] py-16 lg:py-20">
@@ -97,8 +98,7 @@ export default function Testimonials() {
           {/* Card */}
           <div className="flex-1 max-w-3xl mx-auto">
             <div
-              key={active}
-              className={`bg-white rounded-2xl border border-[#e5e2dc] p-8 lg:p-10 shadow-sm ${animClass}`}
+              className={`bg-white rounded-2xl border border-[#e5e2dc] p-8 lg:p-10 shadow-sm transition-opacity duration-[180ms] ease-in-out ${show ? "opacity-100" : "opacity-0"}`}
             >
               {/* Decorative quote mark */}
               <div className="text-5xl leading-none text-[#3dbda5] font-serif mb-3 select-none">
@@ -131,8 +131,8 @@ export default function Testimonials() {
 
                 {/* Name + role */}
                 <div>
-                  <div className="text-lg font-bold text-[#1a2744]">{t.name}</div>
-                  <div className="text-sm text-[#718096] mt-1">
+                  <div className="text-xl font-bold text-[#1a2744]">{t.name}</div>
+                  <div className="text-base text-[#718096] mt-1">
                     {t.title} ·{" "}
                     <a
                       href={t.orgUrl}
@@ -152,7 +152,7 @@ export default function Testimonials() {
               {testimonials.map((_, i) => (
                 <button
                   key={i}
-                  onClick={() => goTo(i, i > active ? "next" : "prev")}
+                  onClick={() => goTo(i)}
                   aria-label={`Go to testimonial ${i + 1}`}
                   className={`w-2 h-2 rounded-full transition-colors ${
                     i === active ? "bg-[#2a7d6e]" : "bg-[#e5e2dc]"
