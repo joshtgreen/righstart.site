@@ -92,7 +92,7 @@ export default function Testimonials() {
               <div key={i} className="snap-center flex-shrink-0 w-[85vw]">
                 <div className="flex flex-col bg-white rounded-2xl border border-[#e5e2dc] p-8 shadow-sm h-full">
                   <div className="text-5xl leading-none text-[#3dbda5] font-serif mb-3 select-none">&ldquo;</div>
-                  <p className="flex-1 text-lg text-[#4a5568] leading-relaxed">{t.quote}</p>
+                  <p className="flex-1 text-base text-[#4a5568] leading-relaxed">{t.quote}</p>
                   <div className="border-t border-[#e5e2dc] mt-5 pt-5 flex items-center gap-4">
                     {t.photo ? (
                       <div className="flex-shrink-0 w-14 h-14 rounded-full overflow-hidden ring-2 ring-[#e5e2dc]">
@@ -163,7 +163,7 @@ export default function Testimonials() {
                   </div>
 
                   {/* Quote body */}
-                  <p className="flex-1 text-lg lg:text-xl text-[#4a5568] leading-relaxed">
+                  <p className="flex-1 text-sm lg:text-base text-[#4a5568] leading-relaxed">
                     {t.quote}
                   </p>
 
