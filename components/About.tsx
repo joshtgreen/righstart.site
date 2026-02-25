@@ -21,34 +21,47 @@ export default function About() {
         {/* Bio */}
         <div className="max-w-3xl space-y-5 text-[#4a5568] leading-relaxed text-lg">
           <p>
-            I&apos;ve been in the thick of it — the high-stakes decisions, the
-            systems that don&apos;t quite hold, the moments when everything
-            feels urgent and nothing is clear. That&apos;s why I&apos;m drawn
-            to working with{" "}
+            I spent the early part of my career as a{" "}
             <strong className="text-[#1a2744]">
-              teams doing meaningful work with real constraints
+              first employee at multiple startups
+            </strong>{" "}
+            — building operations from scratch, navigating compliance, hiring
+            teams, and figuring out what needed to exist so the company could
+            grow.{" "}
+            <strong className="text-[#1a2744]">
+              Two of those companies were acquired
             </strong>
-            — helping them move through complexity and make progress without
-            burning out.
+            , and each one taught me what it takes to build systems that actually
+            work when the stakes are high and the resources are limited.
           </p>
 
           <p>
-            I&apos;ve served as the first ops hire at multiple organizations
-            that went on to be acquired. Today I step in as a{" "}
+            In 2021, I started RightStart to bring that same energy to
+            organizations doing work I believe in. I&apos;ve stepped in as an{" "}
             <strong className="text-[#1a2744]">
-              fractional or interim COO or CFO
+              interim or fractional COO and CFO
             </strong>{" "}
-            — bringing calm structure, creative problem-solving, and steady
-            momentum to whatever comes next.
+            for nonprofits, health-focused organizations, and mission-driven
+            ventures — including{" "}
+            <strong className="text-[#1a2744]">
+              <a href="https://www.aiedu.org/" target="_blank" rel="noopener noreferrer">aiEDU</a>
+            </strong>
+            , which brings AI literacy to students across the country, and{" "}
+            <strong className="text-[#1a2744]">
+              <a href="https://designingjustice.org/" target="_blank" rel="noopener noreferrer">Designing Justice + Designing Spaces</a>
+            </strong>
+            , which uses architecture and development to address the root causes
+            of mass incarceration.
           </p>
 
           <p>
-            I&apos;m especially drawn to{" "}
+            What I love about this work is pretty simple:{" "}
             <strong className="text-[#1a2744]">
-              nonprofits, health-focused organizations, and mission-driven
-              ventures
+              I get to make life easier for people doing important things.
             </strong>{" "}
-            working to improve systems that impact people when it matters most.
+            Whether that means untangling finances, building a hiring process, or
+            just being a calm voice when everything feels urgent — that&apos;s
+            where I&apos;m most useful and most fulfilled.
           </p>
 
         </div>
