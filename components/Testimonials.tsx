@@ -11,7 +11,7 @@ const testimonials = [
     title: "CEO",
     org: "aiEDU",
     orgUrl: "https://www.aiedu.org/",
-    photo: "/testimonials/alex-kotran.jpg",
+    photo: "/testimonials/aiEDU_Team_Alex_Kotran.webp",
   },
   {
     quote:
@@ -20,7 +20,7 @@ const testimonials = [
     title: "Executive Director",
     org: "Designing Justice + Designing Spaces",
     orgUrl: "https://designingjustice.org/",
-    photo: "/testimonials/deanna-van-buren.jpg",
+    photo: "/testimonials/1753300060791.jpeg",
   },
   {
     quote:
@@ -29,7 +29,7 @@ const testimonials = [
     title: "VP of Operations",
     org: "Revero",
     orgUrl: "https://www.revero.com/",
-    photo: "/testimonials/kate-oconnor.jpg",
+    photo: "/testimonials/1645800566487.jpeg",
   },
 ];
 
