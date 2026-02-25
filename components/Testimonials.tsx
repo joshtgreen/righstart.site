@@ -45,26 +45,14 @@ function getInitials(name: string) {
 
 export default function Testimonials() {
   const [active, setActive] = useState(0);
-  const [show, setShow] = useState(true);
-
-  function goTo(index: number) {
-    setShow(false);
-    setTimeout(() => {
-      setActive(index);
-      setShow(true);
-    }, 180);
-  }
 
   function prev() {
-    goTo((active - 1 + testimonials.length) % testimonials.length);
+    setActive((a) => (a - 1 + testimonials.length) % testimonials.length);
   }
 
   function next() {
-    goTo((active + 1) % testimonials.length);
+    setActive((a) => (a + 1) % testimonials.length);
   }
-
-  const t = testimonials[active];
-  const initials = getInitials(t.name);
 
   return (
     <section className="bg-[#faf9f7] py-16 lg:py-20">
@@ -95,56 +83,67 @@ export default function Testimonials() {
             </svg>
           </button>
 
-          {/* Card */}
+          {/* Card stack — all cards rendered in the same grid cell so height
+              is always determined by the tallest card, never jumps */}
           <div className="flex-1 max-w-3xl mx-auto">
-            <div
-              className={`bg-white rounded-2xl border border-[#e5e2dc] p-8 lg:p-10 shadow-sm transition-opacity duration-[180ms] ease-in-out ${show ? "opacity-100" : "opacity-0"}`}
-            >
-              {/* Decorative quote mark */}
-              <div className="text-5xl leading-none text-[#3dbda5] font-serif mb-3 select-none">
-                &ldquo;
-              </div>
-
-              {/* Quote body */}
-              <p className="text-lg lg:text-xl text-[#4a5568] leading-relaxed">
-                {t.quote}
-              </p>
-
-              {/* Attribution */}
-              <div className="border-t border-[#e5e2dc] mt-5 pt-5 flex items-center gap-5">
-                {/* Photo / avatar */}
-                {t.photo ? (
-                  <div className="flex-shrink-0 w-20 h-20 rounded-full overflow-hidden ring-2 ring-[#e5e2dc]">
-                    <Image
-                      src={t.photo}
-                      alt={t.name}
-                      width={80}
-                      height={80}
-                      className="object-cover w-full h-full"
-                    />
+            <div className="grid">
+              {testimonials.map((t, i) => (
+                <div
+                  key={i}
+                  style={{ gridArea: "1 / 1" }}
+                  className={`bg-white rounded-2xl border border-[#e5e2dc] p-8 lg:p-10 shadow-sm transition-opacity duration-200 ease-in-out ${
+                    i === active
+                      ? "opacity-100 pointer-events-auto"
+                      : "opacity-0 pointer-events-none"
+                  }`}
+                >
+                  {/* Decorative quote mark */}
+                  <div className="text-5xl leading-none text-[#3dbda5] font-serif mb-3 select-none">
+                    &ldquo;
                   </div>
-                ) : (
-                  <div className="flex-shrink-0 w-20 h-20 rounded-full bg-[#1a2744] flex items-center justify-center ring-2 ring-[#e5e2dc]">
-                    <span className="text-white text-xl font-bold">{initials}</span>
-                  </div>
-                )}
 
-                {/* Name + role */}
-                <div>
-                  <div className="text-xl font-bold text-[#1a2744]">{t.name}</div>
-                  <div className="text-base text-[#718096] mt-1">
-                    {t.title} ·{" "}
-                    <a
-                      href={t.orgUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[#2a7d6e] font-medium underline underline-offset-2 decoration-[#2a7d6e]/40 hover:decoration-[#2a7d6e] transition-colors"
-                    >
-                      {t.org}
-                    </a>
+                  {/* Quote body */}
+                  <p className="text-lg lg:text-xl text-[#4a5568] leading-relaxed">
+                    {t.quote}
+                  </p>
+
+                  {/* Attribution */}
+                  <div className="border-t border-[#e5e2dc] mt-5 pt-5 flex items-center gap-5">
+                    {/* Photo / avatar */}
+                    {t.photo ? (
+                      <div className="flex-shrink-0 w-20 h-20 rounded-full overflow-hidden ring-2 ring-[#e5e2dc]">
+                        <Image
+                          src={t.photo}
+                          alt={t.name}
+                          width={80}
+                          height={80}
+                          className="object-cover w-full h-full"
+                        />
+                      </div>
+                    ) : (
+                      <div className="flex-shrink-0 w-20 h-20 rounded-full bg-[#1a2744] flex items-center justify-center ring-2 ring-[#e5e2dc]">
+                        <span className="text-white text-xl font-bold">{getInitials(t.name)}</span>
+                      </div>
+                    )}
+
+                    {/* Name + role */}
+                    <div>
+                      <div className="text-xl font-bold text-[#1a2744]">{t.name}</div>
+                      <div className="text-base text-[#718096] mt-1">
+                        {t.title} ·{" "}
+                        <a
+                          href={t.orgUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[#2a7d6e] font-medium underline underline-offset-2 decoration-[#2a7d6e]/40 hover:decoration-[#2a7d6e] transition-colors"
+                        >
+                          {t.org}
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
 
             {/* Dot indicators */}
@@ -152,7 +151,7 @@ export default function Testimonials() {
               {testimonials.map((_, i) => (
                 <button
                   key={i}
-                  onClick={() => goTo(i)}
+                  onClick={() => setActive(i)}
                   aria-label={`Go to testimonial ${i + 1}`}
                   className={`w-2 h-2 rounded-full transition-colors ${
                     i === active ? "bg-[#2a7d6e]" : "bg-[#e5e2dc]"
