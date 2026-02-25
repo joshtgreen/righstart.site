@@ -42,14 +42,8 @@ export default function About() {
             work when the stakes are high and the resources are limited.
           </p>
 
-          {/* Divider — always visible on desktop, visible on mobile only when expanded */}
-          <div className={`flex items-center gap-3 my-6 ${expanded ? "flex" : "hidden lg:flex"}`}>
-            <div className="h-px flex-1 bg-[#2a7d6e]/15" />
-            <svg className="w-4 h-4 text-[#2a7d6e]/40 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-            </svg>
-            <div className="h-px flex-1 bg-[#2a7d6e]/15" />
-          </div>
+          {/* Spacer between paragraphs */}
+          <div className={`my-6 ${expanded ? "block" : "hidden lg:block"}`} />
 
           {/* Paragraphs 2 & 3 — hidden on mobile until expanded, always visible on desktop */}
           <div className={`${expanded ? "block" : "hidden lg:block"}`}>
@@ -72,14 +66,8 @@ export default function About() {
               of mass incarceration.
             </p>
 
-            {/* Divider */}
-            <div className="flex items-center gap-3 my-6">
-              <div className="h-px flex-1 bg-[#2a7d6e]/15" />
-              <svg className="w-4 h-4 text-[#2a7d6e]/40 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-              </svg>
-              <div className="h-px flex-1 bg-[#2a7d6e]/15" />
-            </div>
+            {/* Spacer */}
+            <div className="my-6" />
 
             <p>
               What I love about this work is pretty simple:{" "}
