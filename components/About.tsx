@@ -12,9 +12,9 @@ export default function About() {
 
         {/* Headline */}
         <h2 className="text-4xl lg:text-5xl font-bold text-[#1a2744] leading-snug mb-10 max-w-3xl">
-          At the heart of what I do is a deep belief in{" "}
+          I&apos;m here to support people doing{" "}
           <em className="font-serif font-semibold not-italic tracking-tight text-[#2a7d6e]">
-            supporting the people committed to doing good work.
+            good work.
           </em>
         </h2>
 
