@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import ReclaimEmbed from "@/components/ReclaimEmbed";
 
 export const metadata: Metadata = {
   title: "Book a Call | Josh Green",
@@ -17,13 +17,6 @@ export default function BookPage() {
         {/* Hero strip */}
         <section className="bg-[#1a2744] pt-32 pb-20 px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 mb-6">
-              <div className="w-8 h-px bg-[#2a7d6e]" />
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#2a7d6e]">
-                Let&apos;s Connect
-              </span>
-            </div>
-
             <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">
               Let&apos;s Talk
             </h1>
@@ -53,13 +46,7 @@ export default function BookPage() {
         {/* Scheduling embed */}
         <section className="bg-[#f3f1ee] py-16 px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
-            <div id="reclaim-scheduling" />
-            <Script
-              src="https://meet.reclaimai.com/scripts/embed-scheduling-link.0.x.x.js"
-              data-id="4739f3cc-6238-44c8-a112-314d47bc4841"
-              data-redirect="NONE"
-              strategy="afterInteractive"
-            />
+            <ReclaimEmbed />
           </div>
         </section>
       </main>
