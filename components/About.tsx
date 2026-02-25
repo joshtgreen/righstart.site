@@ -83,6 +83,7 @@ export default function About() {
           {/* Read more / Read less toggle — mobile only */}
           <button
             onClick={() => setExpanded(!expanded)}
+            aria-expanded={expanded}
             className="lg:hidden mt-5 inline-flex items-center gap-1.5 text-[#2a7d6e] font-medium text-base hover:text-[#236b5e] transition-colors"
           >
             {expanded ? "Read less" : "Read more"}
