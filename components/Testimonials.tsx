@@ -111,34 +111,34 @@ export default function Testimonials() {
               </p>
 
               {/* Attribution */}
-              <div className="border-t border-[#e5e2dc] mt-5 pt-5 flex items-center gap-4">
+              <div className="border-t border-[#e5e2dc] mt-5 pt-5 flex items-center gap-5">
                 {/* Photo / avatar */}
                 {t.photo ? (
-                  <div className="flex-shrink-0 w-16 h-16 rounded-full overflow-hidden ring-2 ring-[#e5e2dc]">
+                  <div className="flex-shrink-0 w-20 h-20 rounded-full overflow-hidden ring-2 ring-[#e5e2dc]">
                     <Image
                       src={t.photo}
                       alt={t.name}
-                      width={64}
-                      height={64}
+                      width={80}
+                      height={80}
                       className="object-cover w-full h-full"
                     />
                   </div>
                 ) : (
-                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-[#1a2744] flex items-center justify-center ring-2 ring-[#e5e2dc]">
-                    <span className="text-white text-lg font-bold">{initials}</span>
+                  <div className="flex-shrink-0 w-20 h-20 rounded-full bg-[#1a2744] flex items-center justify-center ring-2 ring-[#e5e2dc]">
+                    <span className="text-white text-xl font-bold">{initials}</span>
                   </div>
                 )}
 
                 {/* Name + role */}
                 <div>
-                  <div className="font-bold text-[#1a2744]">{t.name}</div>
-                  <div className="text-sm text-[#718096] mt-0.5">
+                  <div className="text-lg font-bold text-[#1a2744]">{t.name}</div>
+                  <div className="text-sm text-[#718096] mt-1">
                     {t.title} ·{" "}
                     <a
                       href={t.orgUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-[#2a7d6e] transition-colors"
+                      className="text-[#2a7d6e] font-medium underline underline-offset-2 decoration-[#2a7d6e]/40 hover:decoration-[#2a7d6e] transition-colors"
                     >
                       {t.org}
                     </a>
