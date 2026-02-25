@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Rightstart | Fractional/Interim COO or CFO",
+  title: "Josh Green | Fractional COO/CFO and Advisor",
   description:
     "Strategic operations leadership for nonprofits, health-focused ventures, and mission-driven organizations. Josh Green offers fractional and interim COO and CFO support.",
   openGraph: {
-    title: "Rightstart | Fractional/Interim COO or CFO",
+    title: "Josh Green | Fractional COO/CFO and Advisor",
     description:
       "Strategic operations leadership for nonprofits, health-focused ventures, and mission-driven organizations.",
     url: "https://rightstart.co",
