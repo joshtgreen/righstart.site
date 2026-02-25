@@ -108,8 +108,8 @@ export default function Testimonials() {
         {/* Section header */}
         <div className="mb-10">
           <div className="inline-flex items-center gap-2 mb-4">
-            <div className="w-8 h-px bg-[#2a7d6e]" />
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#2a7d6e]">
+            <div className="w-8 h-px bg-[#2a7d6e]" aria-hidden="true" />
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#1f6356]">
               What People Say
             </span>
           </div>
@@ -119,7 +119,7 @@ export default function Testimonials() {
         </div>
 
         {/* Mobile: horizontal scroll snap */}
-        <div className="lg:hidden">
+        <div className="lg:hidden" role="region" aria-label="Testimonials">
           <div
             ref={mobileScrollRef}
             onScroll={handleMobileScroll}
@@ -128,8 +128,8 @@ export default function Testimonials() {
             {testimonials.map((t, i) => (
               <div key={i} className="snap-center flex-shrink-0 w-[85vw]">
                 <div className="flex flex-col bg-white rounded-2xl border border-[#e5e2dc] p-8 shadow-sm h-full">
-                  <div className="text-5xl leading-none text-[#3dbda5] font-serif mb-3 select-none">&ldquo;</div>
-                  <p className="flex-1 text-base text-[#4a5568] leading-relaxed">{renderQuote(t.quote)}</p>
+                  <div className="text-5xl leading-none text-[#3dbda5] font-serif mb-3 select-none" aria-hidden="true">&ldquo;</div>
+                  <blockquote className="flex-1 text-base text-[#4a5568] leading-relaxed">{renderQuote(t.quote)}</blockquote>
                   <div className="border-t border-[#e5e2dc] mt-5 pt-5 flex items-center gap-4">
                     {t.photo ? (
                       <div className="flex-shrink-0 w-14 h-14 rounded-full overflow-hidden ring-2 ring-[#e5e2dc]">
@@ -155,10 +155,13 @@ export default function Testimonials() {
               </div>
             ))}
           </div>
-          <div className="flex justify-center gap-2 mt-4">
-            {testimonials.map((_, i) => (
+          <div className="flex justify-center gap-2 mt-4" role="tablist" aria-label="Testimonial indicators">
+            {testimonials.map((t, i) => (
               <div
                 key={i}
+                role="tab"
+                aria-selected={i === mobileActive}
+                aria-label={`Testimonial from ${t.name}`}
                 className={`w-2 h-2 rounded-full transition-colors ${
                   i === mobileActive ? "bg-[#2a7d6e]" : "bg-[#e5e2dc]"
                 }`}
@@ -168,14 +171,14 @@ export default function Testimonials() {
         </div>
 
         {/* Desktop: arrow carousel */}
-        <div className="hidden lg:flex items-center gap-4 lg:gap-8">
+        <div className="hidden lg:flex items-center gap-4 lg:gap-8" role="region" aria-label="Testimonials">
           {/* Prev arrow */}
           <button
             onClick={prev}
             aria-label="Previous testimonial"
             className="flex-shrink-0 w-11 h-11 rounded-full border border-[#e5e2dc] bg-white hover:bg-[#f3f1ee] transition-colors flex items-center justify-center text-[#1a2744]"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
@@ -183,26 +186,27 @@ export default function Testimonials() {
           {/* Card stack — all cards rendered in the same grid cell so height
               is always determined by the tallest card, never jumps */}
           <div className="flex-1 max-w-3xl mx-auto">
-            <div className="grid">
+            <div className="grid" aria-live="polite">
               {testimonials.map((t, i) => (
                 <div
                   key={i}
                   style={{ gridArea: "1 / 1" }}
-                  className={`flex flex-col bg-white rounded-2xl border border-[#e5e2dc] p-8 lg:p-10 shadow-sm transition-opacity duration-200 ease-in-out ${
+                  aria-hidden={i !== active}
+                  className={`flex flex-col bg-white rounded-2xl border border-[#e5e2dc] p-8 lg:p-10 shadow-sm transition-opacity duration-300 ease-in-out ${
                     i === active
                       ? "opacity-100 pointer-events-auto"
                       : "opacity-0 pointer-events-none"
                   }`}
                 >
                   {/* Decorative quote mark */}
-                  <div className="text-5xl leading-none text-[#3dbda5] font-serif mb-3 select-none">
+                  <div className="text-5xl leading-none text-[#3dbda5] font-serif mb-3 select-none" aria-hidden="true">
                     &ldquo;
                   </div>
 
                   {/* Quote body */}
-                  <p className="flex-1 text-sm lg:text-base text-[#4a5568] leading-relaxed">
+                  <blockquote className="flex-1 text-sm lg:text-base text-[#4a5568] leading-relaxed">
                     {renderQuote(t.quote)}
-                  </p>
+                  </blockquote>
 
                   {/* Attribution */}
                   <div className="border-t border-[#e5e2dc] mt-5 pt-5 flex items-center gap-5">
@@ -245,12 +249,14 @@ export default function Testimonials() {
             </div>
 
             {/* Dot indicators */}
-            <div className="flex justify-center gap-2 mt-6">
-              {testimonials.map((_, i) => (
+            <div className="flex justify-center gap-2 mt-6" role="tablist" aria-label="Choose testimonial">
+              {testimonials.map((t, i) => (
                 <button
                   key={i}
                   onClick={() => setActive(i)}
-                  aria-label={`Go to testimonial ${i + 1}`}
+                  role="tab"
+                  aria-selected={i === active}
+                  aria-label={`Testimonial from ${t.name}`}
                   className={`w-2 h-2 rounded-full transition-colors ${
                     i === active ? "bg-[#2a7d6e]" : "bg-[#e5e2dc]"
                   }`}
@@ -265,7 +271,7 @@ export default function Testimonials() {
             aria-label="Next testimonial"
             className="flex-shrink-0 w-11 h-11 rounded-full border border-[#e5e2dc] bg-white hover:bg-[#f3f1ee] transition-colors flex items-center justify-center text-[#1a2744]"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M9 5l7 7-7 7" />
             </svg>
           </button>

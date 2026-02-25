@@ -35,26 +35,35 @@ body {
   to   { opacity: 1; transform: translateX(0); }
 }
 
-@keyframes slide-in-from-left {
-  from { opacity: 0; transform: translateX(-2rem); }
-  to   { opacity: 1; transform: translateX(0); }
-}
-
 .animate-slide-from-right {
   animation: slide-in-from-right 300ms ease-out both;
 }
 
-.animate-slide-from-left {
-  animation: slide-in-from-left 300ms ease-out both;
+/* Skip-to-content link — visible only on keyboard focus */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem 1.5rem;
+  background: var(--navy);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 0 0 0.5rem 0;
+}
+.skip-to-content:focus {
+  left: 0;
 }
 
-@keyframes progress-fill {
-  from { width: 0% }
-  to   { width: 100% }
-}
-
-.animate-progress-fill {
-  animation: progress-fill 5s linear forwards;
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 .scrollbar-hide {

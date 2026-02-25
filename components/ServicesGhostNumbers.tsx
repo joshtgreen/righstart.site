@@ -5,7 +5,7 @@ import { useState } from "react";
 const services = [
   {
     icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
           d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"
         />
@@ -18,7 +18,7 @@ const services = [
   },
   {
     icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
         />
@@ -31,7 +31,7 @@ const services = [
   },
   {
     icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
           d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
         />
@@ -44,7 +44,7 @@ const services = [
   },
   {
     icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
           d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
         />
@@ -67,8 +67,8 @@ export default function ServicesGhostNumbers() {
         {/* Section header */}
         <div className="mb-10">
           <div className="inline-flex items-center gap-2 mb-4">
-            <div className="w-8 h-px bg-[#2a7d6e]" />
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#2a7d6e]">
+            <div className="w-8 h-px bg-[#2a7d6e]" aria-hidden="true" />
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#1f6356]">
               How I Can Help
             </span>
           </div>
@@ -84,15 +84,25 @@ export default function ServicesGhostNumbers() {
 
         <div className="flex flex-col lg:flex-row gap-6">
           {/* Left nav */}
-          <div className="lg:w-72 lg:flex-shrink-0">
+          <div className="lg:w-72 lg:flex-shrink-0" role="tablist" aria-label="Services">
             <ul className="flex flex-col gap-2">
               {services.map((s, i) => {
                 const isActive = active === i;
                 return (
                   <li
                     key={s.title}
+                    role="tab"
+                    tabIndex={0}
+                    aria-selected={isActive}
+                    aria-controls={`service-panel-${i}`}
                     onClick={() => setActive(i)}
-                    className={`relative cursor-pointer py-4 pl-5 pr-4 select-none overflow-hidden rounded-xl border transition-all duration-150 ${
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        setActive(i);
+                      }
+                    }}
+                    className={`relative cursor-pointer py-4 pl-5 pr-4 select-none overflow-hidden rounded-xl border transition-all duration-300 ${
                       isActive
                         ? "bg-white border-[#2a7d6e]/30 shadow-sm"
                         : "bg-white/40 border-transparent hover:bg-white/70 hover:border-[#e5e2dc]"
@@ -100,7 +110,8 @@ export default function ServicesGhostNumbers() {
                   >
                     {/* Active left bar */}
                     <span
-                      className={`absolute left-0 top-2 bottom-2 w-[3px] rounded-r transition-all duration-200 ${
+                      aria-hidden="true"
+                      className={`absolute left-0 top-2 bottom-2 w-[3px] rounded-r transition-all duration-300 ${
                         isActive ? "bg-[#2a7d6e]" : "bg-transparent"
                       }`}
                     />
@@ -108,11 +119,11 @@ export default function ServicesGhostNumbers() {
                     {/* Content */}
                     <div className="relative z-10 flex items-center justify-between gap-3">
                       <div>
-                        <p className="text-[10px] uppercase tracking-widest font-semibold text-[#2a7d6e]/60 mb-1">
+                        <p className="text-[10px] uppercase tracking-widest font-semibold text-[#2a7d6e]/60 mb-1" aria-hidden="true">
                           {String(i + 1).padStart(2, "0")}
                         </p>
                         <p
-                          className={`text-base font-semibold leading-snug transition-colors duration-150 ${
+                          className={`text-base font-semibold leading-snug transition-colors duration-300 ${
                             isActive ? "text-[#1a2744]" : "text-[#4a5568]"
                           }`}
                         >
@@ -122,12 +133,13 @@ export default function ServicesGhostNumbers() {
 
                       {/* Arrow indicator */}
                       <svg
-                        className={`w-4 h-4 flex-shrink-0 transition-all duration-200 ${
+                        className={`w-4 h-4 flex-shrink-0 transition-all duration-300 ${
                           isActive ? "text-[#2a7d6e] translate-x-0 opacity-100" : "text-[#9ca3af] -translate-x-1 opacity-0 group-hover:opacity-50"
                         }`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
+                        aria-hidden="true"
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
@@ -142,9 +154,12 @@ export default function ServicesGhostNumbers() {
           <div className="flex-1">
             <div
               key={active}
+              id={`service-panel-${active}`}
+              role="tabpanel"
+              aria-label={service.title}
               className="rounded-2xl p-8 lg:p-10 border h-full animate-slide-from-right bg-[#1a2744] border-[#2d3f6b]"
             >
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl mb-4 bg-[#2a7d6e]/30 text-[#3dbda5]">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl mb-4 bg-[#2a7d6e]/30 text-[#3dbda5]" aria-hidden="true">
                 {service.icon}
               </div>
 
