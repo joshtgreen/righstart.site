@@ -15,7 +15,7 @@ const testimonials = [
   },
   {
     quote:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Josh came to us at a moment when a lot of organizations doing this work were either shutting down or barely holding on. The philanthropic landscape had shifted — commitments that felt real suddenly weren't, and we were trying to keep critical work alive. He came in with no background in architecture or the specific world we operate in, and got up to speed faster than I would have thought possible. What struck me was how much he genuinely cared about what we were doing, not just the operational problem in front of him. He stabilized the organization, helped us build toward long-term sustainability, and the foundation we have now is one we could not have built without him.",
     name: "Deanna van Buren",
     title: "Executive Director",
     org: "Designing Justice + Designing Spaces",
