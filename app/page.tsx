@@ -30,7 +30,7 @@ const jsonLd = {
       name: "Josh Green",
       jobTitle: "Fractional COO/CFO and Advisor",
       url: "https://rightstart.co",
-      sameAs: ["https://www.linkedin.com/in/joshtgreen/"],
+      sameAs: ["https://www.linkedin.com/in/joshuatgreen/"],
       worksFor: {
         "@type": "Organization",
         name: "RightStart",

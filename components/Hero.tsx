@@ -23,6 +23,23 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: text */}
           <div>
+            {/* Mobile photo — above headline */}
+            <div className="lg:hidden mb-8 flex justify-center">
+              <div className="relative w-32 h-32 sm:w-40 sm:h-40">
+                <div className="absolute inset-0 rounded-full border-2 border-[#2a7d6e]/40 scale-110" aria-hidden="true" />
+                <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-[#2a7d6e]/30">
+                  <Image
+                    src="/josh-headshot.jpg"
+                    alt="Josh Green"
+                    fill
+                    className="object-cover"
+                    priority
+                    sizes="160px"
+                  />
+                </div>
+              </div>
+            </div>
+
             <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.08] tracking-tight mb-6">
               Senior
               <br />
@@ -66,7 +83,7 @@ export default function Hero() {
               {/* Photo */}
               <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-[#2a7d6e]/30">
                 <Image
-                  src="/Josh Headshot.jpg"
+                  src="/josh-headshot.jpg"
                   alt="Josh Green, Fractional COO and Strategic Advisor at RightStart"
                   fill
                   className="object-cover"
