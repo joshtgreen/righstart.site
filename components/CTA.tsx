@@ -13,7 +13,7 @@ export default function CTA() {
             </div>
 
             <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
-              Let&apos;s build what works.
+              Let&apos;s figure it out together.
             </h2>
 
             <p className="text-lg text-white/70 leading-relaxed mb-4">
