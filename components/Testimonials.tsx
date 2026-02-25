@@ -3,10 +3,26 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
 
-const testimonials = [
+type QuoteSegment = string | { text: string; highlight: true };
+
+const testimonials: {
+  quote: QuoteSegment[];
+  name: string;
+  title: string;
+  org: string;
+  orgUrl: string;
+  photo: string;
+}[] = [
   {
-    quote:
-      "Josh came in at a pivotal moment for aiEDU — right when AI went from a niche concern to a national conversation, and the work we'd been building for years suddenly had the whole world's attention. We were growing fast, but we weren't built to sustain it. He helped us professionalize the organization, led us through developing our first strategic plan, and then helped us hire the executive leadership team to run it. That arc — from scattered to structured to staffed — wouldn't have happened without him. He's one of the sharpest strategic thinkers I've worked with, and the kind of steady, senior presence that fundamentally changes how an organization operates. He wasn't a typical consultant. He was a genuine partner who cared about the mission as much as we did.",
+    quote: [
+      "Josh came in at a pivotal moment for aiEDU — right when AI went from a niche concern to a national conversation, and the work we'd been building for years suddenly had the whole world's attention. We were growing fast, but we weren't built to sustain it. He ",
+      { text: "helped us professionalize the organization, led us through developing our first strategic plan, and then helped us hire the executive leadership team", highlight: true },
+      " to run it. That arc — ",
+      { text: "from scattered to structured to staffed", highlight: true },
+      " — wouldn't have happened without him. He's ",
+      { text: "one of the sharpest strategic thinkers I've worked with", highlight: true },
+      ", and the kind of steady, senior presence that fundamentally changes how an organization operates. He wasn't a typical consultant. He was a genuine partner who cared about the mission as much as we did.",
+    ],
     name: "Alex Kotran",
     title: "CEO",
     org: "aiEDU",
@@ -14,8 +30,13 @@ const testimonials = [
     photo: "/testimonials/aiEDU_Team_Alex_Kotran.webp",
   },
   {
-    quote:
-      "Josh came to us at a moment when a lot of organizations doing this work were either shutting down or barely holding on. The philanthropic landscape had shifted — commitments that felt real suddenly weren't, and we were trying to keep critical work alive. He came in with no background in architecture or the specific world we operate in, and got up to speed faster than I would have thought possible. What struck me was how much he genuinely cared about what we were doing, not just the operational problem in front of him. He stabilized the organization, helped us build toward long-term sustainability, and the foundation we have now is one we could not have built without him.",
+    quote: [
+      "Josh came to us at a moment when a lot of organizations doing this work were either shutting down or barely holding on. The philanthropic landscape had shifted — commitments that felt real suddenly weren't, and we were trying to keep critical work alive. He came in with no background in architecture or the specific world we operate in, and ",
+      { text: "got up to speed faster than I would have thought possible", highlight: true },
+      ". What struck me was how much he genuinely cared about what we were doing, not just the operational problem in front of him. He ",
+      { text: "stabilized the organization, helped us build toward long-term sustainability", highlight: true },
+      ", and the foundation we have now is one we could not have built without him.",
+    ],
     name: "Deanna van Buren",
     title: "Executive Director",
     org: "Designing Justice + Designing Spaces",
@@ -23,8 +44,14 @@ const testimonials = [
     photo: "/testimonials/1753300060791.jpeg",
   },
   {
-    quote:
-      "Josh is the reason I have this job. He ran ops here before there was an ops function, and then hired me to take it over. So I'm maybe not the most objective reference, but that's also kind of the point: I've seen his work up close in a way most people haven't. When growth slowed a few years later, he came back and helped us scale again, taking us from providing care in six states to all fifty. You can tell a lot about someone by what they leave behind. Both times, he left us in a better place than he found us.",
+    quote: [
+      { text: "Josh is the reason I have this job.", highlight: true },
+      " He ran ops here before there was an ops function, and then hired me to take it over. So I'm maybe not the most objective reference, but that's also kind of the point: I've seen his work up close in a way most people haven't. When growth slowed a few years later, he came back and helped us scale again, ",
+      { text: "taking us from providing care in six states to all fifty", highlight: true },
+      ". You can tell a lot about someone by what they leave behind. Both times, ",
+      { text: "he left us in a better place than he found us", highlight: true },
+      ".",
+    ],
     name: "Kate O'Connor",
     title: "VP of Operations",
     org: "Revero",
@@ -32,6 +59,18 @@ const testimonials = [
     photo: "/testimonials/1645800566487.jpeg",
   },
 ];
+
+function renderQuote(segments: QuoteSegment[]) {
+  return segments.map((seg, i) =>
+    typeof seg === "string" ? (
+      <span key={i}>{seg}</span>
+    ) : (
+      <span key={i} className="font-semibold text-[#1a2744]">
+        {seg.text}
+      </span>
+    )
+  );
+}
 
 function getInitials(name: string) {
   return name
@@ -92,7 +131,7 @@ export default function Testimonials() {
               <div key={i} className="snap-center flex-shrink-0 w-[85vw]">
                 <div className="flex flex-col bg-white rounded-2xl border border-[#e5e2dc] p-8 shadow-sm h-full">
                   <div className="text-5xl leading-none text-[#3dbda5] font-serif mb-3 select-none">&ldquo;</div>
-                  <p className="flex-1 text-base text-[#4a5568] leading-relaxed">{t.quote}</p>
+                  <p className="flex-1 text-base text-[#4a5568] leading-relaxed">{renderQuote(t.quote)}</p>
                   <div className="border-t border-[#e5e2dc] mt-5 pt-5 flex items-center gap-4">
                     {t.photo ? (
                       <div className="flex-shrink-0 w-14 h-14 rounded-full overflow-hidden ring-2 ring-[#e5e2dc]">
@@ -164,7 +203,7 @@ export default function Testimonials() {
 
                   {/* Quote body */}
                   <p className="flex-1 text-sm lg:text-base text-[#4a5568] leading-relaxed">
-                    {t.quote}
+                    {renderQuote(t.quote)}
                   </p>
 
                   {/* Attribution */}
