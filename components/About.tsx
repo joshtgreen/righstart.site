@@ -65,64 +65,6 @@ export default function About() {
           </p>
         </div>
 
-        {/* Decorative graphic */}
-        <div className="mt-14 lg:mt-16" aria-hidden>
-          <svg
-            viewBox="0 0 960 120"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-full h-auto"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            {/* Horizontal spine */}
-            <line x1="0" y1="60" x2="960" y2="60" stroke="#e5e2dc" strokeWidth="1" />
-
-            {/* Large teal circle — left */}
-            <circle cx="140" cy="60" r="48" stroke="#2a7d6e" strokeWidth="1.5" opacity="0.18" />
-            <circle cx="140" cy="60" r="32" fill="#2a7d6e" opacity="0.06" />
-
-            {/* Cluster — left-center */}
-            <circle cx="300" cy="52" r="18" stroke="#1a2744" strokeWidth="1" opacity="0.10" />
-            <circle cx="320" cy="68" r="12" fill="#2a7d6e" opacity="0.10" />
-            <circle cx="288" cy="70" r="6" fill="#2a7d6e" opacity="0.15" />
-
-            {/* Arc sweep — center */}
-            <path
-              d="M 420 90 A 50 50 0 0 1 520 90"
-              stroke="#2a7d6e"
-              strokeWidth="1.5"
-              opacity="0.20"
-              fill="none"
-            />
-            <path
-              d="M 440 30 A 40 40 0 0 0 520 30"
-              stroke="#1a2744"
-              strokeWidth="1"
-              opacity="0.08"
-              fill="none"
-            />
-            <circle cx="470" cy="60" r="4" fill="#2a7d6e" opacity="0.25" />
-
-            {/* Dotted accent — right-center */}
-            <circle cx="600" cy="60" r="2.5" fill="#2a7d6e" opacity="0.30" />
-            <circle cx="620" cy="60" r="2.5" fill="#2a7d6e" opacity="0.22" />
-            <circle cx="640" cy="60" r="2.5" fill="#2a7d6e" opacity="0.14" />
-
-            {/* Ring pair — right */}
-            <circle cx="740" cy="48" r="28" stroke="#2a7d6e" strokeWidth="1.5" opacity="0.14" />
-            <circle cx="770" cy="68" r="22" stroke="#1a2744" strokeWidth="1" opacity="0.08" />
-            <circle cx="755" cy="58" r="8" fill="#2a7d6e" opacity="0.08" />
-
-            {/* Small accent — far right */}
-            <circle cx="880" cy="54" r="14" stroke="#e5e2dc" strokeWidth="1.5" />
-            <circle cx="880" cy="54" r="5" fill="#2a7d6e" opacity="0.12" />
-
-            {/* Short teal accent lines */}
-            <line x1="50" y1="60" x2="80" y2="60" stroke="#2a7d6e" strokeWidth="2" opacity="0.25" />
-            <line x1="900" y1="60" x2="940" y2="60" stroke="#2a7d6e" strokeWidth="2" opacity="0.20" />
-          </svg>
-        </div>
-
       </div>
     </section>
   );
