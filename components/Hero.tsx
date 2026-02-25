@@ -57,7 +57,7 @@ export default function Hero() {
           </div>
 
           {/* Right: photo */}
-          <div className="flex justify-center lg:justify-end">
+          <div className="hidden lg:flex lg:justify-end">
             <div className="relative w-72 h-72 lg:w-96 lg:h-96">
               {/* Decorative ring */}
               <div className="absolute inset-0 rounded-full border-2 border-[#2a7d6e]/40 scale-110" />
