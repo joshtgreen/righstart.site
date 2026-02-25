@@ -12,7 +12,7 @@ export default function About() {
 
         {/* Headline */}
         <h2 className="text-4xl lg:text-5xl font-bold text-[#1a2744] leading-snug mb-10">
-          I&apos;m here to support people doing{" "}
+          I&apos;m here to help people doing{" "}
           <em className="font-serif font-semibold not-italic tracking-tight text-[#2a7d6e]">
             good work.
           </em>
