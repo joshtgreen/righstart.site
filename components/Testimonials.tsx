@@ -91,7 +91,7 @@ export default function Testimonials() {
                 <div
                   key={i}
                   style={{ gridArea: "1 / 1" }}
-                  className={`bg-white rounded-2xl border border-[#e5e2dc] p-8 lg:p-10 shadow-sm transition-opacity duration-200 ease-in-out ${
+                  className={`flex flex-col bg-white rounded-2xl border border-[#e5e2dc] p-8 lg:p-10 shadow-sm transition-opacity duration-200 ease-in-out ${
                     i === active
                       ? "opacity-100 pointer-events-auto"
                       : "opacity-0 pointer-events-none"
@@ -103,7 +103,7 @@ export default function Testimonials() {
                   </div>
 
                   {/* Quote body */}
-                  <p className="text-lg lg:text-xl text-[#4a5568] leading-relaxed">
+                  <p className="flex-1 text-lg lg:text-xl text-[#4a5568] leading-relaxed">
                     {t.quote}
                   </p>
 
