@@ -17,9 +17,7 @@ const testimonials: {
     quote: [
       "Josh came in at a pivotal moment for aiEDU — right when AI went from a niche concern to a national conversation, and the work we'd been building for years suddenly had the whole world's attention. We were growing fast, but we weren't built to sustain it. He ",
       { text: "helped us professionalize the organization, led us through developing our first strategic plan, and then helped us hire the executive leadership team", highlight: true },
-      " to run it. That arc — ",
-      { text: "from scattered to structured to staffed", highlight: true },
-      " — wouldn't have happened without him. He's ",
+      " to run it. That arc — from scattered to structured to staffed — wouldn't have happened without him. He's ",
       { text: "one of the sharpest strategic thinkers I've worked with", highlight: true },
       ", and the kind of steady, senior presence that fundamentally changes how an organization operates. He wasn't a typical consultant. He was a genuine partner who cared about the mission as much as we did.",
     ],
