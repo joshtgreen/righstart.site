@@ -17,7 +17,7 @@ html {
 }
 
 h1, h2, h3 {
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 
 body {
