@@ -15,7 +15,7 @@ const testimonials: {
 }[] = [
   {
     quote: [
-      "Josh joined at a pivotal moment for aiEDU — right when AI went from a niche concern to a national conversation, and the work we'd been building for years suddenly had the whole world's attention. We were growing fast, but we weren't built to sustain it. He helped us professionalize the organization, led us through developing our first strategic plan, and then helped us hire the executive leadership team to run it. That arc — from scattered to structured to staffed — wouldn't have happened without him. He's one of the sharpest strategic thinkers I've worked with, and the kind of steady, senior presence that fundamentally changes how an organization operates. He wasn't a typical consultant. He was a genuine partner who cared about the mission as much as we did.",
+      "Josh joined at a pivotal moment for aiEDU — right when AI went from a niche concern to a national conversation, and the work we'd been building for years suddenly had the whole world's attention. We were growing fast, but we weren't built to sustain it. He helped us professionalize the organization, led us through developing our first strategic plan, and then helped us hire the executive leadership team to run it. That arc, from scattered to structured to staffed, wouldn't have happened without him. He's one of the sharpest strategic thinkers I've worked with, and the kind of steady, senior presence that fundamentally changes how an organization operates. He wasn't a typical consultant. He was a genuine partner who cared about the mission as much as we did.",
     ],
     name: "Alex Kotran",
     title: "CEO",
