@@ -44,11 +44,11 @@ export default function About() {
             for nonprofits, health-focused organizations, and mission-driven
             ventures — including{" "}
             <strong className="text-[#1a2744]">
-              <a href="https://www.aiedu.org/" target="_blank" rel="noopener noreferrer">aiEDU</a>
+              <a href="https://www.aiedu.org/" target="_blank" rel="noopener noreferrer" className="text-[#2a7d6e] underline decoration-[#2a7d6e]/40 hover:decoration-[#2a7d6e] transition-colors">aiEDU</a>
             </strong>
             , which brings AI literacy to students across the country, and{" "}
             <strong className="text-[#1a2744]">
-              <a href="https://designingjustice.org/" target="_blank" rel="noopener noreferrer">Designing Justice + Designing Spaces</a>
+              <a href="https://designingjustice.org/" target="_blank" rel="noopener noreferrer" className="text-[#2a7d6e] underline decoration-[#2a7d6e]/40 hover:decoration-[#2a7d6e] transition-colors">Designing Justice + Designing Spaces</a>
             </strong>
             , which uses architecture and development to address the root causes
             of mass incarceration.
