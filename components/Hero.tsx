@@ -66,7 +66,7 @@ export default function Hero() {
               {/* Photo */}
               <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-[#2a7d6e]/30">
                 <Image
-                  src="https://images.squarespace-cdn.com/content/v1/681b3ede27973f2eef8ec91a/14b70cd5-9e58-483a-8109-31d72c73ea5e/Josh+Green+Rightstart.co"
+                  src="/Josh Headshot.jpg"
                   alt="Josh Green, Fractional COO and Strategic Advisor at RightStart"
                   fill
                   className="object-cover"
