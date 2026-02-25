@@ -7,17 +7,14 @@ const services = [
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+          d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"
         />
       </svg>
     ),
     title: "Fractional/Interim COO or CFO",
     tagline: "Embedded operational and financial leadership — without the full-time overhead.",
-    results: [
-      "Helped define strategic goals and hire executive leaders at an AI education nonprofit",
-      "Scaled a telehealth organization to 50 states and quadrupled patient volume in 3 months",
-      "Developed internal systems supporting growth, retention, and team culture at a national nonprofit",
-    ],
+    description:
+      "I embed directly into your team as an operational or financial leader — owning the day-to-day so you can focus on the mission. That usually means building the systems, processes, and teams an organization needs to grow without breaking. I've done this for nonprofits, health-focused ventures, and education organizations, and I treat every engagement like it's my own company.",
   },
   {
     icon: (
@@ -29,11 +26,8 @@ const services = [
     ),
     title: "Project-Based Consulting",
     tagline: "Short-term support for complex, high-stakes initiatives.",
-    results: [
-      "Led HIPAA compliance and launch readiness for a virtual care organization",
-      "Built a provider hiring pipeline for a nutrition therapy platform",
-      "Designed and implemented automations for an orthodontic healthtech venture",
-    ],
+    description:
+      "Sometimes you don't need a fractional executive — you need someone to come in, solve a specific problem, and hand it back clean. I've led compliance projects, built hiring pipelines from scratch, designed internal tooling, and gotten organizations launch-ready on tight timelines. Scoped, focused, and built to last after I leave.",
   },
   {
     icon: (
@@ -45,11 +39,8 @@ const services = [
     ),
     title: "Advising",
     tagline: "Ongoing support, honest feedback, and clarity-focused guidance.",
-    results: [
-      "A space to think clearly, ask the hard questions, and move things forward",
-      "Weekly calls or check-ins to stay grounded, focused, and accountable",
-      "Real-time support tailored to what's actually happening on the ground",
-    ],
+    description:
+      "Not every organization needs someone in the seat — sometimes you just need a sharp, honest thought partner. I work with founders and executive directors on an ongoing basis through regular calls, helping them think through hard decisions, pressure-test ideas, and stay focused on what actually matters.",
   },
   {
     icon: (
@@ -61,11 +52,8 @@ const services = [
     ),
     title: "Open Office Hours",
     tagline: "Free, no-pitch calls to jam, troubleshoot, or think out loud.",
-    results: [
-      "A low-stakes way to talk through what's working (or not)",
-      "Space to clear a block, gut-check an idea, or sketch next steps",
-      "Open to leaders, operators, and curious collaborators",
-    ],
+    description:
+      "Free, no-pitch calls for anyone who could use a thinking partner. Whether you're stuck on a hiring decision, navigating a board conversation, or just need to talk something through — grab a slot. No agenda required, no strings attached.",
   },
 ];
 
@@ -97,15 +85,17 @@ export default function ServicesGhostNumbers() {
         <div className="flex flex-col lg:flex-row gap-6">
           {/* Left nav */}
           <div className="lg:w-72 lg:flex-shrink-0">
-            <ul className="flex flex-col gap-1">
+            <ul className="flex flex-col gap-2">
               {services.map((s, i) => {
                 const isActive = active === i;
                 return (
                   <li
                     key={s.title}
                     onClick={() => setActive(i)}
-                    className={`relative cursor-pointer py-5 pl-5 pr-2 select-none overflow-hidden rounded-xl transition-colors duration-150 ${
-                      isActive ? "bg-white/70" : "hover:bg-white/40"
+                    className={`relative cursor-pointer py-4 pl-5 pr-4 select-none overflow-hidden rounded-xl border transition-all duration-150 ${
+                      isActive
+                        ? "bg-white border-[#2a7d6e]/30 shadow-sm"
+                        : "bg-white/40 border-transparent hover:bg-white/70 hover:border-[#e5e2dc]"
                     }`}
                   >
                     {/* Active left bar */}
@@ -115,28 +105,32 @@ export default function ServicesGhostNumbers() {
                       }`}
                     />
 
-                    {/* Ghost number */}
-                    <span
-                      className={`absolute -top-3 left-1 text-[7rem] font-black leading-none select-none pointer-events-none transition-colors duration-200 ${
-                        isActive ? "text-[#2a7d6e]/[0.10]" : "text-[#1a2744]/[0.04]"
-                      }`}
-                      aria-hidden
-                    >
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-
                     {/* Content */}
-                    <div className="relative z-10">
-                      <p className="text-[10px] uppercase tracking-widest font-semibold text-[#2a7d6e]/60 mb-1">
-                        {String(i + 1).padStart(2, "0")}
-                      </p>
-                      <p
-                        className={`text-base font-semibold leading-snug transition-colors duration-150 ${
-                          isActive ? "text-[#1a2744]" : "text-[#4a5568]"
+                    <div className="relative z-10 flex items-center justify-between gap-3">
+                      <div>
+                        <p className="text-[10px] uppercase tracking-widest font-semibold text-[#2a7d6e]/60 mb-1">
+                          {String(i + 1).padStart(2, "0")}
+                        </p>
+                        <p
+                          className={`text-base font-semibold leading-snug transition-colors duration-150 ${
+                            isActive ? "text-[#1a2744]" : "text-[#4a5568]"
+                          }`}
+                        >
+                          {s.title}
+                        </p>
+                      </div>
+
+                      {/* Arrow indicator */}
+                      <svg
+                        className={`w-4 h-4 flex-shrink-0 transition-all duration-200 ${
+                          isActive ? "text-[#2a7d6e] translate-x-0 opacity-100" : "text-[#9ca3af] -translate-x-1 opacity-0 group-hover:opacity-50"
                         }`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
                       >
-                        {s.title}
-                      </p>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
                     </div>
                   </li>
                 );
@@ -161,17 +155,9 @@ export default function ServicesGhostNumbers() {
                 {service.tagline}
               </p>
 
-              <ul className="space-y-3">
-                {service.results.map((r) => (
-                  <li
-                    key={r}
-                    className="flex gap-3 text-sm leading-relaxed text-white/75"
-                  >
-                    <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#3dbda5]" />
-                    {r}
-                  </li>
-                ))}
-              </ul>
+              <p className="text-sm leading-relaxed text-white/75">
+                {service.description}
+              </p>
             </div>
           </div>
         </div>
