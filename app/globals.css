@@ -56,3 +56,11 @@ body {
 .animate-progress-fill {
   animation: progress-fill 5s linear forwards;
 }
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

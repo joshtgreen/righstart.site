@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 
 const testimonials = [
@@ -46,6 +46,17 @@ function getInitials(name: string) {
 export default function Testimonials() {
   const [active, setActive] = useState(0);
 
+  const mobileScrollRef = useRef<HTMLDivElement>(null);
+  const [mobileActive, setMobileActive] = useState(0);
+
+  function handleMobileScroll() {
+    const el = mobileScrollRef.current;
+    if (!el) return;
+    const maxScroll = el.scrollWidth - el.offsetWidth;
+    const index = Math.round((el.scrollLeft / maxScroll) * (testimonials.length - 1));
+    setMobileActive(Math.max(0, Math.min(index, testimonials.length - 1)));
+  }
+
   function prev() {
     setActive((a) => (a - 1 + testimonials.length) % testimonials.length);
   }
@@ -70,8 +81,57 @@ export default function Testimonials() {
           </h2>
         </div>
 
-        {/* Carousel */}
-        <div className="flex items-center gap-4 lg:gap-8">
+        {/* Mobile: horizontal scroll snap */}
+        <div className="lg:hidden">
+          <div
+            ref={mobileScrollRef}
+            onScroll={handleMobileScroll}
+            className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 -mx-6 px-6 pb-4"
+          >
+            {testimonials.map((t, i) => (
+              <div key={i} className="snap-center flex-shrink-0 w-[85vw]">
+                <div className="flex flex-col bg-white rounded-2xl border border-[#e5e2dc] p-8 shadow-sm h-full">
+                  <div className="text-5xl leading-none text-[#3dbda5] font-serif mb-3 select-none">&ldquo;</div>
+                  <p className="flex-1 text-lg text-[#4a5568] leading-relaxed">{t.quote}</p>
+                  <div className="border-t border-[#e5e2dc] mt-5 pt-5 flex items-center gap-4">
+                    {t.photo ? (
+                      <div className="flex-shrink-0 w-14 h-14 rounded-full overflow-hidden ring-2 ring-[#e5e2dc]">
+                        <Image src={t.photo} alt={t.name} width={56} height={56} loading="eager" className="object-cover w-full h-full" />
+                      </div>
+                    ) : (
+                      <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[#1a2744] flex items-center justify-center ring-2 ring-[#e5e2dc]">
+                        <span className="text-white text-lg font-bold">{getInitials(t.name)}</span>
+                      </div>
+                    )}
+                    <div>
+                      <div className="text-base font-bold text-[#1a2744]">{t.name}</div>
+                      <div className="text-sm text-[#718096] mt-0.5">
+                        {t.title} ·{" "}
+                        <a href={t.orgUrl} target="_blank" rel="noopener noreferrer"
+                          className="text-[#2a7d6e] font-medium underline underline-offset-2 decoration-[#2a7d6e]/40 hover:decoration-[#2a7d6e] transition-colors">
+                          {t.org}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-center gap-2 mt-4">
+            {testimonials.map((_, i) => (
+              <div
+                key={i}
+                className={`w-2 h-2 rounded-full transition-colors ${
+                  i === mobileActive ? "bg-[#2a7d6e]" : "bg-[#e5e2dc]"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop: arrow carousel */}
+        <div className="hidden lg:flex items-center gap-4 lg:gap-8">
           {/* Prev arrow */}
           <button
             onClick={prev}
