@@ -30,9 +30,7 @@ export default function CTA() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://rightstart.co/book"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/book"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-base bg-[#2a7d6e] text-white hover:bg-[#3dbda5] transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-teal-900/30"
               >
                 Let&apos;s Jam

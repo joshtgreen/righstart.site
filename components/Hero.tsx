@@ -42,9 +42,7 @@ export default function Hero() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://rightstart.co/book"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/book"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-base bg-[#2a7d6e] text-white hover:bg-[#236b5e] transition-all hover:shadow-lg hover:shadow-teal-900/30 hover:-translate-y-0.5"
               >
                 Let&apos;s Talk

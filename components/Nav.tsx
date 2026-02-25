@@ -68,9 +68,7 @@ export default function Nav() {
               </a>
             ))}
             <a
-              href="https://rightstart.co/book"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/book"
               className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-semibold bg-[#2a7d6e] text-white hover:bg-[#236b5e] transition-colors"
             >
               Book a Call
@@ -116,9 +114,7 @@ export default function Nav() {
             </a>
           ))}
           <a
-            href="https://rightstart.co/book"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/book"
             className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold bg-[#2a7d6e] text-white hover:bg-[#236b5e] transition-colors"
           >
             Book a Call
