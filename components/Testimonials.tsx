@@ -24,7 +24,7 @@ const testimonials = [
   },
   {
     quote:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt.",
+      "Josh is the reason I have this job. He ran ops here before there was an ops function, and then hired me to take it over. So I'm maybe not the most objective reference, but that's also kind of the point: I've seen his work up close in a way most people haven't. When growth slowed a few years later, he came back and helped us scale again, taking us from providing care in six states to all fifty. You can tell a lot about someone by what they leave behind. Both times, he left us in a better place than he found us.",
     name: "Kate O'Connor",
     title: "VP of Operations",
     org: "Revero",
