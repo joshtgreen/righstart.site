@@ -32,7 +32,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-lg lg:text-xl text-white/70 leading-relaxed max-w-lg mb-10">
-              I support nonprofits and mission-driven organizations when they
+              I support mission-driven organizations when they
               need senior leadership without a full-time hire. I step in as{" "}
               <span className="text-[#3dbda5] font-medium">
                 fractional/interim COO or CFO
