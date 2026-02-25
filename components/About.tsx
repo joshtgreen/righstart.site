@@ -11,9 +11,9 @@ export default function About() {
         </div>
 
         {/* Headline */}
-        <h2 className="text-4xl lg:text-5xl font-bold text-[#1a2744] leading-tight mb-10 max-w-3xl">
+        <h2 className="text-4xl lg:text-5xl font-bold text-[#1a2744] leading-snug mb-10 max-w-3xl">
           At the heart of what I do is a deep belief in{" "}
-          <em className="font-serif not-italic text-[#2a7d6e]">
+          <em className="font-serif font-semibold not-italic tracking-tight text-[#2a7d6e]">
             supporting the people committed to doing good work.
           </em>
         </h2>
