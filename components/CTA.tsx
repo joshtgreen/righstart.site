@@ -12,7 +12,7 @@ export default function CTA() {
               </span>
             </div>
 
-            <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
               Let&apos;s figure it out together.
             </h2>
 
