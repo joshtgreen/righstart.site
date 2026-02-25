@@ -24,11 +24,11 @@ export default function Hero() {
           {/* Left: text */}
           <div>
             <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.08] tracking-tight mb-6">
-              Your mission deserves
+              Senior
               <br />
-              <span className="text-[#3dbda5]">a partner,</span>
+              <span className="text-[#3dbda5]">leadership,</span>
               <br />
-              not a consultant.
+              without the full-time commitment.
             </h1>
 
             <p className="text-lg lg:text-xl text-white/70 leading-relaxed max-w-lg mb-10">
