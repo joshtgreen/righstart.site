@@ -114,7 +114,7 @@ export default function Testimonials() {
             </span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-[#1a2744] leading-tight">
-            Trusted by the teams I work with.
+            From people I&apos;ve worked with.
           </h2>
         </div>
 
