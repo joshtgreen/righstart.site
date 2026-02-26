@@ -32,7 +32,7 @@ export default function Hero() {
                 <br />
                 without the full-time commitment.
               </h1>
-              <div className="relative w-24 h-24 sm:w-32 sm:h-32 shrink-0">
+              <div className="relative w-32 h-32 sm:w-40 sm:h-40 shrink-0">
                 <div className="absolute inset-0 rounded-full border-2 border-[#2a7d6e]/40 scale-110" aria-hidden="true" />
                 <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-[#2a7d6e]/30">
                   <Image
@@ -41,7 +41,7 @@ export default function Hero() {
                     fill
                     className="object-cover"
                     priority
-                    sizes="128px"
+                    sizes="160px"
                   />
                 </div>
               </div>
