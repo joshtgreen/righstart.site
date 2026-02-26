@@ -5,3 +5,6 @@ This is a low-stakes personal project where iteration speed is the priority.
 
 # currentDate
 Today's date is 2026-02-26.
+
+# Test
+Auto-merge test - this line should appear on the default branch automatically.
