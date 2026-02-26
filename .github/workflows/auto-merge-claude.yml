@@ -1,33 +1,52 @@
 name: Auto-merge Claude PRs
 
 on:
-  pull_request:
-    types: [opened, synchronize]
+  push:
+    branches:
+      - 'claude/**'
 
 jobs:
   auto-merge:
-    if: startsWith(github.head_ref, 'claude/')
     runs-on: ubuntu-latest
     permissions:
       contents: write
       pull-requests: write
     steps:
-      - name: Auto-merge PR
+      - name: Create and merge PR
         uses: actions/github-script@v7
         with:
           script: |
-            // Approve the PR
-            await github.rest.pulls.createReview({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: context.payload.pull_request.number,
-              event: 'APPROVE'
+            const branch = context.ref.replace('refs/heads/', '');
+            const repo = context.repo;
+
+            // Check if a PR already exists for this branch
+            const { data: existingPRs } = await github.rest.pulls.list({
+              ...repo,
+              head: `${repo.owner}:${branch}`,
+              state: 'open'
             });
 
-            // Enable auto-merge (squash)
+            let pr;
+            if (existingPRs.length > 0) {
+              pr = existingPRs[0];
+            } else {
+              // Get the default branch
+              const { data: repoData } = await github.rest.repos.get(repo);
+
+              // Create the PR
+              const { data: newPR } = await github.rest.pulls.create({
+                ...repo,
+                title: `Auto-merge: ${branch}`,
+                head: branch,
+                base: repoData.default_branch,
+                body: `Automatic PR created for \`${branch}\``
+              });
+              pr = newPR;
+            }
+
+            // Merge immediately
             await github.rest.pulls.merge({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: context.payload.pull_request.number,
+              ...repo,
+              pull_number: pr.number,
               merge_method: 'squash'
             });
