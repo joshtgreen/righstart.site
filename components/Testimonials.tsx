@@ -127,7 +127,7 @@ export default function Testimonials() {
           >
             {testimonials.map((t, i) => (
               <div key={i} className="snap-center flex-shrink-0 w-[85vw]">
-                <div className="flex flex-col bg-white rounded-2xl border border-[#e5e2dc] p-8 shadow-sm h-full">
+                <div className="flex flex-col bg-[#f9fafb] rounded-2xl border border-[#e5e2dc] border-l-4 border-l-[#2a7d6e] p-8 shadow-md h-full">
                   <div className="text-5xl leading-none text-[#3dbda5] font-serif mb-3 select-none" aria-hidden="true">&ldquo;</div>
                   <blockquote className="flex-1 text-base text-[#4a5568] leading-relaxed">{renderQuote(t.quote)}</blockquote>
                   <div className="border-t border-[#e5e2dc] mt-5 pt-5 flex items-center gap-4">
@@ -192,7 +192,7 @@ export default function Testimonials() {
                   key={i}
                   style={{ gridArea: "1 / 1" }}
                   aria-hidden={i !== active}
-                  className={`flex flex-col bg-white rounded-2xl border border-[#e5e2dc] p-8 lg:p-10 shadow-sm transition-opacity duration-300 ease-in-out ${
+                  className={`flex flex-col bg-[#f9fafb] rounded-2xl border border-[#e5e2dc] border-l-4 border-l-[#2a7d6e] p-8 lg:p-10 shadow-md transition-opacity duration-300 ease-in-out ${
                     i === active
                       ? "opacity-100 pointer-events-auto"
                       : "opacity-0 pointer-events-none"
