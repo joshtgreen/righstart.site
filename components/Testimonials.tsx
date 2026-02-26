@@ -103,7 +103,7 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="bg-[#faf9f7] py-16 lg:py-20">
+    <section className="bg-[#faf9f7] py-16 lg:py-20 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-10">
