@@ -23,9 +23,16 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: text */}
           <div>
-            {/* Mobile photo — above headline */}
-            <div className="lg:hidden mb-8 flex justify-center">
-              <div className="relative w-32 h-32 sm:w-40 sm:h-40">
+            {/* Mobile: headline + photo side by side */}
+            <div className="lg:hidden flex items-center gap-5 mb-6">
+              <h1 className="text-4xl sm:text-5xl font-bold text-white leading-[1.08] tracking-tight flex-1">
+                Senior
+                <br />
+                <span className="text-[#3dbda5]">leadership,</span>
+                <br />
+                without the full-time commitment.
+              </h1>
+              <div className="relative w-24 h-24 sm:w-32 sm:h-32 shrink-0">
                 <div className="absolute inset-0 rounded-full border-2 border-[#2a7d6e]/40 scale-110" aria-hidden="true" />
                 <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-[#2a7d6e]/30">
                   <Image
@@ -34,13 +41,14 @@ export default function Hero() {
                     fill
                     className="object-cover"
                     priority
-                    sizes="160px"
+                    sizes="128px"
                   />
                 </div>
               </div>
             </div>
 
-            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.08] tracking-tight mb-6">
+            {/* Desktop headline */}
+            <h1 className="hidden lg:block text-6xl xl:text-7xl font-bold text-white leading-[1.08] tracking-tight mb-6">
               Senior
               <br />
               <span className="text-[#3dbda5]">leadership,</span>
