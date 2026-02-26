@@ -6,7 +6,7 @@ export default function About() {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <section id="about" className="bg-[#faf9f7] py-16 lg:py-20">
+    <section id="about" className="bg-[#f5f3ef] py-16 lg:py-20">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section label */}
         <div className="inline-flex items-center gap-2 mb-4">

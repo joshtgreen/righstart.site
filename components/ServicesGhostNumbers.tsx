@@ -62,7 +62,7 @@ export default function ServicesGhostNumbers() {
   const service = services[active];
 
   return (
-    <section id="services" className="bg-[#f3f1ee] py-16 lg:py-20">
+    <section id="services" className="bg-[#edebe5] py-16 lg:py-20">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-10">

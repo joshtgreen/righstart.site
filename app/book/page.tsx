@@ -44,7 +44,7 @@ export default function BookPage() {
         </section>
 
         {/* Scheduling embed */}
-        <section className="bg-[#f3f1ee] py-16 px-6 lg:px-8">
+        <section className="bg-[#edebe5] py-16 px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <ReclaimEmbed />
           </div>
