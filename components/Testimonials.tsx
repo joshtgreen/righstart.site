@@ -27,21 +27,20 @@ const testimonials: {
     orgUrl: "https://www.aiedu.org/",
     photo: "/testimonials/aiEDU_Team_Alex_Kotran.webp",
   },
-  // Hidden until Deanna approves
-  // {
-  //   quote: [
-  //     "Josh came to us at a moment when a lot of organizations doing this work were either shutting down or barely holding on. The philanthropic landscape had shifted — commitments that felt real suddenly weren't, and we were trying to keep critical work alive. He came in with no background in architecture or the specific world we operate in, and ",
-  //     { text: "got up to speed faster than I would have thought possible", highlight: true },
-  //     ". What struck me was how much he genuinely cared about what we were doing, not just the operational problem in front of him. He ",
-  //     { text: "stabilized the organization, helped us build toward long-term sustainability", highlight: true },
-  //     ", and the foundation we have now is one we could not have built without him.",
-  //   ],
-  //   name: "Deanna van Buren",
-  //   title: "Executive Director",
-  //   org: "Designing Justice + Designing Spaces",
-  //   orgUrl: "https://designingjustice.org/",
-  //   photo: "/testimonials/1753300060791.jpeg",
-  // },
+  {
+    quote: [
+      "Josh came to us at a moment when a lot of organizations doing this work were either shutting down or barely holding on. The philanthropic landscape had shifted — commitments that felt real suddenly weren't, and we were trying to keep critical work alive. He came in with no background in architecture or the specific world we operate in, and ",
+      { text: "got up to speed faster than I would have thought possible", highlight: true },
+      ". What struck me was how much he genuinely cared about what we were doing, not just the operational problem in front of him. He ",
+      { text: "stabilized the organization, helped us build toward long-term sustainability", highlight: true },
+      ", and the foundation we have now is one we could not have built without him.",
+    ],
+    name: "Deanna van Buren",
+    title: "Executive Director",
+    org: "Designing Justice + Designing Spaces",
+    orgUrl: "https://designingjustice.org/",
+    photo: "/testimonials/1753300060791.jpeg",
+  },
   {
     quote: [
       { text: "Josh is the reason I have this job.", highlight: true },
