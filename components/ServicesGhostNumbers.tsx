@@ -11,8 +11,8 @@ const services = [
         />
       </svg>
     ),
-    title: "Fractional/Interim COO or CFO",
-    tagline: "Embedded operational and financial leadership — without the full-time overhead.",
+    title: "Interim/Fractional Executive",
+    tagline: "Embedded COO or CFO leadership — without the full-time overhead.",
     description:
       "I embed directly into your team as an operational or financial leader — owning the day-to-day so you can focus on the mission. That usually means building the systems, processes, and teams an organization needs to grow without breaking. I've done this for nonprofits, health-focused ventures, and education organizations, and I treat every engagement like it's my own company.",
   },
