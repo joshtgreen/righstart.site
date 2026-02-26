@@ -33,7 +33,7 @@ export default function Hero() {
                 without the full-time commitment.
               </h1>
               <div className="relative w-28 h-28 sm:w-40 sm:h-40 shrink-0">
-                <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-[#2a7d6e]/30">
+                <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-inset ring-[#2a7d6e]/30">
                   <Image
                     src="/josh-headshot.jpg"
                     alt="Josh Green"
