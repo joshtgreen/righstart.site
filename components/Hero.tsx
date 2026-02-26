@@ -24,16 +24,15 @@ export default function Hero() {
           {/* Left: text */}
           <div>
             {/* Mobile: headline + photo side by side */}
-            <div className="lg:hidden flex items-center gap-5 mb-6">
-              <h1 className="text-4xl sm:text-5xl font-bold text-white leading-[1.08] tracking-tight flex-1">
+            <div className="lg:hidden flex items-center gap-6 mb-6">
+              <h1 className="text-4xl sm:text-5xl font-bold text-white leading-[1.08] tracking-tight flex-1 min-w-0">
                 Senior
                 <br />
                 <span className="text-[#3dbda5]">leadership,</span>
                 <br />
                 without the full-time commitment.
               </h1>
-              <div className="relative w-32 h-32 sm:w-40 sm:h-40 shrink-0">
-                <div className="absolute inset-0 rounded-full border-2 border-[#2a7d6e]/40 scale-110" aria-hidden="true" />
+              <div className="relative w-28 h-28 sm:w-40 sm:h-40 shrink-0">
                 <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-[#2a7d6e]/30">
                   <Image
                     src="/josh-headshot.jpg"
@@ -41,7 +40,7 @@ export default function Hero() {
                     fill
                     className="object-cover"
                     priority
-                    sizes="160px"
+                    sizes="(max-width: 639px) 112px, 160px"
                   />
                 </div>
               </div>
