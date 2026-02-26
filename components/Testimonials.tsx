@@ -119,7 +119,7 @@ export default function Testimonials() {
         </div>
 
         {/* Mobile: horizontal scroll snap */}
-        <div className="lg:hidden" role="region" aria-label="Testimonials">
+        <div className="lg:hidden overflow-x-clip" role="region" aria-label="Testimonials">
           <div
             ref={mobileScrollRef}
             onScroll={handleMobileScroll}
