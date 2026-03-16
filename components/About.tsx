@@ -17,44 +17,52 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" className="relative bg-[var(--cream)] py-16 lg:py-20 overflow-hidden">
-      {/* Subtle grid texture */}
-      <div className="absolute inset-0 opacity-[0.4]" aria-hidden="true"
+    <section id="about" className="relative bg-[var(--navy)] py-16 lg:py-20 overflow-hidden">
+      {/* Subtle dot texture — same family as Hero */}
+      <div className="absolute inset-0 opacity-[0.04]" aria-hidden="true"
         style={{
-          backgroundImage: `linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px)`,
-          backgroundSize: "48px 48px",
+          backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
+          backgroundSize: "32px 32px",
+        }}
+      />
+
+      {/* Warm gradient accent */}
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full opacity-[0.07]" aria-hidden="true"
+        style={{
+          background: "radial-gradient(circle, var(--teal) 0%, transparent 70%)",
+          transform: "translate(-30%, 30%)",
         }}
       />
 
       <div className="relative max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section label */}
         <div className="inline-flex items-center gap-2 mb-4">
-          <div className="w-8 h-px bg-[var(--teal)]" aria-hidden="true" />
-          <span className="text-xs font-semibold uppercase tracking-widest text-[#1f6356]">
+          <div className="w-8 h-px bg-[var(--teal-light)]" aria-hidden="true" />
+          <span className="text-xs font-semibold uppercase tracking-widest text-[var(--teal-light)]">
             Meet Josh
           </span>
         </div>
 
         {/* Headline */}
-        <h2 className="text-4xl lg:text-5xl font-bold font-serif text-[var(--navy)] leading-snug mb-10">
+        <h2 className="text-4xl lg:text-5xl font-bold font-serif text-white leading-snug mb-10">
           I&apos;m here to help people doing{" "}
-          <em className="not-italic text-[var(--teal)]">
+          <em className="not-italic text-[var(--teal-light)]">
             good work.
           </em>
         </h2>
 
         {/* Bio */}
-        <div className="text-[#4a5568] leading-relaxed text-lg max-w-3xl">
+        <div className="text-white/70 leading-relaxed text-lg max-w-3xl">
           {/* Paragraph 1 — always visible */}
           <p>
             I spent the early part of my career as a{" "}
-            <strong className="text-[var(--navy)]">
+            <strong className="text-white">
               first employee at multiple startups
             </strong>{" "}
             — building operations from scratch, navigating compliance, hiring
             teams, and figuring out what needed to exist so the company could
             grow.{" "}
-            <strong className="text-[var(--navy)]">
+            <strong className="text-white">
               Two of those companies were acquired
             </strong>
             , and each one taught me what it takes to build systems that actually
@@ -72,17 +80,17 @@ export default function About() {
             <p>
               In 2021, I started RightStart to bring that same energy to
               organizations doing work I believe in. I&apos;ve stepped in as an{" "}
-              <strong className="text-[var(--navy)]">
+              <strong className="text-white">
                 interim or fractional COO and CFO
               </strong>{" "}
               for nonprofits, health-focused organizations, and mission-driven
               ventures — including{" "}
-              <strong className="text-[var(--navy)]">
-                <a href="https://www.aiedu.org/" target="_blank" rel="noopener noreferrer" className="text-[var(--teal)] underline decoration-[var(--teal)]/40 hover:decoration-[var(--teal)] transition-colors">aiEDU</a>
+              <strong className="text-white">
+                <a href="https://www.aiedu.org/" target="_blank" rel="noopener noreferrer" className="text-[var(--teal-light)] underline decoration-[var(--teal-light)]/40 hover:decoration-[var(--teal-light)] transition-colors">aiEDU</a>
               </strong>
               , which brings AI literacy to students across the country, and{" "}
-              <strong className="text-[var(--navy)]">
-                <a href="https://designingjustice.org/" target="_blank" rel="noopener noreferrer" className="text-[var(--teal)] underline decoration-[var(--teal)]/40 hover:decoration-[var(--teal)] transition-colors">Designing Justice + Designing Spaces</a>
+              <strong className="text-white">
+                <a href="https://designingjustice.org/" target="_blank" rel="noopener noreferrer" className="text-[var(--teal-light)] underline decoration-[var(--teal-light)]/40 hover:decoration-[var(--teal-light)] transition-colors">Designing Justice + Designing Spaces</a>
               </strong>
               , which uses architecture and development to address the root causes
               of mass incarceration.
@@ -92,7 +100,7 @@ export default function About() {
 
             <p>
               What I love about this work is pretty simple:{" "}
-              <strong className="text-[var(--navy)] font-serif">
+              <strong className="text-white font-serif">
                 I get to make life easier for people doing important things.
               </strong>{" "}
               Whether that means untangling finances, building a hiring process, or
@@ -105,7 +113,7 @@ export default function About() {
           <button
             onClick={() => setExpanded(!expanded)}
             aria-expanded={expanded}
-            className="lg:hidden mt-5 inline-flex items-center gap-1.5 text-[var(--teal)] font-medium text-base hover:text-[#236b5e] transition-colors"
+            className="lg:hidden mt-5 inline-flex items-center gap-1.5 text-[var(--teal-light)] font-medium text-base hover:text-[var(--teal)] transition-colors"
           >
             {expanded ? "Read less" : "Read more"}
             <svg

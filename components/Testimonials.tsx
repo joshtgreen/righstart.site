@@ -131,7 +131,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="bg-[var(--warm-gray)] py-16 lg:py-20">
+    <section className="bg-white py-16 lg:py-20">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-10">
@@ -141,7 +141,7 @@ export default function Testimonials() {
               What People Say
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-[var(--navy)] leading-tight">
+          <h2 className="text-4xl lg:text-5xl font-bold font-serif text-[var(--navy)] leading-tight">
             From people I&apos;ve worked with.
           </h2>
         </div>
