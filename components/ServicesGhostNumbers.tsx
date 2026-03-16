@@ -10,7 +10,7 @@ export default function ServicesGhostNumbers() {
       ),
       title: "Interim/Fractional Executive",
       tagline: "Embedded COO or CFO leadership — without the full-time overhead.",
-      detail: "10–20 hrs/week · 3–12 month engagements",
+      detail: "10–30 hrs/week · 3–12 month engagements",
     },
     {
       icon: (
