@@ -8,9 +8,12 @@ export default function About() {
   const [contentHeight, setContentHeight] = useState(0);
 
   useEffect(() => {
-    if (contentRef.current) {
-      setContentHeight(contentRef.current.scrollHeight);
-    }
+    if (!contentRef.current) return;
+    const observer = new ResizeObserver(() => {
+      setContentHeight(contentRef.current?.scrollHeight ?? 0);
+    });
+    observer.observe(contentRef.current);
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -77,12 +80,11 @@ export default function About() {
               of mass incarceration.
             </p>
 
-            {/* Spacer */}
             <div className="my-6" />
 
             <p>
               What I love about this work is pretty simple:{" "}
-              <strong className="text-[var(--navy)]">
+              <strong className="text-[var(--navy)] font-serif">
                 I get to make life easier for people doing important things.
               </strong>{" "}
               Whether that means untangling finances, building a hiring process, or

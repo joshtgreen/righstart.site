@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useCallback } from "react";
 import Image from "next/image";
 
 type QuoteSegment = string | { text: string; highlight: true };
@@ -80,7 +80,7 @@ function getInitials(name: string) {
     .slice(0, 2);
 }
 
-function TestimonialCard({ t, className = "" }: { t: typeof testimonials[number]; className?: string }) {
+function TestimonialCard({ t, eager = false, className = "" }: { t: typeof testimonials[number]; eager?: boolean; className?: string }) {
   return (
     <div className={`flex flex-col bg-white rounded-2xl border border-[var(--border)] border-t-[3px] border-t-[var(--teal)] p-7 lg:p-8 shadow-sm h-full ${className}`}>
       <div className="text-4xl leading-none text-[var(--teal-light)] font-serif mb-3 select-none" aria-hidden="true">&ldquo;</div>
@@ -88,7 +88,7 @@ function TestimonialCard({ t, className = "" }: { t: typeof testimonials[number]
       <div className="border-t border-[var(--border)] mt-5 pt-5 flex items-center gap-4">
         {t.photo ? (
           <div className="flex-shrink-0 w-14 h-14 rounded-full overflow-hidden ring-2 ring-[var(--border)]">
-            <Image src={t.photo} alt={t.name} width={56} height={56} loading="eager" className="object-cover w-full h-full" />
+            <Image src={t.photo} alt={t.name} width={56} height={56} loading={eager ? "eager" : "lazy"} className="object-cover w-full h-full" />
           </div>
         ) : (
           <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[var(--navy)] flex items-center justify-center ring-2 ring-[var(--border)]">
@@ -96,7 +96,7 @@ function TestimonialCard({ t, className = "" }: { t: typeof testimonials[number]
           </div>
         )}
         <div>
-          <div className="text-base font-bold text-[var(--navy)]">{t.name}</div>
+          <div className="text-base font-semibold font-serif text-[var(--navy)]">{t.name}</div>
           <div className="text-sm text-[#718096] mt-0.5">
             {t.title} ·{" "}
             <a href={t.orgUrl} target="_blank" rel="noopener noreferrer"
@@ -114,16 +114,24 @@ export default function Testimonials() {
   const mobileScrollRef = useRef<HTMLDivElement>(null);
   const [mobileActive, setMobileActive] = useState(0);
 
-  function handleMobileScroll() {
+  const handleMobileScroll = useCallback(() => {
     const el = mobileScrollRef.current;
     if (!el) return;
     const maxScroll = el.scrollWidth - el.offsetWidth;
+    if (maxScroll === 0) return;
     const index = Math.round((el.scrollLeft / maxScroll) * (testimonials.length - 1));
     setMobileActive(Math.max(0, Math.min(index, testimonials.length - 1)));
-  }
+  }, []);
+
+  const scrollToMobile = useCallback((index: number) => {
+    const el = mobileScrollRef.current;
+    if (!el) return;
+    const maxScroll = el.scrollWidth - el.offsetWidth;
+    el.scrollTo({ left: (index / (testimonials.length - 1)) * maxScroll, behavior: "smooth" });
+  }, []);
 
   return (
-    <section className="bg-white py-16 lg:py-20">
+    <section className="bg-[var(--warm-gray)] py-16 lg:py-20">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-10">
@@ -147,17 +155,18 @@ export default function Testimonials() {
           >
             {testimonials.map((t, i) => (
               <div key={i} className="snap-center flex-shrink-0 w-[85vw]">
-                <TestimonialCard t={t} className="shadow-lg" />
+                <TestimonialCard t={t} eager={i === 0} className="shadow-lg" />
               </div>
             ))}
           </div>
-          <div className="flex justify-center gap-2 mt-4" role="tablist" aria-label="Testimonial indicators">
+          <div className="flex justify-center gap-2.5 mt-4" role="tablist" aria-label="Testimonial indicators">
             {testimonials.map((t, i) => (
-              <div
+              <button
                 key={i}
                 role="tab"
                 aria-selected={i === mobileActive}
                 aria-label={`Testimonial from ${t.name}`}
+                onClick={() => scrollToMobile(i)}
                 className={`w-2 h-2 rounded-full transition-colors ${
                   i === mobileActive ? "bg-[var(--teal)]" : "bg-[var(--border)]"
                 }`}
@@ -169,7 +178,7 @@ export default function Testimonials() {
         {/* Desktop: all 3 visible */}
         <div className="hidden lg:grid lg:grid-cols-3 gap-6" role="region" aria-label="Testimonials">
           {testimonials.map((t, i) => (
-            <TestimonialCard key={i} t={t} />
+            <TestimonialCard key={i} t={t} eager={i === 0} />
           ))}
         </div>
       </div>

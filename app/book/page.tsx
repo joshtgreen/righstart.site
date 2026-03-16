@@ -15,7 +15,7 @@ export default function BookPage() {
       <Nav />
       <main id="main-content">
         {/* Hero strip */}
-        <section className="bg-[#1a2744] pt-32 pb-20 px-6 lg:px-8">
+        <section className="bg-[var(--navy)] pt-32 pb-20 px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">
               Let&apos;s Talk
@@ -32,19 +32,19 @@ export default function BookPage() {
               Not sure this is the right step? No pressure — feel free to{" "}
               <a
                 href="mailto:josh@rightstart.co?subject=Let's%20Chat"
-                className="text-[#3dbda5] hover:text-[#2a7d6e] underline underline-offset-2 transition-colors"
+                className="text-[var(--teal-light)] hover:text-[var(--teal)] underline underline-offset-2 transition-colors"
               >
                 reach out
               </a>{" "}
               with a quick note instead.
             </p>
 
-            <p className="mt-3 text-sm text-[#3dbda5]">josh@rightstart.co</p>
+            <p className="mt-3 text-sm text-[var(--teal-light)]">josh@rightstart.co</p>
           </div>
         </section>
 
         {/* Scheduling embed */}
-        <section className="bg-[#eef0f2] py-16 px-6 lg:px-8">
+        <section className="bg-[var(--warm-gray)] py-16 px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <ReclaimEmbed />
           </div>

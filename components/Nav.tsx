@@ -16,7 +16,6 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close on Escape and return focus to toggle
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === "Escape" && menuOpen) {
@@ -32,7 +31,6 @@ export default function Nav() {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [handleKeyDown]);
 
-  // Move focus into menu when it opens
   useEffect(() => {
     if (menuOpen) {
       const firstLink = menuRef.current?.querySelector("a");
@@ -50,14 +48,12 @@ export default function Nav() {
     >
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo / Wordmark */}
           <Link
             href="/"
             className="flex items-center group"
             aria-label="Rightstart home"
           >
             <div className="relative h-8 w-36">
-              {/* White logo — shown on dark/transparent nav */}
               <Image
                 src="/logos/rightstart font white.png"
                 alt="Rightstart"
@@ -67,7 +63,6 @@ export default function Nav() {
                 }`}
                 priority
               />
-              {/* Dark logo — shown when nav is scrolled/light */}
               <Image
                 src="/logos/rightstart.png"
                 alt="Rightstart"
@@ -80,7 +75,7 @@ export default function Nav() {
             </div>
           </Link>
 
-          {/* Desktop nav links */}
+          {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">
             {["About", "Services", "Contact"].map((item) => (
               <a
@@ -101,11 +96,11 @@ export default function Nav() {
                 scrolled ? "text-[var(--navy)]" : "text-white/90"
               }`}
             >
-              Projects
+              Benchmarking Tool
             </a>
             <a
               href="/book"
-              className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-semibold bg-[var(--teal)] text-white hover:bg-[#236b5e] transition-colors"
+              className="inline-flex items-center px-6 py-3 rounded-full text-sm font-semibold bg-[var(--teal)] text-white hover:bg-[#236b5e] transition-colors"
             >
               Book a Call
             </a>
@@ -163,11 +158,11 @@ export default function Nav() {
             onClick={() => setMenuOpen(false)}
             className="text-sm font-medium text-[var(--navy)] py-1"
           >
-            Projects
+            Benchmarking Tool
           </a>
           <a
             href="/book"
-            className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold bg-[var(--teal)] text-white hover:bg-[#236b5e] transition-colors"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-semibold bg-[var(--teal)] text-white hover:bg-[#236b5e] transition-colors"
           >
             Book a Call
           </a>

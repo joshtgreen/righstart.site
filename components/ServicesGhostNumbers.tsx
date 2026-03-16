@@ -10,6 +10,7 @@ export default function ServicesGhostNumbers() {
       ),
       title: "Interim/Fractional Executive",
       tagline: "Embedded COO or CFO leadership — without the full-time overhead.",
+      detail: "10–20 hrs/week · 3–12 month engagements",
     },
     {
       icon: (
@@ -20,7 +21,8 @@ export default function ServicesGhostNumbers() {
         </svg>
       ),
       title: "Project-Based Consulting",
-      tagline: "Short-term support for complex, high-stakes initiatives.",
+      tagline: "Scoped help for a specific challenge — compliance, hiring, launch readiness.",
+      detail: "Defined scope · Typically 1–4 months",
     },
     {
       icon: (
@@ -31,7 +33,8 @@ export default function ServicesGhostNumbers() {
         </svg>
       ),
       title: "Advising",
-      tagline: "Ongoing support, honest feedback, and clarity-focused guidance.",
+      tagline: "A sharp, honest thought partner on an ongoing basis via regular calls.",
+      detail: "2–4 hrs/month · Ongoing",
     },
     {
       icon: (
@@ -43,11 +46,12 @@ export default function ServicesGhostNumbers() {
       ),
       title: "Open Office Hours",
       tagline: "Free, no-pitch calls to jam, troubleshoot, or think out loud.",
+      detail: "Free · No commitment",
     },
   ];
 
   return (
-    <section id="services" className="bg-[var(--warm-gray)] py-16 lg:py-20">
+    <section id="services" className="bg-white py-16 lg:py-20">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-10">
@@ -68,11 +72,11 @@ export default function ServicesGhostNumbers() {
         </div>
 
         {/* Card grid */}
-        <div className="grid sm:grid-cols-2 gap-5">
+        <div className="grid sm:grid-cols-2 gap-6">
           {services.map((s) => (
             <div
               key={s.title}
-              className="bg-white rounded-2xl border border-[var(--border)] p-7 lg:p-8"
+              className="bg-[var(--cream)] rounded-2xl border border-[var(--border)] p-7 lg:p-8"
             >
               <div className="flex items-start gap-4">
                 <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-[var(--teal)]/10 text-[var(--teal)] shrink-0 mt-0.5">
@@ -84,6 +88,9 @@ export default function ServicesGhostNumbers() {
                   </h3>
                   <p className="text-sm text-[#4a5568] mt-1">
                     {s.tagline}
+                  </p>
+                  <p className="text-xs font-medium text-[var(--teal)] mt-2">
+                    {s.detail}
                   </p>
                 </div>
               </div>

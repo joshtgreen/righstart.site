@@ -1,8 +1,9 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import Testimonials from "@/components/Testimonials";
 import About from "@/components/About";
 import ServicesGhostNumbers from "@/components/ServicesGhostNumbers";
-import Testimonials from "@/components/Testimonials";
+import MidCTA from "@/components/MidCTA";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -20,6 +21,7 @@ const jsonLd = {
       serviceType: [
         "Fractional COO",
         "Fractional CFO",
+        "Interim Executive Leadership",
         "Operations Consulting",
         "Strategic Advisory",
       ],
@@ -30,6 +32,8 @@ const jsonLd = {
       name: "Josh Green",
       jobTitle: "Fractional COO/CFO and Advisor",
       url: "https://rightstart.co",
+      image: "https://rightstart.co/josh-headshot.jpg",
+      email: "josh@rightstart.co",
       sameAs: ["https://www.linkedin.com/in/joshuatgreen/"],
       worksFor: {
         "@type": "Organization",
@@ -40,6 +44,7 @@ const jsonLd = {
         "Financial Management",
         "Nonprofit Leadership",
         "Startup Operations",
+        "Strategic Planning",
       ],
     },
   ],
@@ -55,9 +60,10 @@ export default function Home() {
       <Nav />
       <main id="main-content">
         <Hero />
+        <Testimonials />
         <About />
         <ServicesGhostNumbers />
-        <Testimonials />
+        <MidCTA />
         <CTA />
       </main>
       <Footer />

@@ -35,7 +35,7 @@ export default function Hero() {
               <div className="relative w-24 h-24 min-[375px]:w-28 min-[375px]:h-28 sm:w-40 sm:h-40 shrink-0">
                 <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-inset ring-[var(--teal)]/30">
                   <Image
-                    src="/josh-headshot.jpg"
+                    src="/josh-headshot.webp"
                     alt="Josh Green"
                     fill
                     className="object-cover"
@@ -55,10 +55,10 @@ export default function Hero() {
               without the full-time commitment.
             </h1>
 
-            <p className="text-lg lg:text-xl text-white/70 leading-relaxed max-w-lg mb-10">
+            <p className="text-lg lg:text-xl text-white/70 leading-relaxed max-w-lg mb-10 font-serif">
               I support mission-driven organizations when they
               need senior leadership without a full-time hire. I step in as{" "}
-              <span className="text-[var(--teal-light)] font-medium">
+              <span className="text-[var(--teal-light)] font-medium font-sans">
                 fractional/interim COO or CFO
               </span>
               , project lead, or trusted advisor.
@@ -90,7 +90,7 @@ export default function Hero() {
               {/* Photo */}
               <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-[var(--teal)]/30">
                 <Image
-                  src="/josh-headshot.jpg"
+                  src="/josh-headshot.webp"
                   alt="Josh Green, Fractional COO and Strategic Advisor at RightStart"
                   fill
                   className="object-cover"
