@@ -1,22 +1,22 @@
 export default function CTA() {
   return (
-    <section id="contact" className="bg-[var(--navy)] py-16 lg:py-20">
+    <section id="contact" className="bg-white py-16 lg:py-20">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left: text */}
           <div>
             <div className="inline-flex items-center gap-2 mb-4">
-              <div className="w-8 h-px bg-[var(--teal-light)]" aria-hidden="true" />
-              <span className="text-xs font-semibold uppercase tracking-widest text-[var(--teal-light)]">
+              <div className="w-8 h-px bg-[var(--teal)]" aria-hidden="true" />
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#1f6356]">
                 Get in Touch
               </span>
             </div>
 
-            <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+            <h2 className="text-4xl lg:text-5xl font-bold font-serif text-[var(--navy)] leading-tight mb-4">
               Ready to talk?
             </h2>
 
-            <p className="text-lg text-white/70 leading-relaxed mb-6">
+            <p className="text-lg text-[#4a5568] leading-relaxed mb-6">
               If you&apos;re building something ambitious and need clarity,
               structure, or a trusted partner — I&apos;d love to connect.
               Based in San Francisco, working with founders across the country.
@@ -31,7 +31,7 @@ export default function CTA() {
           </div>
 
           {/* Right: contact card */}
-          <div className="bg-white/5 border border-white/15 rounded-2xl p-8 lg:p-10 backdrop-blur-sm">
+          <div className="bg-[var(--navy)] rounded-2xl p-8 lg:p-10">
             <h3 className="text-white font-semibold text-lg mb-6">
               Other ways to connect
             </h3>
