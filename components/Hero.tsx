@@ -35,7 +35,7 @@ export default function Hero() {
               <div className="relative w-24 h-24 min-[375px]:w-28 min-[375px]:h-28 sm:w-40 sm:h-40 shrink-0">
                 <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-inset ring-[var(--teal)]/30">
                   <Image
-                    src="/josh-headshot.webp"
+                    src="/josh-headshot.jpg"
                     alt="Josh Green"
                     fill
                     className="object-cover"
@@ -90,7 +90,7 @@ export default function Hero() {
               {/* Photo */}
               <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-[var(--teal)]/30">
                 <Image
-                  src="/josh-headshot.webp"
+                  src="/josh-headshot.jpg"
                   alt="Josh Green, Fractional COO and Strategic Advisor at RightStart"
                   fill
                   className="object-cover"
