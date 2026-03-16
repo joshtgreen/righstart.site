@@ -51,20 +51,24 @@ export default function ServicesGhostNumbers() {
   ];
 
   return (
-    <section id="services" className="bg-white py-16 lg:py-20">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
+    <section id="services" className="relative bg-[var(--navy)] py-16 lg:py-20 overflow-hidden">
+      {/* Teal radial glow */}
+      <div className="absolute top-[-20%] right-[-10%] w-[60%] h-[70%] rounded-full bg-[var(--teal)]/5 blur-3xl" aria-hidden="true" />
+      <div className="absolute bottom-[-10%] left-[-5%] w-[40%] h-[50%] rounded-full bg-[var(--teal)]/3 blur-3xl" aria-hidden="true" />
+
+      <div className="relative max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-10">
           <div className="inline-flex items-center gap-2 mb-4">
-            <div className="w-8 h-px bg-[var(--teal)]" aria-hidden="true" />
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#1f6356]">
+            <div className="w-8 h-px bg-[var(--teal-light)]" aria-hidden="true" />
+            <span className="text-xs font-semibold uppercase tracking-widest text-[var(--teal-light)]">
               How I Can Help
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-[var(--navy)] leading-tight">
+          <h2 className="text-4xl lg:text-5xl font-bold font-serif text-white leading-tight">
             The right support, for where you are.
           </h2>
-          <p className="mt-4 text-lg text-[#4a5568] leading-relaxed max-w-2xl">
+          <p className="mt-4 text-lg text-white/60 leading-relaxed max-w-2xl">
             Whether you need embedded executive leadership, help getting a
             complex initiative across the finish line, or just someone to think
             with — there&apos;s a way to work together.
@@ -76,20 +80,20 @@ export default function ServicesGhostNumbers() {
           {services.map((s) => (
             <div
               key={s.title}
-              className="bg-[var(--cream)] rounded-2xl border border-[var(--border)] p-7 lg:p-8"
+              className="bg-white/[0.06] backdrop-blur-sm rounded-2xl border border-white/10 border-l-[3px] border-l-[var(--teal)] p-7 lg:p-8"
             >
               <div className="flex items-start gap-4">
-                <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-[var(--teal)]/10 text-[var(--teal)] shrink-0 mt-0.5">
+                <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-[var(--teal)]/15 text-[var(--teal-light)] shrink-0 mt-0.5">
                   {s.icon}
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-[var(--navy)] leading-snug">
+                  <h3 className="text-lg font-bold text-white leading-snug">
                     {s.title}
                   </h3>
-                  <p className="text-sm text-[#4a5568] mt-1">
+                  <p className="text-sm text-white/60 mt-1">
                     {s.tagline}
                   </p>
-                  <p className="text-xs font-medium text-[var(--teal)] mt-2">
+                  <p className="text-xs font-medium text-[var(--teal-light)] mt-2">
                     {s.detail}
                   </p>
                 </div>

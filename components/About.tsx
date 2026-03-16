@@ -17,8 +17,16 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" className="bg-white py-16 lg:py-20">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
+    <section id="about" className="relative bg-[var(--cream)] py-16 lg:py-20 overflow-hidden">
+      {/* Subtle grid texture */}
+      <div className="absolute inset-0 opacity-[0.4]" aria-hidden="true"
+        style={{
+          backgroundImage: `linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px)`,
+          backgroundSize: "48px 48px",
+        }}
+      />
+
+      <div className="relative max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section label */}
         <div className="inline-flex items-center gap-2 mb-4">
           <div className="w-8 h-px bg-[var(--teal)]" aria-hidden="true" />
@@ -28,15 +36,15 @@ export default function About() {
         </div>
 
         {/* Headline */}
-        <h2 className="text-4xl lg:text-5xl font-bold text-[var(--navy)] leading-snug mb-10">
+        <h2 className="text-4xl lg:text-5xl font-bold font-serif text-[var(--navy)] leading-snug mb-10">
           I&apos;m here to help people doing{" "}
-          <em className="font-serif font-semibold not-italic tracking-tight text-[var(--teal)]">
+          <em className="not-italic text-[var(--teal)]">
             good work.
           </em>
         </h2>
 
         {/* Bio */}
-        <div className="text-[#4a5568] leading-relaxed text-lg">
+        <div className="text-[#4a5568] leading-relaxed text-lg max-w-3xl">
           {/* Paragraph 1 — always visible */}
           <p>
             I spent the early part of my career as a{" "}
