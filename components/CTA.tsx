@@ -31,7 +31,7 @@ export default function CTA() {
           </div>
 
           {/* Right: contact card */}
-          <div className="bg-[var(--navy)] rounded-2xl p-8 lg:p-10">
+          <div className="bg-[var(--navy)] rounded-2xl p-8 lg:p-10 shadow-lg">
             <h3 className="text-white font-semibold text-lg mb-6">
               Other ways to connect
             </h3>

@@ -87,7 +87,7 @@ export default function ServicesGhostNumbers() {
               className="bg-white rounded-2xl border border-[var(--border)] border-l-[3px] border-l-[var(--teal)] p-7 lg:p-8 shadow-sm"
             >
               <div className="flex items-start gap-4">
-                <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-[var(--teal)]/10 text-[var(--teal)] shrink-0 mt-0.5">
+                <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-[var(--teal)]/15 text-[var(--teal)] shrink-0 mt-0.5">
                   {s.icon}
                 </div>
                 <div>
