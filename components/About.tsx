@@ -1,25 +1,33 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export default function About() {
   const [expanded, setExpanded] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [contentHeight, setContentHeight] = useState(0);
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setContentHeight(contentRef.current.scrollHeight);
+    }
+  }, []);
 
   return (
     <section id="about" className="bg-white py-16 lg:py-20">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section label */}
         <div className="inline-flex items-center gap-2 mb-4">
-          <div className="w-8 h-px bg-[#2a7d6e]" aria-hidden="true" />
+          <div className="w-8 h-px bg-[var(--teal)]" aria-hidden="true" />
           <span className="text-xs font-semibold uppercase tracking-widest text-[#1f6356]">
             Meet Josh
           </span>
         </div>
 
         {/* Headline */}
-        <h2 className="text-4xl lg:text-5xl font-bold text-[#1a2744] leading-snug mb-10">
+        <h2 className="text-4xl lg:text-5xl font-bold text-[var(--navy)] leading-snug mb-10">
           I&apos;m here to help people doing{" "}
-          <em className="font-serif font-semibold not-italic tracking-tight text-[#2a7d6e]">
+          <em className="font-serif font-semibold not-italic tracking-tight text-[var(--teal)]">
             good work.
           </em>
         </h2>
@@ -29,38 +37,41 @@ export default function About() {
           {/* Paragraph 1 — always visible */}
           <p>
             I spent the early part of my career as a{" "}
-            <strong className="text-[#1a2744]">
+            <strong className="text-[var(--navy)]">
               first employee at multiple startups
             </strong>{" "}
             — building operations from scratch, navigating compliance, hiring
             teams, and figuring out what needed to exist so the company could
             grow.{" "}
-            <strong className="text-[#1a2744]">
+            <strong className="text-[var(--navy)]">
               Two of those companies were acquired
             </strong>
             , and each one taught me what it takes to build systems that actually
             work when the stakes are high and the resources are limited.
           </p>
 
-          {/* Spacer between paragraphs */}
-          <div className={`my-6 ${expanded ? "block" : "hidden lg:block"}`} />
+          {/* Collapsible content — animated on mobile, always visible on desktop */}
+          <div
+            ref={contentRef}
+            className="lg:!max-h-none overflow-hidden transition-[max-height] duration-500 ease-in-out"
+            style={{ maxHeight: expanded ? `${contentHeight}px` : "0px" }}
+          >
+            <div className="mt-6" />
 
-          {/* Paragraphs 2 & 3 — hidden on mobile until expanded, always visible on desktop */}
-          <div className={`${expanded ? "block" : "hidden lg:block"}`}>
             <p>
               In 2021, I started RightStart to bring that same energy to
               organizations doing work I believe in. I&apos;ve stepped in as an{" "}
-              <strong className="text-[#1a2744]">
+              <strong className="text-[var(--navy)]">
                 interim or fractional COO and CFO
               </strong>{" "}
               for nonprofits, health-focused organizations, and mission-driven
               ventures — including{" "}
-              <strong className="text-[#1a2744]">
-                <a href="https://www.aiedu.org/" target="_blank" rel="noopener noreferrer" className="text-[#2a7d6e] underline decoration-[#2a7d6e]/40 hover:decoration-[#2a7d6e] transition-colors">aiEDU</a>
+              <strong className="text-[var(--navy)]">
+                <a href="https://www.aiedu.org/" target="_blank" rel="noopener noreferrer" className="text-[var(--teal)] underline decoration-[var(--teal)]/40 hover:decoration-[var(--teal)] transition-colors">aiEDU</a>
               </strong>
               , which brings AI literacy to students across the country, and{" "}
-              <strong className="text-[#1a2744]">
-                <a href="https://designingjustice.org/" target="_blank" rel="noopener noreferrer" className="text-[#2a7d6e] underline decoration-[#2a7d6e]/40 hover:decoration-[#2a7d6e] transition-colors">Designing Justice + Designing Spaces</a>
+              <strong className="text-[var(--navy)]">
+                <a href="https://designingjustice.org/" target="_blank" rel="noopener noreferrer" className="text-[var(--teal)] underline decoration-[var(--teal)]/40 hover:decoration-[var(--teal)] transition-colors">Designing Justice + Designing Spaces</a>
               </strong>
               , which uses architecture and development to address the root causes
               of mass incarceration.
@@ -71,7 +82,7 @@ export default function About() {
 
             <p>
               What I love about this work is pretty simple:{" "}
-              <strong className="text-[#1a2744]">
+              <strong className="text-[var(--navy)]">
                 I get to make life easier for people doing important things.
               </strong>{" "}
               Whether that means untangling finances, building a hiring process, or
@@ -84,11 +95,11 @@ export default function About() {
           <button
             onClick={() => setExpanded(!expanded)}
             aria-expanded={expanded}
-            className="lg:hidden mt-5 inline-flex items-center gap-1.5 text-[#2a7d6e] font-medium text-base hover:text-[#236b5e] transition-colors"
+            className="lg:hidden mt-5 inline-flex items-center gap-1.5 text-[var(--teal)] font-medium text-base hover:text-[#236b5e] transition-colors"
           >
             {expanded ? "Read less" : "Read more"}
             <svg
-              className={`w-4 h-4 transition-transform ${expanded ? "rotate-180" : ""}`}
+              className={`w-4 h-4 transition-transform duration-300 ${expanded ? "rotate-180" : ""}`}
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"

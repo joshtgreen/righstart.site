@@ -46,7 +46,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-6 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-white/50">
-          <span>© {year} Josh Green · All rights reserved</span>
+          <span>&copy; {year} Josh Green · All rights reserved</span>
           <span>San Francisco, CA</span>
         </div>
       </div>

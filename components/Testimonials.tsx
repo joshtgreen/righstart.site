@@ -63,7 +63,7 @@ function renderQuote(segments: QuoteSegment[]) {
     typeof seg === "string" ? (
       <span key={i}>{seg}</span>
     ) : (
-      <span key={i} className="font-semibold text-[#1a2744]">
+      <span key={i} className="font-semibold text-[var(--navy)]">
         {seg.text}
       </span>
     )
@@ -80,9 +80,37 @@ function getInitials(name: string) {
     .slice(0, 2);
 }
 
-export default function Testimonials() {
-  const [active, setActive] = useState(0);
+function TestimonialCard({ t, className = "" }: { t: typeof testimonials[number]; className?: string }) {
+  return (
+    <div className={`flex flex-col bg-white rounded-2xl border border-[var(--border)] border-t-[3px] border-t-[var(--teal)] p-7 lg:p-8 shadow-sm h-full ${className}`}>
+      <div className="text-4xl leading-none text-[var(--teal-light)] font-serif mb-3 select-none" aria-hidden="true">&ldquo;</div>
+      <blockquote className="flex-1 text-sm text-[#4a5568] leading-relaxed">{renderQuote(t.quote)}</blockquote>
+      <div className="border-t border-[var(--border)] mt-5 pt-5 flex items-center gap-4">
+        {t.photo ? (
+          <div className="flex-shrink-0 w-14 h-14 rounded-full overflow-hidden ring-2 ring-[var(--border)]">
+            <Image src={t.photo} alt={t.name} width={56} height={56} loading="eager" className="object-cover w-full h-full" />
+          </div>
+        ) : (
+          <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[var(--navy)] flex items-center justify-center ring-2 ring-[var(--border)]">
+            <span className="text-white text-lg font-bold">{getInitials(t.name)}</span>
+          </div>
+        )}
+        <div>
+          <div className="text-base font-bold text-[var(--navy)]">{t.name}</div>
+          <div className="text-sm text-[#718096] mt-0.5">
+            {t.title} ·{" "}
+            <a href={t.orgUrl} target="_blank" rel="noopener noreferrer"
+              className="text-[var(--teal)] font-medium underline underline-offset-2 decoration-[var(--teal)]/40 hover:decoration-[var(--teal)] transition-colors">
+              {t.org}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
+export default function Testimonials() {
   const mobileScrollRef = useRef<HTMLDivElement>(null);
   const [mobileActive, setMobileActive] = useState(0);
 
@@ -94,26 +122,18 @@ export default function Testimonials() {
     setMobileActive(Math.max(0, Math.min(index, testimonials.length - 1)));
   }
 
-  function prev() {
-    setActive((a) => (a - 1 + testimonials.length) % testimonials.length);
-  }
-
-  function next() {
-    setActive((a) => (a + 1) % testimonials.length);
-  }
-
   return (
     <section className="bg-white py-16 lg:py-20">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-10">
           <div className="inline-flex items-center gap-2 mb-4">
-            <div className="w-8 h-px bg-[#2a7d6e]" aria-hidden="true" />
+            <div className="w-8 h-px bg-[var(--teal)]" aria-hidden="true" />
             <span className="text-xs font-semibold uppercase tracking-widest text-[#1f6356]">
               What People Say
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-[#1a2744] leading-tight">
+          <h2 className="text-4xl lg:text-5xl font-bold text-[var(--navy)] leading-tight">
             From people I&apos;ve worked with.
           </h2>
         </div>
@@ -127,31 +147,7 @@ export default function Testimonials() {
           >
             {testimonials.map((t, i) => (
               <div key={i} className="snap-center flex-shrink-0 w-[85vw]">
-                <div className="flex flex-col bg-white rounded-2xl border border-[#e5e2dc] border-t-[3px] border-t-[#2a7d6e] p-8 shadow-lg h-full">
-                  <div className="text-5xl leading-none text-[#3dbda5] font-serif mb-3 select-none" aria-hidden="true">&ldquo;</div>
-                  <blockquote className="flex-1 text-base text-[#4a5568] leading-relaxed">{renderQuote(t.quote)}</blockquote>
-                  <div className="border-t border-[#e5e2dc] mt-5 pt-5 flex items-center gap-4">
-                    {t.photo ? (
-                      <div className="flex-shrink-0 w-14 h-14 rounded-full overflow-hidden ring-2 ring-[#e5e2dc]">
-                        <Image src={t.photo} alt={t.name} width={56} height={56} loading="eager" className="object-cover w-full h-full" />
-                      </div>
-                    ) : (
-                      <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[#1a2744] flex items-center justify-center ring-2 ring-[#e5e2dc]">
-                        <span className="text-white text-lg font-bold">{getInitials(t.name)}</span>
-                      </div>
-                    )}
-                    <div>
-                      <div className="text-base font-bold text-[#1a2744]">{t.name}</div>
-                      <div className="text-sm text-[#718096] mt-0.5">
-                        {t.title} ·{" "}
-                        <a href={t.orgUrl} target="_blank" rel="noopener noreferrer"
-                          className="text-[#2a7d6e] font-medium underline underline-offset-2 decoration-[#2a7d6e]/40 hover:decoration-[#2a7d6e] transition-colors">
-                          {t.org}
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <TestimonialCard t={t} className="shadow-lg" />
               </div>
             ))}
           </div>
@@ -163,118 +159,18 @@ export default function Testimonials() {
                 aria-selected={i === mobileActive}
                 aria-label={`Testimonial from ${t.name}`}
                 className={`w-2 h-2 rounded-full transition-colors ${
-                  i === mobileActive ? "bg-[#2a7d6e]" : "bg-[#e5e2dc]"
+                  i === mobileActive ? "bg-[var(--teal)]" : "bg-[var(--border)]"
                 }`}
               />
             ))}
           </div>
         </div>
 
-        {/* Desktop: arrow carousel */}
-        <div className="hidden lg:flex items-center gap-4 lg:gap-8" role="region" aria-label="Testimonials">
-          {/* Prev arrow */}
-          <button
-            onClick={prev}
-            aria-label="Previous testimonial"
-            className="flex-shrink-0 w-11 h-11 rounded-full border border-[#e5e2dc] bg-white hover:bg-[#eef0f2] transition-colors flex items-center justify-center text-[#1a2744]"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-
-          {/* Card stack — all cards rendered in the same grid cell so height
-              is always determined by the tallest card, never jumps */}
-          <div className="flex-1 max-w-3xl mx-auto">
-            <div className="grid" aria-live="polite">
-              {testimonials.map((t, i) => (
-                <div
-                  key={i}
-                  style={{ gridArea: "1 / 1" }}
-                  aria-hidden={i !== active}
-                  className={`flex flex-col bg-white rounded-2xl border border-[#e5e2dc] border-t-[3px] border-t-[#2a7d6e] p-8 lg:p-10 shadow-lg transition-opacity duration-300 ease-in-out ${
-                    i === active
-                      ? "opacity-100 pointer-events-auto"
-                      : "opacity-0 pointer-events-none"
-                  }`}
-                >
-                  {/* Decorative quote mark */}
-                  <div className="text-5xl leading-none text-[#3dbda5] font-serif mb-3 select-none" aria-hidden="true">
-                    &ldquo;
-                  </div>
-
-                  {/* Quote body */}
-                  <blockquote className="flex-1 text-sm lg:text-base text-[#4a5568] leading-relaxed">
-                    {renderQuote(t.quote)}
-                  </blockquote>
-
-                  {/* Attribution */}
-                  <div className="border-t border-[#e5e2dc] mt-5 pt-5 flex items-center gap-5">
-                    {/* Photo / avatar */}
-                    {t.photo ? (
-                      <div className="flex-shrink-0 w-20 h-20 rounded-full overflow-hidden ring-2 ring-[#e5e2dc]">
-                        <Image
-                          src={t.photo}
-                          alt={t.name}
-                          width={80}
-                          height={80}
-                          loading="eager"
-                          className="object-cover w-full h-full"
-                        />
-                      </div>
-                    ) : (
-                      <div className="flex-shrink-0 w-20 h-20 rounded-full bg-[#1a2744] flex items-center justify-center ring-2 ring-[#e5e2dc]">
-                        <span className="text-white text-xl font-bold">{getInitials(t.name)}</span>
-                      </div>
-                    )}
-
-                    {/* Name + role */}
-                    <div>
-                      <div className="text-xl font-bold text-[#1a2744]">{t.name}</div>
-                      <div className="text-base text-[#718096] mt-1">
-                        {t.title} ·{" "}
-                        <a
-                          href={t.orgUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[#2a7d6e] font-medium underline underline-offset-2 decoration-[#2a7d6e]/40 hover:decoration-[#2a7d6e] transition-colors"
-                        >
-                          {t.org}
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Dot indicators */}
-            <div className="flex justify-center gap-2 mt-6" role="tablist" aria-label="Choose testimonial">
-              {testimonials.map((t, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActive(i)}
-                  role="tab"
-                  aria-selected={i === active}
-                  aria-label={`Testimonial from ${t.name}`}
-                  className={`w-2 h-2 rounded-full transition-colors ${
-                    i === active ? "bg-[#2a7d6e]" : "bg-[#e5e2dc]"
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* Next arrow */}
-          <button
-            onClick={next}
-            aria-label="Next testimonial"
-            className="flex-shrink-0 w-11 h-11 rounded-full border border-[#e5e2dc] bg-white hover:bg-[#eef0f2] transition-colors flex items-center justify-center text-[#1a2744]"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+        {/* Desktop: all 3 visible */}
+        <div className="hidden lg:grid lg:grid-cols-3 gap-6" role="region" aria-label="Testimonials">
+          {testimonials.map((t, i) => (
+            <TestimonialCard key={i} t={t} />
+          ))}
         </div>
       </div>
     </section>
