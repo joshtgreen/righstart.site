@@ -1,8 +1,6 @@
 # Git Workflow
 
-Commit and push to the assigned session branch.
-After each push, rebase on the default branch (claude/redesign-business-website-aA9a2) so the next push stays mergeable.
-This is a low-stakes personal project where iteration speed is the priority.
-
-# currentDate
-Today's date is 2026-02-26.
+- **`main`** is the production branch. Vercel deploys the live site from `main`. Do not push directly to `main`.
+- **`test`** is the testing branch. Push work here first so Josh can preview on the Vercel preview deployment.
+- When work on `test` is approved, merge it into `main`.
+- This is a low-stakes personal project where iteration speed is the priority.
