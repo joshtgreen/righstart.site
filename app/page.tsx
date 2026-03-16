@@ -3,7 +3,6 @@ import Hero from "@/components/Hero";
 import Testimonials from "@/components/Testimonials";
 import About from "@/components/About";
 import ServicesGhostNumbers from "@/components/ServicesGhostNumbers";
-import MidCTA from "@/components/MidCTA";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -63,7 +62,6 @@ export default function Home() {
         <Testimonials />
         <About />
         <ServicesGhostNumbers />
-        <MidCTA />
         <CTA />
       </main>
       <Footer />
