@@ -131,11 +131,8 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="relative bg-white pt-16 lg:pt-20 pb-28 lg:pb-36">
-      {/* Gradient fade into next navy section */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 lg:h-32 bg-gradient-to-b from-transparent to-[var(--navy)]" aria-hidden="true" />
-
-      <div className="relative max-w-6xl mx-auto px-6 lg:px-8">
+    <section className="bg-white py-16 lg:py-20">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-10">
           <div className="inline-flex items-center gap-2 mb-4">
