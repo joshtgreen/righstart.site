@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
-import { Inter, Lora } from "next/font/google";
+import { DM_Sans, DM_Serif_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-inter",
+  weight: ["400", "500", "700"],
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
-const lora = Lora({
+const dmSerifDisplay = DM_Serif_Display({
   subsets: ["latin"],
-  weight: ["600"],
+  weight: ["400"],
   style: ["normal", "italic"],
-  variable: "--font-lora",
+  variable: "--font-dm-serif",
   display: "swap",
 });
 
@@ -50,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${lora.variable}`}>
+    <html lang="en" className={`${dmSans.variable} ${dmSerifDisplay.variable}`}>
       <body className="antialiased">
         <a href="#main-content" className="skip-to-content">
           Skip to content

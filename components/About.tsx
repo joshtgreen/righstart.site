@@ -18,21 +18,17 @@ export default function About() {
 
   return (
     <section id="about" className="relative bg-[var(--navy)] py-16 lg:py-20 overflow-hidden">
-      {/* Subtle dot texture — same family as Hero */}
-      <div className="absolute inset-0 opacity-[0.04]" aria-hidden="true"
+      {/* Subtle grid texture */}
+      <div className="absolute inset-0" aria-hidden="true"
         style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
-          backgroundSize: "32px 32px",
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)`,
+          backgroundSize: "48px 48px",
         }}
       />
 
-      {/* Warm gradient accent */}
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full opacity-[0.07]" aria-hidden="true"
-        style={{
-          background: "radial-gradient(circle, var(--teal) 0%, transparent 70%)",
-          transform: "translate(-30%, 30%)",
-        }}
-      />
+      {/* Blurred gradient orbs */}
+      <div className="pointer-events-none absolute bottom-[-30%] left-[-15%] w-[50%] h-[60%] rounded-full bg-[var(--teal)]/5 blur-3xl" aria-hidden="true" />
+      <div className="pointer-events-none absolute top-[-20%] right-[-10%] w-[40%] h-[50%] rounded-full bg-[var(--navy-light)]/30 blur-3xl" aria-hidden="true" />
 
       <div className="relative max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section label */}
@@ -100,7 +96,7 @@ export default function About() {
 
             <p>
               What I love about this work is pretty simple:{" "}
-              <strong className="text-white font-serif">
+              <strong className="text-white">
                 I get to make life easier for people doing important things.
               </strong>{" "}
               Whether that means untangling finances, building a hiring process, or

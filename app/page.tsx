@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import WaveDivider from "@/components/WaveDivider";
 import Testimonials from "@/components/Testimonials";
 import About from "@/components/About";
 import ServicesGhostNumbers from "@/components/ServicesGhostNumbers";
@@ -59,9 +60,13 @@ export default function Home() {
       <Nav />
       <main id="main-content">
         <Hero />
+        <WaveDivider direction="down" fillColor="var(--navy)" className="bg-white" />
         <Testimonials />
+        <WaveDivider direction="up" fillColor="var(--navy)" className="bg-white" />
         <About />
+        <WaveDivider direction="down" fillColor="var(--navy)" className="bg-[var(--cream)]" />
         <ServicesGhostNumbers />
+        <WaveDivider direction="up" fillColor="var(--navy)" className="bg-[var(--cream)]" />
         <CTA />
       </main>
       <Footer />

@@ -1,8 +1,9 @@
 export default function CTA() {
   return (
     <section id="contact" className="relative bg-[var(--navy)] py-16 lg:py-20 overflow-hidden">
-      {/* Teal radial glow */}
-      <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[60%] rounded-full bg-[var(--teal)]/5 blur-3xl" aria-hidden="true" />
+      {/* Blurred gradient orbs */}
+      <div className="pointer-events-none absolute top-[-20%] left-[-10%] w-[50%] h-[60%] rounded-full bg-[var(--teal)]/5 blur-3xl" aria-hidden="true" />
+      <div className="pointer-events-none absolute bottom-[-20%] right-[-10%] w-[40%] h-[50%] rounded-full bg-[var(--navy-light)]/30 blur-3xl" aria-hidden="true" />
 
       <div className="relative max-w-6xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">

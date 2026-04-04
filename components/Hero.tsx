@@ -3,21 +3,17 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center bg-[var(--navy)] overflow-hidden">
-      {/* Subtle texture overlay */}
-      <div className="absolute inset-0 opacity-[0.04]" aria-hidden="true"
+      {/* Subtle grid texture */}
+      <div className="absolute inset-0" aria-hidden="true"
         style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
-          backgroundSize: "32px 32px",
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)`,
+          backgroundSize: "48px 48px",
         }}
       />
 
-      {/* Warm gradient accent */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-10" aria-hidden="true"
-        style={{
-          background: "radial-gradient(circle, var(--teal) 0%, transparent 70%)",
-          transform: "translate(20%, -20%)",
-        }}
-      />
+      {/* Blurred gradient orb */}
+      <div className="pointer-events-none absolute top-[-20%] right-[-10%] w-[60%] h-[70%] rounded-full bg-[var(--teal)]/5 blur-3xl" aria-hidden="true" />
+      <div className="pointer-events-none absolute bottom-[-30%] left-[-15%] w-[50%] h-[60%] rounded-full bg-[var(--navy-light)]/30 blur-3xl" aria-hidden="true" />
 
       <div className="relative max-w-6xl mx-auto px-6 lg:px-8 pt-24 pb-20 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -25,12 +21,12 @@ export default function Hero() {
           <div>
             {/* Mobile: headline + photo side by side */}
             <div className="lg:hidden flex items-center gap-6 mb-6">
-              <h1 className="text-4xl sm:text-5xl font-bold text-white leading-[1.08] tracking-tight flex-1 min-w-0">
+              <h1 className="text-4xl sm:text-5xl font-bold font-serif text-white leading-[1.08] tracking-tight flex-1 min-w-0">
                 Senior
                 <br />
                 <span className="text-[var(--teal-light)]">leadership,</span>
                 <br />
-                without the full-time commitment.
+                without the <span className="whitespace-nowrap">full-time</span> commitment.
               </h1>
               <div className="relative w-24 h-24 min-[375px]:w-28 min-[375px]:h-28 sm:w-40 sm:h-40 shrink-0">
                 <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-inset ring-[var(--teal)]/30">
@@ -47,15 +43,15 @@ export default function Hero() {
             </div>
 
             {/* Desktop headline */}
-            <h1 className="hidden lg:block text-6xl xl:text-7xl font-bold text-white leading-[1.08] tracking-tight mb-6">
+            <h1 className="hidden lg:block text-6xl xl:text-7xl font-bold font-serif text-white leading-[1.08] tracking-tight mb-6">
               Senior
               <br />
               <span className="text-[var(--teal-light)]">leadership,</span>
               <br />
-              without the full-time commitment.
+              without the <span className="whitespace-nowrap">full-time</span> commitment.
             </h1>
 
-            <p className="text-lg lg:text-xl text-white/70 leading-relaxed max-w-lg mb-10 font-serif">
+            <p className="text-lg lg:text-xl text-white/70 leading-relaxed max-w-lg mb-10">
               I support mission-driven organizations when they
               need senior leadership without a full-time hire. I step in as{" "}
               <span className="text-[var(--teal-light)] font-medium font-sans">
