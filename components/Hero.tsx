@@ -26,7 +26,7 @@ export default function Hero() {
                 <br />
                 <span className="text-[var(--teal-light)]">leadership,</span>
                 <br />
-                without the <span className="whitespace-nowrap">full-time</span> commitment.
+                when you need it most.
               </h1>
               <div className="relative w-24 h-24 min-[375px]:w-28 min-[375px]:h-28 sm:w-40 sm:h-40 shrink-0">
                 <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-inset ring-[var(--teal)]/30">
@@ -48,16 +48,16 @@ export default function Hero() {
               <br />
               <span className="text-[var(--teal-light)]">leadership,</span>
               <br />
-              without the <span className="whitespace-nowrap">full-time</span> commitment.
+              when you need it most.
             </h1>
 
             <p className="text-lg lg:text-xl text-white/70 leading-relaxed max-w-lg mb-10">
-              I support mission-driven organizations when they
-              need senior leadership without a full-time hire. I step in as{" "}
+              I support mission-driven organizations when a moment
+              calls for experienced leadership without a full-time hire. I step in as{" "}
               <span className="text-[var(--teal-light)] font-medium font-sans">
                 fractional/interim COO or CFO
               </span>
-              , project lead, or trusted advisor.
+              , project lead, or trusted advisor, until the job is done.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

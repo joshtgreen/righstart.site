@@ -138,7 +138,7 @@ export default function Testimonials() {
           <div className="inline-flex items-center gap-2 mb-4">
             <div className="w-8 h-px bg-[var(--teal)]" aria-hidden="true" />
             <span className="text-xs font-semibold uppercase tracking-widest text-[#1f6356]">
-              What People Say
+              What To Expect
             </span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold font-serif text-[var(--navy)] leading-tight">

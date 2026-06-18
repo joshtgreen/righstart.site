@@ -41,7 +41,7 @@ export default function About() {
 
         {/* Headline */}
         <h2 className="text-4xl lg:text-5xl font-bold font-serif text-white leading-snug mb-10">
-          I&apos;m here to help people doing{" "}
+          I help people doing{" "}
           <em className="not-italic text-[var(--teal-light)]">
             good work.
           </em>
@@ -51,18 +51,17 @@ export default function About() {
         <div className="text-white/70 leading-relaxed text-lg max-w-3xl">
           {/* Paragraph 1 — always visible */}
           <p>
-            I spent the early part of my career as a{" "}
+            I spent the early part of my career as{" "}
             <strong className="text-white">
-              first employee at multiple startups
+              employee number one at multiple startups
             </strong>{" "}
             — building operations from scratch, navigating compliance, hiring
-            teams, and figuring out what needed to exist so the company could
-            grow.{" "}
+            teams, and charting a course for growth.{" "}
             <strong className="text-white">
               Two of those companies were acquired
             </strong>
-            , and each one taught me what it takes to build systems that actually
-            work when the stakes are high and the resources are limited.
+            , and both experiences taught me what it takes to build systems that
+            deliver when the stakes are high and resources are limited.
           </p>
 
           {/* Collapsible content — animated on mobile, always visible on desktop */}
@@ -74,34 +73,34 @@ export default function About() {
             <div className="mt-6" />
 
             <p>
-              In 2021, I started RightStart to bring that same energy to
+              In 2021, I founded RightStart to bring that same energy to
               organizations doing work I believe in. I&apos;ve stepped in as an{" "}
               <strong className="text-white">
                 interim or fractional COO and CFO
               </strong>{" "}
-              for nonprofits, health-focused organizations, and mission-driven
-              ventures — including{" "}
+              for nonprofits, digital health startups, and values-aligned
+              ventures. Past clients include{" "}
               <strong className="text-white">
                 <a href="https://www.aiedu.org/" target="_blank" rel="noopener noreferrer" className="text-[var(--teal-light)] underline decoration-[var(--teal-light)]/40 hover:decoration-[var(--teal-light)] transition-colors">aiEDU</a>
               </strong>
-              , which brings AI literacy to students across the country, and{" "}
+              , which teaches AI literacy to students across the country, and{" "}
               <strong className="text-white">
                 <a href="https://designingjustice.org/" target="_blank" rel="noopener noreferrer" className="text-[var(--teal-light)] underline decoration-[var(--teal-light)]/40 hover:decoration-[var(--teal-light)] transition-colors">Designing Justice + Designing Spaces</a>
               </strong>
-              , which uses architecture and development to address the root causes
-              of mass incarceration.
+              , a social enterprise exploring the ways design and development can
+              address the root causes of mass incarceration.
             </p>
 
             <div className="my-6" />
 
             <p>
-              What I love about this work is pretty simple:{" "}
+              What I love about this work is simple:{" "}
               <strong className="text-white">
-                I get to make life easier for people doing important things.
+                I get to make life easier for people solving important problems.
               </strong>{" "}
               Whether that means untangling finances, building a hiring process, or
-              just being a calm voice when everything feels urgent — that&apos;s
-              where I&apos;m most useful and most fulfilled.
+              offering a steady perspective when the challenges feel overwhelming —
+              that&apos;s where I thrive.
             </p>
           </div>
 

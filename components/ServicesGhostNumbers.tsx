@@ -33,7 +33,7 @@ export default function ServicesGhostNumbers() {
         </svg>
       ),
       title: "Advising",
-      tagline: "A sharp, honest thought partner on an ongoing basis via regular calls.",
+      tagline: "Rigorous, honest thought partnership on an ongoing basis via regular calls.",
       detail: "2–4 hrs/month · Ongoing",
     },
     {
@@ -45,7 +45,7 @@ export default function ServicesGhostNumbers() {
         </svg>
       ),
       title: "Open Office Hours",
-      tagline: "Free, no-pitch calls to jam, troubleshoot, or think out loud.",
+      tagline: "Free, no-pitch calls to troubleshoot and think out loud.",
       detail: "Free · No commitment",
     },
   ];
@@ -66,7 +66,7 @@ export default function ServicesGhostNumbers() {
           <div className="inline-flex items-center gap-2 mb-4">
             <div className="w-8 h-px bg-[var(--teal)]" aria-hidden="true" />
             <span className="text-xs font-semibold uppercase tracking-widest text-[#1f6356]">
-              How I Can Help
+              What I Offer
             </span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold font-serif text-[var(--navy)] leading-tight">
@@ -74,8 +74,8 @@ export default function ServicesGhostNumbers() {
           </h2>
           <p className="mt-4 text-lg text-[#4a5568] leading-relaxed max-w-2xl">
             Whether you need embedded executive leadership, help getting a
-            complex initiative across the finish line, or just someone to think
-            with — there&apos;s a way to work together.
+            complex initiative across the finish line, or just someone to be a
+            sounding board — I can help.
           </p>
         </div>
 
