@@ -64,6 +64,32 @@ export default function About() {
             deliver when the stakes are high and resources are limited.
           </p>
 
+          {/* Paragraph 2 — always visible (roles and clients) */}
+          <p className="mt-6">
+            In 2021, I founded RightStart to bring that same energy to
+            organizations doing work I believe in. I&apos;ve stepped in as an{" "}
+            <strong className="text-white">
+              interim or fractional COO and CFO
+            </strong>{" "}
+            for nonprofits, digital health startups, and values-aligned
+            ventures. I was interim COO at{" "}
+            <strong className="text-white">
+              <a href="https://www.aiedu.org/" target="_blank" rel="noopener noreferrer" className="text-[var(--teal-light)] underline decoration-[var(--teal-light)]/40 hover:decoration-[var(--teal-light)] transition-colors">aiEDU</a>
+            </strong>
+            , which teaches AI literacy to students across the country, from
+            2023 to 2024. Today I&apos;m interim COO/CFO at{" "}
+            <strong className="text-white">
+              <a href="https://designingjustice.org/" target="_blank" rel="noopener noreferrer" className="text-[var(--teal-light)] underline decoration-[var(--teal-light)]/40 hover:decoration-[var(--teal-light)] transition-colors">Designing Justice + Designing Spaces</a>
+            </strong>
+            , a social enterprise exploring the ways design and development can
+            address the root causes of mass incarceration. I also serve on
+            nonprofit boards, and I built a free{" "}
+            <strong className="text-white">
+              <a href="https://comp.rightstart.co" target="_blank" rel="noopener noreferrer" className="text-[var(--teal-light)] underline decoration-[var(--teal-light)]/40 hover:decoration-[var(--teal-light)] transition-colors">nonprofit compensation benchmarking tool</a>
+            </strong>{" "}
+            because I kept doing that work for clients.
+          </p>
+
           {/* Collapsible content — animated on mobile, always visible on desktop */}
           <div
             ref={contentRef}
@@ -71,27 +97,6 @@ export default function About() {
             style={{ maxHeight: expanded ? `${contentHeight}px` : "0px" }}
           >
             <div className="mt-6" />
-
-            <p>
-              In 2021, I founded RightStart to bring that same energy to
-              organizations doing work I believe in. I&apos;ve stepped in as an{" "}
-              <strong className="text-white">
-                interim or fractional COO and CFO
-              </strong>{" "}
-              for nonprofits, digital health startups, and values-aligned
-              ventures. Past clients include{" "}
-              <strong className="text-white">
-                <a href="https://www.aiedu.org/" target="_blank" rel="noopener noreferrer" className="text-[var(--teal-light)] underline decoration-[var(--teal-light)]/40 hover:decoration-[var(--teal-light)] transition-colors">aiEDU</a>
-              </strong>
-              , which teaches AI literacy to students across the country, and{" "}
-              <strong className="text-white">
-                <a href="https://designingjustice.org/" target="_blank" rel="noopener noreferrer" className="text-[var(--teal-light)] underline decoration-[var(--teal-light)]/40 hover:decoration-[var(--teal-light)] transition-colors">Designing Justice + Designing Spaces</a>
-              </strong>
-              , a social enterprise exploring the ways design and development can
-              address the root causes of mass incarceration.
-            </p>
-
-            <div className="my-6" />
 
             <p>
               What I love about this work is simple:{" "}
