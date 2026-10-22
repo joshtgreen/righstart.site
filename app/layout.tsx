@@ -20,22 +20,22 @@ const dmSerifDisplay = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Josh Green | Fractional COO/CFO and Advisor",
+  title: "Josh Green | Fractional COO/CFO and Advisor | RightStart",
   description:
-    "Strategic operations leadership for nonprofits, health-focused ventures, and mission-driven organizations. Josh Green offers fractional and interim COO and CFO support.",
+    "Josh Green (RightStart) is a fractional COO/CFO and advisor for nonprofits and mission-driven startups. Clients include aiEDU and Designing Justice + Designing Spaces.",
   metadataBase: new URL("https://rightstart.co"),
   openGraph: {
-    title: "Josh Green | Fractional COO/CFO and Advisor",
+    title: "Josh Green | Fractional COO/CFO and Advisor | RightStart",
     description:
-      "Strategic operations leadership for nonprofits, health-focused ventures, and mission-driven organizations.",
+      "Fractional COO/CFO and advisor for nonprofits and mission-driven startups. Clients include aiEDU and Designing Justice + Designing Spaces.",
     siteName: "Rightstart",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Josh Green | Fractional COO/CFO and Advisor",
+    title: "Josh Green | Fractional COO/CFO and Advisor | RightStart",
     description:
-      "Strategic operations leadership for nonprofits, health-focused ventures, and mission-driven organizations.",
+      "Fractional COO/CFO and advisor for nonprofits and mission-driven startups. Clients include aiEDU and Designing Justice + Designing Spaces.",
   },
   other: {
     "theme-color": "#1a2744",

@@ -6,14 +6,14 @@ import ReclaimEmbed from "@/components/ReclaimEmbed";
 export const metadata: Metadata = {
   title: "Book a Call | Josh Green",
   description:
-    "Schedule a time to connect with Josh Green, Fractional COO and advisor for early-stage startups and nonprofits.",
+    "Pick a time to talk with Josh Green, fractional COO/CFO and advisor at RightStart, about what your organization needs next. The call is free.",
   alternates: { canonical: "/book" },
   // A page-level openGraph replaces the layout's whole block and app/book has no
   // image file of its own, so the image is restated here explicitly.
   openGraph: {
     title: "Book a Call | Josh Green",
     description:
-      "Schedule a time to connect with Josh Green, Fractional COO and advisor for early-stage startups and nonprofits.",
+      "Pick a time to talk with Josh Green, fractional COO/CFO and advisor at RightStart, about what your organization needs next. The call is free.",
     url: "/book",
     siteName: "Rightstart",
     type: "website",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Book a Call | Josh Green",
     description:
-      "Schedule a time to connect with Josh Green, Fractional COO and advisor for early-stage startups and nonprofits.",
+      "Pick a time to talk with Josh Green, fractional COO/CFO and advisor at RightStart, about what your organization needs next. The call is free.",
   },
 };
 

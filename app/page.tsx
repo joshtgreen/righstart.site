@@ -13,9 +13,9 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Josh Green | Fractional COO/CFO and Advisor",
+    title: "Josh Green | Fractional COO/CFO and Advisor | RightStart",
     description:
-      "Strategic operations leadership for nonprofits, health-focused ventures, and mission-driven organizations.",
+      "Fractional COO/CFO and advisor for nonprofits and mission-driven startups. Clients include aiEDU and Designing Justice + Designing Spaces.",
     url: "/",
     siteName: "Rightstart",
     type: "website",
