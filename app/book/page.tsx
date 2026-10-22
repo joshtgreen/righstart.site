@@ -66,6 +66,19 @@ export default function BookPage() {
         <section className="bg-[var(--warm-gray)] py-16 px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <ReclaimEmbed />
+            <p className="mt-4 text-sm text-[#4a5568]">
+              Scheduling is handled by Reclaim.ai, which uses its own cookies.
+              See{" "}
+              <a
+                href="https://reclaim.ai/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--teal)] underline underline-offset-2 hover:text-[#236b5e] transition-colors"
+              >
+                Reclaim&apos;s privacy policy
+              </a>
+              .
+            </p>
           </div>
         </section>
       </main>
