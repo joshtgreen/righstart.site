@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Book a Call | Josh Green",
   description:
     "Schedule a time to connect with Josh Green, Fractional COO and advisor for early-stage startups and nonprofits.",
+  alternates: { canonical: "/book" },
   // A page-level openGraph replaces the layout's whole block and app/book has no
   // image file of its own, so the image is restated here explicitly.
   openGraph: {

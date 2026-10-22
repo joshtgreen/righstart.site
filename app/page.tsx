@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 // A page-level openGraph replaces the layout's whole block, so restate it here.
 // The home page keeps the generated /opengraph-image from app/opengraph-image.tsx.
 export const metadata: Metadata = {
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Josh Green | Fractional COO/CFO and Advisor",
     description:
