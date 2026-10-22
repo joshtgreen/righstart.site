@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#111d36] border-t border-white/5 py-10">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <Image
               src="/logos/rightstart font white.png"
@@ -18,6 +18,25 @@ export default function Footer() {
             />
             <span className="text-white/40">·</span>
             <span className="text-white/60 text-sm">Josh Green</span>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
+            <a
+              href="https://comp.rightstart.co"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/50 hover:text-white/80 transition-colors"
+            >
+              Nonprofit Comp Benchmarking
+            </a>
+            <a
+              href="https://wageproof.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/50 hover:text-white/80 transition-colors"
+            >
+              WageProof
+            </a>
           </div>
 
           <div className="flex items-center gap-6">
