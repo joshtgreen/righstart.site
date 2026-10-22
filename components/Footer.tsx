@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <Image
               src="/logos/rightstart font white.png"
-              alt="Rightstart"
+              alt="RightStart"
               width={880}
               height={190}
               className="h-6 w-auto"

@@ -32,7 +32,7 @@ export default function Hero() {
                 <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-inset ring-[var(--teal)]/30">
                   <Image
                     src="/josh-headshot.jpg"
-                    alt="Josh Green"
+                    alt="Josh Green, Fractional COO/CFO and Advisor at RightStart"
                     fill
                     className="object-cover"
                     priority
@@ -87,7 +87,7 @@ export default function Hero() {
               <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-[var(--teal)]/30">
                 <Image
                   src="/josh-headshot.jpg"
-                  alt="Josh Green, Fractional COO and Strategic Advisor at RightStart"
+                  alt="Josh Green, Fractional COO/CFO and Advisor at RightStart"
                   fill
                   className="object-cover"
                   priority

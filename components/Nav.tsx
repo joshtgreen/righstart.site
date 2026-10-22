@@ -74,12 +74,12 @@ export default function Nav() {
           <Link
             href="/"
             className="flex items-center group"
-            aria-label="Rightstart home"
+            aria-label="RightStart home"
           >
             <div className="relative h-8 w-36">
               <Image
                 src="/logos/rightstart font white.png"
-                alt="Rightstart"
+                alt="RightStart"
                 fill
                 className={`object-contain object-left transition-opacity duration-300 ${
                   scrolled ? "opacity-0" : "opacity-100"
@@ -88,7 +88,7 @@ export default function Nav() {
               />
               <Image
                 src="/logos/rightstart.png"
-                alt="Rightstart"
+                alt="RightStart"
                 fill
                 className={`object-contain object-left transition-opacity duration-300 ${
                   scrolled ? "opacity-100" : "opacity-0"

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Josh Green | Fractional COO/CFO and Advisor | RightStart",
     description:
       "Fractional COO/CFO and advisor for nonprofits and mission-driven startups. Clients include aiEDU and Designing Justice + Designing Spaces.",
-    siteName: "Rightstart",
+    siteName: "RightStart",
     type: "website",
   },
   twitter: {

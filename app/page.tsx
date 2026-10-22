@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description:
       "Fractional COO/CFO and advisor for nonprofits and mission-driven startups. Clients include aiEDU and Designing Justice + Designing Spaces.",
     url: "/",
-    siteName: "Rightstart",
+    siteName: "RightStart",
     type: "website",
   },
 };

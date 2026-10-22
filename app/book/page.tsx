@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       "Pick a time to talk with Josh Green, fractional COO/CFO and advisor at RightStart, about what your organization needs next. The call is free.",
     url: "/book",
-    siteName: "Rightstart",
+    siteName: "RightStart",
     type: "website",
     images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
