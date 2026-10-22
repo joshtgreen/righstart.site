@@ -103,7 +103,7 @@ export default function Nav() {
             {["About", "Services", "Contact"].map((item) => (
               <a
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                href={`/#${item.toLowerCase()}`}
                 className={`text-sm font-medium transition-colors hover:opacity-70 ${
                   scrolled ? "text-[var(--navy)]" : "text-white/90"
                 }`}
@@ -207,7 +207,7 @@ export default function Nav() {
           {["About", "Services", "Contact"].map((item) => (
             <a
               key={item}
-              href={`#${item.toLowerCase()}`}
+              href={`/#${item.toLowerCase()}`}
               onClick={() => setMenuOpen(false)}
               className="text-sm font-medium text-[var(--navy)] py-1"
             >
