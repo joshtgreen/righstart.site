@@ -7,6 +7,23 @@ export const metadata: Metadata = {
   title: "Book a Call | Josh Green",
   description:
     "Schedule a time to connect with Josh Green, Fractional COO and advisor for early-stage startups and nonprofits.",
+  // A page-level openGraph replaces the layout's whole block and app/book has no
+  // image file of its own, so the image is restated here explicitly.
+  openGraph: {
+    title: "Book a Call | Josh Green",
+    description:
+      "Schedule a time to connect with Josh Green, Fractional COO and advisor for early-stage startups and nonprofits.",
+    url: "/book",
+    siteName: "Rightstart",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Book a Call | Josh Green",
+    description:
+      "Schedule a time to connect with Josh Green, Fractional COO and advisor for early-stage startups and nonprofits.",
+  },
 };
 
 export default function BookPage() {

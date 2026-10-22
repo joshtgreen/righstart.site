@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import WaveDivider from "@/components/WaveDivider";
@@ -6,6 +7,19 @@ import About from "@/components/About";
 import ServicesGhostNumbers from "@/components/ServicesGhostNumbers";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+
+// A page-level openGraph replaces the layout's whole block, so restate it here.
+// The home page keeps the generated /opengraph-image from app/opengraph-image.tsx.
+export const metadata: Metadata = {
+  openGraph: {
+    title: "Josh Green | Fractional COO/CFO and Advisor",
+    description:
+      "Strategic operations leadership for nonprofits, health-focused ventures, and mission-driven organizations.",
+    url: "/",
+    siteName: "Rightstart",
+    type: "website",
+  },
+};
 
 const jsonLd = {
   "@context": "https://schema.org",

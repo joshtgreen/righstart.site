@@ -28,10 +28,8 @@ export const metadata: Metadata = {
     title: "Josh Green | Fractional COO/CFO and Advisor",
     description:
       "Strategic operations leadership for nonprofits, health-focused ventures, and mission-driven organizations.",
-    url: "https://rightstart.co",
     siteName: "Rightstart",
     type: "website",
-    images: [{ url: "/opengraph-image.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
