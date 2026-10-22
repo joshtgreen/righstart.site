@@ -19,16 +19,16 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: text */}
           <div>
-            {/* Mobile: headline + photo side by side */}
-            <div className="lg:hidden flex items-center gap-6 mb-6">
-              <h1 className="text-4xl sm:text-5xl font-bold font-serif text-white leading-[1.08] tracking-tight flex-1 min-w-0">
+            {/* Headline (the page's only h1). Below lg it sits beside the small photo; at lg the wrapper becomes a plain block. */}
+            <div className="flex items-center gap-6 mb-6 lg:block lg:mb-0">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold font-serif text-white leading-[1.08] tracking-tight flex-1 min-w-0 lg:mb-6">
                 Senior
                 <br />
                 <span className="text-[var(--teal-light)]">leadership,</span>
                 <br />
                 when you need it most.
               </h1>
-              <div className="relative w-24 h-24 min-[375px]:w-28 min-[375px]:h-28 sm:w-40 sm:h-40 shrink-0">
+              <div className="lg:hidden relative w-24 h-24 min-[375px]:w-28 min-[375px]:h-28 sm:w-40 sm:h-40 shrink-0">
                 <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-inset ring-[var(--teal)]/30">
                   <Image
                     src="/josh-headshot.jpg"
@@ -41,15 +41,6 @@ export default function Hero() {
                 </div>
               </div>
             </div>
-
-            {/* Desktop headline */}
-            <h1 className="hidden lg:block text-6xl xl:text-7xl font-bold font-serif text-white leading-[1.08] tracking-tight mb-6">
-              Senior
-              <br />
-              <span className="text-[var(--teal-light)]">leadership,</span>
-              <br />
-              when you need it most.
-            </h1>
 
             <p className="text-lg lg:text-xl text-white/70 leading-relaxed max-w-lg mb-10">
               I support mission-driven organizations when a moment

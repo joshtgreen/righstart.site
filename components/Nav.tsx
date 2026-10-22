@@ -81,6 +81,7 @@ export default function Nav() {
                 src="/logos/rightstart font white.png"
                 alt="RightStart"
                 fill
+                sizes="144px"
                 className={`object-contain object-left transition-opacity duration-300 ${
                   scrolled ? "opacity-0" : "opacity-100"
                 }`}
@@ -90,6 +91,7 @@ export default function Nav() {
                 src="/logos/rightstart.png"
                 alt="RightStart"
                 fill
+                sizes="144px"
                 className={`object-contain object-left transition-opacity duration-300 ${
                   scrolled ? "opacity-100" : "opacity-0"
                 }`}

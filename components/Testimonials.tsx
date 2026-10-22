@@ -88,7 +88,7 @@ function TestimonialCard({ t, eager = false, className = "" }: { t: typeof testi
       <div className="border-t border-[var(--border)] mt-5 pt-5 flex items-center gap-4">
         {t.photo ? (
           <div className="flex-shrink-0 w-14 h-14 rounded-full overflow-hidden ring-2 ring-[var(--border)]">
-            <Image src={t.photo} alt={t.name} width={56} height={56} loading={eager ? "eager" : "lazy"} className="object-cover w-full h-full" />
+            <Image src={t.photo} alt="" width={56} height={56} loading={eager ? "eager" : "lazy"} className="object-cover w-full h-full" />
           </div>
         ) : (
           <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[var(--navy)] flex items-center justify-center ring-2 ring-[var(--border)]">
