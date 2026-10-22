@@ -41,9 +41,10 @@ export default function BookPage() {
 
             <p className="text-lg text-white/70 leading-relaxed mb-4 max-w-2xl">
               Need a sounding board? Want help talking through what&apos;s next?
-              Whether it&apos;s a one-off challenge or something longer-term,
-              I&apos;m happy to connect and see what we can figure out together.
-              Pick a time that works for you below.
+              Whether it&apos;s a one-off challenge or a possible interim,
+              project or advising engagement, I&apos;m happy to connect and see
+              what we can figure out together. Pick a time that works for you
+              below. The call is free.
             </p>
 
             <p className="text-base text-white/50 leading-relaxed">
