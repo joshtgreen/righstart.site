@@ -82,8 +82,11 @@ export default function About() {
               <a href="https://designingjustice.org/" target="_blank" rel="noopener noreferrer" className="text-[var(--teal-light)] underline decoration-[var(--teal-light)]/40 hover:decoration-[var(--teal-light)] transition-colors">Designing Justice + Designing Spaces</a>
             </strong>
             , a social enterprise exploring the ways design and development can
-            address the root causes of mass incarceration. I also serve on
-            nonprofit boards, and I built a free{" "}
+            address the root causes of mass incarceration.
+          </p>
+
+          <p className="mt-6">
+            I also serve on nonprofit boards, and I built a free{" "}
             <strong className="text-white">
               <a href="https://comp.rightstart.co" target="_blank" rel="noopener noreferrer" className="text-[var(--teal-light)] underline decoration-[var(--teal-light)]/40 hover:decoration-[var(--teal-light)] transition-colors">nonprofit compensation benchmarking tool</a>
             </strong>{" "}
