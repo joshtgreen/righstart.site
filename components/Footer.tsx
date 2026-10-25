@@ -22,12 +22,12 @@ export default function Footer() {
 
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
             <a
-              href="https://comp.rightstart.co"
+              href="https://peerset.org"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/50 hover:text-white/80 transition-colors"
             >
-              Nonprofit Comp Benchmarking
+              PeerSet
             </a>
             <a
               href="https://wageproof.com"

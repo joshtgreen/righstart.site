@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const projects = [
-  { name: "Nonprofit Comp Benchmarking", href: "https://comp.rightstart.co" },
+  { name: "PeerSet", href: "https://peerset.org" },
   { name: "WageProof", href: "https://wageproof.com" },
 ];
 

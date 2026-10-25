@@ -86,11 +86,11 @@ export default function About() {
           </p>
 
           <p className="mt-6">
-            I also serve on nonprofit boards, and I built a free{" "}
+            I also serve on nonprofit boards, and I built{" "}
             <strong className="text-white">
-              <a href="https://comp.rightstart.co" target="_blank" rel="noopener noreferrer" className="text-[var(--teal-light)] underline decoration-[var(--teal-light)]/40 hover:decoration-[var(--teal-light)] transition-colors">nonprofit compensation benchmarking tool</a>
-            </strong>{" "}
-            because I kept doing that work for clients. My other project is{" "}
+              <a href="https://peerset.org" target="_blank" rel="noopener noreferrer" className="text-[var(--teal-light)] underline decoration-[var(--teal-light)]/40 hover:decoration-[var(--teal-light)] transition-colors">PeerSet</a>
+            </strong>
+            , a free nonprofit compensation benchmarking tool, because I kept doing that work for clients. My other project is{" "}
             <strong className="text-white">
               <a href="https://wageproof.com" target="_blank" rel="noopener noreferrer" className="text-[var(--teal-light)] underline decoration-[var(--teal-light)]/40 hover:decoration-[var(--teal-light)] transition-colors">WageProof</a>
             </strong>
