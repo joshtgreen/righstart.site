@@ -21,6 +21,7 @@ Josh founded RightStart in 2021. Based in San Francisco, working nationwide.
 - [RightStart home](https://rightstart.co/): about Josh, testimonials, services and contact.
 - [Book a call](https://rightstart.co/book): pick a time to talk with Josh. The call is free.
 - [Nonprofit Comp Benchmarking](https://comp.rightstart.co): a free nonprofit compensation benchmarking tool Josh built.
+- [WageProof](https://wageproof.com): reasonable compensation reports for accountants with S-corp clients, backed by Bureau of Labor Statistics wage data. Josh built it.
 - [Josh Green on LinkedIn](https://www.linkedin.com/in/joshuatgreen/)
 
 ## Contact

@@ -6,7 +6,7 @@ export default function CTA() {
       <div className="pointer-events-none absolute bottom-[-20%] right-[-10%] w-[40%] h-[50%] rounded-full bg-[var(--navy-light)]/30 blur-3xl" aria-hidden="true" />
 
       <div className="relative max-w-6xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left: text */}
           <div>
             <div className="inline-flex items-center gap-2 mb-4">
@@ -35,7 +35,7 @@ export default function CTA() {
           </div>
 
           {/* Right: contact card */}
-          <div className="bg-white/[0.06] backdrop-blur-sm border border-white/10 rounded-2xl p-8 lg:p-10">
+          <div className="bg-white/[0.06] backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8 lg:p-10">
             <h3 className="text-white font-semibold text-lg mb-6">
               Other ways to connect
             </h3>
@@ -74,7 +74,7 @@ export default function CTA() {
                     rel="noopener noreferrer"
                     className="text-white text-sm font-medium hover:text-[var(--teal-light)] transition-colors"
                   >
-                    linkedin.com/in/joshuatgreen
+                    linkedin.com/in/<wbr />joshuatgreen
                   </a>
                 </div>
               </div>

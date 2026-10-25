@@ -90,7 +90,12 @@ export default function About() {
             <strong className="text-white">
               <a href="https://comp.rightstart.co" target="_blank" rel="noopener noreferrer" className="text-[var(--teal-light)] underline decoration-[var(--teal-light)]/40 hover:decoration-[var(--teal-light)] transition-colors">nonprofit compensation benchmarking tool</a>
             </strong>{" "}
-            because I kept doing that work for clients.
+            because I kept doing that work for clients. My other project is{" "}
+            <strong className="text-white">
+              <a href="https://wageproof.com" target="_blank" rel="noopener noreferrer" className="text-[var(--teal-light)] underline decoration-[var(--teal-light)]/40 hover:decoration-[var(--teal-light)] transition-colors">WageProof</a>
+            </strong>
+            , which gives accountants a reasonable compensation report for
+            their S-corp clients, backed by Bureau of Labor Statistics wage data.
           </p>
 
           {/* Collapsible content — animated on mobile, always visible on desktop */}

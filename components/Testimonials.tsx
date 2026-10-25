@@ -154,7 +154,7 @@ export default function Testimonials() {
             className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 -mx-6 px-6 pb-4"
           >
             {testimonials.map((t, i) => (
-              <div key={i} className="snap-center flex-shrink-0 w-[85vw]">
+              <div key={i} className="snap-center flex-shrink-0 w-[85vw] max-w-md">
                 <TestimonialCard t={t} eager={i === 0} className="shadow-lg" />
               </div>
             ))}

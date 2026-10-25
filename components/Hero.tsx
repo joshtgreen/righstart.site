@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center bg-[var(--navy)] overflow-hidden">
+    <section className="relative min-h-screen sm:portrait:min-h-[70svh] flex items-center bg-[var(--navy)] overflow-hidden">
       {/* Subtle grid texture */}
       <div className="absolute inset-0" aria-hidden="true"
         style={{
@@ -16,19 +16,19 @@ export default function Hero() {
       <div className="pointer-events-none absolute bottom-[-30%] left-[-15%] w-[50%] h-[60%] rounded-full bg-[var(--navy-light)]/30 blur-3xl" aria-hidden="true" />
 
       <div className="relative max-w-6xl mx-auto px-6 lg:px-8 pt-24 pb-20 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid sm:grid-cols-[1fr_auto] lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: text */}
           <div>
-            {/* Headline (the page's only h1). Below lg it sits beside the small photo; at lg the wrapper becomes a plain block. */}
-            <div className="flex items-center gap-6 mb-6 lg:block lg:mb-0">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold font-serif text-white leading-[1.08] tracking-tight flex-1 min-w-0 lg:mb-6">
+            {/* Headline (the page's only h1). Below sm it sits beside the small photo; at sm the wrapper becomes a plain block. */}
+            <div className="flex items-center gap-6 mb-6 sm:block sm:mb-0">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold font-serif text-white leading-[1.08] tracking-tight flex-1 min-w-0 sm:mb-6">
                 Senior
                 <br />
                 <span className="text-[var(--teal-light)]">leadership,</span>
                 <br />
-                when you need it most.
+                when you need <span className="whitespace-nowrap">it most.</span>
               </h1>
-              <div className="lg:hidden relative w-24 h-24 min-[375px]:w-28 min-[375px]:h-28 sm:w-40 sm:h-40 shrink-0">
+              <div className="sm:hidden relative w-24 h-24 min-[375px]:w-28 min-[375px]:h-28 shrink-0">
                 <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-inset ring-[var(--teal)]/30">
                   <Image
                     src="/josh-headshot.jpg"
@@ -36,7 +36,7 @@ export default function Hero() {
                     fill
                     className="object-cover"
                     priority
-                    sizes="(max-width: 639px) 112px, 160px"
+                    sizes="112px"
                   />
                 </div>
               </div>
@@ -68,8 +68,8 @@ export default function Hero() {
           </div>
 
           {/* Right: photo */}
-          <div className="hidden lg:flex lg:justify-end">
-            <div className="relative w-72 h-72 lg:w-96 lg:h-96">
+          <div className="hidden sm:flex sm:justify-end">
+            <div className="relative w-48 h-48 md:w-60 md:h-60 lg:w-96 lg:h-96">
               {/* Decorative ring */}
               <div className="absolute inset-0 rounded-full border-2 border-[var(--teal)]/40 scale-110" aria-hidden="true" />
               <div className="absolute inset-0 rounded-full border border-white/10 scale-125" aria-hidden="true" />
@@ -82,7 +82,7 @@ export default function Hero() {
                   fill
                   className="object-cover"
                   priority
-                  sizes="(max-width: 768px) 288px, 384px"
+                  sizes="(max-width: 767px) 192px, (max-width: 1023px) 240px, 384px"
                 />
               </div>
             </div>
