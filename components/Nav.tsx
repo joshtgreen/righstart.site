@@ -4,9 +4,24 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+// Each project shows its own wordmark (the files in public/logos/projects are copies of
+// the products' own logo files). Both menus are white, so these are the dark-letter versions.
+// At the same height the two wordmarks' lowercase letters come out the same size.
+// WageProof's file has a little empty space at its left edge; `nudge` lines its icon up
+// with PeerSet's.
 const projects = [
-  { name: "PeerSet", href: "https://peerset.org" },
-  { name: "WageProof", href: "https://wageproof.com" },
+  {
+    name: "PeerSet",
+    href: "https://peerset.org",
+    logo: { src: "/logos/projects/peerset-logo.svg", width: 232, height: 64 },
+    nudge: "",
+  },
+  {
+    name: "WageProof",
+    href: "https://wageproof.com",
+    logo: { src: "/logos/projects/wageproof-navy.svg", width: 120, height: 24 },
+    nudge: "-ml-[3px]",
+  },
 ];
 
 export default function Nav() {
@@ -147,16 +162,23 @@ export default function Nav() {
               </button>
 
               {projectsOpen && (
-                <div className="absolute top-full right-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-[var(--border)] py-2 animate-slide-from-right">
+                <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-[var(--border)] p-2 animate-slide-from-right">
                   {projects.map((p) => (
                     <a
                       key={p.name}
                       href={p.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block px-4 py-2.5 text-sm text-[var(--navy)] hover:bg-[var(--cream)] transition-colors"
+                      className="flex items-center px-3 py-3 rounded-lg hover:bg-[var(--cream)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--teal)]"
                     >
-                      {p.name}
+                      <Image
+                        src={p.logo.src}
+                        alt={p.name}
+                        width={p.logo.width}
+                        height={p.logo.height}
+                        unoptimized
+                        className={`h-6 w-auto ${p.nudge}`}
+                      />
                     </a>
                   ))}
                 </div>
@@ -235,7 +257,7 @@ export default function Nav() {
             </svg>
           </button>
           {mobileProjectsOpen && (
-            <div className="flex flex-col gap-3 pl-4 border-l-2 border-[var(--teal)]/30">
+            <div className="flex flex-col items-start gap-1 pl-4 border-l-2 border-[var(--teal)]/30">
               {projects.map((p) => (
                 <a
                   key={p.name}
@@ -243,9 +265,16 @@ export default function Nav() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMenuOpen(false)}
-                  className="text-sm text-[var(--navy)]/70 hover:text-[var(--navy)] transition-colors"
+                  className="flex items-center py-2.5 rounded hover:opacity-70 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--teal)] focus-visible:ring-offset-4"
                 >
-                  {p.name}
+                  <Image
+                    src={p.logo.src}
+                    alt={p.name}
+                    width={p.logo.width}
+                    height={p.logo.height}
+                    unoptimized
+                    className={`h-6 w-auto ${p.nudge}`}
+                  />
                 </a>
               ))}
             </div>
