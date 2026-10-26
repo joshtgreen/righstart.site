@@ -177,7 +177,7 @@ export default function Nav() {
                         width={p.logo.width}
                         height={p.logo.height}
                         unoptimized
-                        className={`h-6 w-auto ${p.nudge}`}
+                        className={`h-6 w-auto max-w-none ${p.nudge}`}
                       />
                     </a>
                   ))}
@@ -273,7 +273,7 @@ export default function Nav() {
                     width={p.logo.width}
                     height={p.logo.height}
                     unoptimized
-                    className={`h-6 w-auto ${p.nudge}`}
+                    className={`h-6 w-auto max-w-none ${p.nudge}`}
                   />
                 </a>
               ))}
